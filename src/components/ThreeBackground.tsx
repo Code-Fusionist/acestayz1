@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
+import { useLocation } from 'react-router-dom';
 
 function AnimatedPoints() {
   const ref = useRef<THREE.Points>(null);
@@ -42,14 +43,21 @@ function AnimatedPoints() {
 }
 
 const ThreeBackground = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
-      <Canvas
-        camera={{ position: [0, 0, 1] }}
-        style={{ background: 'transparent' }}
-      >
-        <AnimatedPoints />
-      </Canvas>
+      {isHomePage ? (
+        <Canvas
+          camera={{ position: [0, 0, 1] }}
+          style={{ background: 'transparent' }}
+        >
+          <AnimatedPoints />
+        </Canvas>
+      ) : (
+        <div className="w-full h-full bg-transparent" />
+      )}
     </div>
   );
 };

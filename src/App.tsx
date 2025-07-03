@@ -11,7 +11,6 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import WhyUs from "./pages/WhyUs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import AnimatedCursor from "./components/AnimatedCursor";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +19,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <AnimatedCursor />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
