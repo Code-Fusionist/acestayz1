@@ -1,12 +1,66 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Navbar from '../components/Navbar';
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import DestinationSection from '../components/DestinationSection';
+import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
+import ServicesSection from '../components/ServicesSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import PartnersSection from '../components/PartnersSection';
+import PartnershipSection from '../components/PartnershipSection';
+import ContactForm from '../components/ContactForm';
+import FloatingArrow from '../components/FloatingArrow';
+import ThreeBackground from '../components/ThreeBackground';
 
 const Index = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.fade-in-up');
+      elements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('animate-slide-up');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="relative min-h-screen bg-white overflow-x-hidden">
+      <ThreeBackground />
+      
+      <Navbar onContactClick={() => setShowContactForm(true)} />
+      
+      <motion.div style={{ opacity }} className="relative z-10">
+        <HeroSection />
+      </motion.div>
+
+      <div className="relative z-10 space-y-0">
+        <AboutSection />
+        <DestinationSection />
+        <FeaturedRoomsSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <PartnersSection />
+        <PartnershipSection onContactClick={() => setShowContactForm(true)} />
       </div>
+
+      <FloatingArrow />
+      
+      {showContactForm && (
+        <ContactForm onClose={() => setShowContactForm(false)} />
+      )}
     </div>
   );
 };
