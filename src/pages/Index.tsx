@@ -13,11 +13,12 @@ import PartnershipSection from '../components/PartnershipSection';
 import ContactForm from '../components/ContactForm';
 import FloatingArrow from '../components/FloatingArrow';
 import ThreeBackground from '../components/ThreeBackground';
+import Footer from '../components/Footer';
 
 const Index = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,6 +57,7 @@ const Index = () => {
         <PartnershipSection onContactClick={() => setShowContactForm(true)} />
       </div>
 
+      <Footer />
       <FloatingArrow />
       
       {showContactForm && (
