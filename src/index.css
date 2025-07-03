@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
@@ -185,13 +186,13 @@ All colors MUST be HSL.
 }
 
 @keyframes accordion-down {
-  from: { height: "0", opacity: "0" }
-  to: { height: "var(--radix-accordion-content-height)", opacity: "1" }
+  from { height: 0; opacity: 0; }
+  to { height: var(--radix-accordion-content-height); opacity: 1; }
 }
 
 @keyframes accordion-up {
-  from: { height: "var(--radix-accordion-content-height)", opacity: "1" }
-  to: { height: "0", opacity: "0" }
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to { height: 0; opacity: 0; }
 }
 
 .animate-accordion-down {
@@ -224,3 +225,4 @@ All colors MUST be HSL.
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--ace-dark));
 }
+
