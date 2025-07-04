@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from '../components/Navbar';
@@ -14,6 +13,7 @@ import ContactForm from '../components/ContactForm';
 import FloatingArrow from '../components/FloatingArrow';
 import ThreeBackground from '../components/ThreeBackground';
 import Footer from '../components/Footer';
+import PressCarousel from '../components/PressCarousel';
 
 const Index = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -64,11 +64,11 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="font-playfair text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
+            <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
             Why Choose
             <span className="text-ace-gold block">Ace Stayz</span>
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
             Discover what makes us the preferred choice for discerning travelers 
             who value exceptional service and unparalleled comfort.
           </p>
@@ -87,11 +87,11 @@ const Index = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="text-4xl lg:text-5xl font-bold text-ace-gold mb-2"
+                  className="text-4xl lg:text-5xl font-bold text-ace-gold mb-2 font-poppins"
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-gray-600 font-medium font-poppins">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -101,6 +101,7 @@ const Index = () => {
       <div className="relative z-10 space-y-0">
         {/* <AboutSection /> */}
         <FeaturedSection />
+        <PressCarousel />
         <DestinationSection />
         <FeaturedRoomsSection />
         <ServicesSection />
