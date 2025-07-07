@@ -5,7 +5,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
 
 function FooterPoints() {
   const ref = useRef<THREE.Points>(null);
@@ -32,7 +32,7 @@ function FooterPoints() {
     <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#baac55"
+        color="#FFD700"
         size={0.02}
         sizeAttenuation={true}
         depthWrite={false}
@@ -58,6 +58,7 @@ const Footer = () => {
       { name: 'Gurugram', href: '/destinations' },
       { name: 'Jaipur', href: '/destinations' },
       { name: 'Noida', href: '/destinations' },
+      { name: 'Mohali', href: '/destinations' },
     ],
     support: [
       { name: 'Customer Support', href: '/contact' },
@@ -99,10 +100,15 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                <h3 className="font-playfair text-3xl font-bold text-ace-gold mb-4">
-                  Ace Stayz
-                </h3>
-                <p className="text-white/80 mb-6 leading-relaxed">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-ace-gold rounded-lg flex items-center justify-center mr-3">
+                    <span className="font-poppins text-2xl font-bold text-white">A</span>
+                  </div>
+                  <h3 className="font-poppins text-3xl font-bold text-ace-gold">
+                    Ace Stayz
+                  </h3>
+                </div>
+                <p className="text-white/80 mb-6 leading-relaxed font-poppins">
                   Where luxury meets comfort. Experience unparalleled hospitality 
                   at our premium stays across India's most vibrant cities.
                 </p>
@@ -110,15 +116,11 @@ const Footer = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Mail size={16} className="text-ace-gold" />
-                    <span className="text-sm">info@acestayz.com</span>
+                    <span className="text-sm font-poppins">info@acestayz.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone size={16} className="text-ace-gold" />
-                    <span className="text-sm">+91 7011315545</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <MapPin size={16} className="text-ace-gold mt-1" />
-                    <span className="text-sm">Delhi | Gurugram | Jaipur | Noida</span>
+                    <span className="text-sm font-poppins">+91 7011315545</span>
                   </div>
                 </div>
               </motion.div>
@@ -131,7 +133,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <h4 className="font-playfair text-xl font-semibold mb-6 text-ace-gold">
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">
                   Company
                 </h4>
                 <ul className="space-y-3">
@@ -144,7 +146,7 @@ const Footer = () => {
                     >
                       <Link
                         to={link.href}
-                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm"
+                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
                       >
                         {link.name}
                       </Link>
@@ -161,7 +163,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <h4 className="font-playfair text-xl font-semibold mb-6 text-ace-gold">
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">
                   Destinations
                 </h4>
                 <ul className="space-y-3">
@@ -174,7 +176,7 @@ const Footer = () => {
                     >
                       <Link
                         to={link.href}
-                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm"
+                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
                       >
                         {link.name}
                       </Link>
@@ -191,7 +193,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <h4 className="font-playfair text-xl font-semibold mb-6 text-ace-gold">
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">
                   Support
                 </h4>
                 <ul className="space-y-3 mb-8">
@@ -204,7 +206,7 @@ const Footer = () => {
                     >
                       <Link
                         to={link.href}
-                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm"
+                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
                       >
                         {link.name}
                       </Link>
@@ -213,7 +215,7 @@ const Footer = () => {
                 </ul>
 
                 <div>
-                  <h5 className="font-semibold mb-4 text-ace-gold">Follow Us</h5>
+                  <h5 className="font-semibold mb-4 text-ace-gold font-poppins">Follow Us</h5>
                   <div className="flex space-x-4">
                     {socialLinks.map((social, index) => (
                       <motion.a
@@ -245,25 +247,25 @@ const Footer = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-white/60 text-sm">
+              <p className="text-white/60 text-sm font-poppins">
                 © 2024 Ace Stayz. All rights reserved.
               </p>
               <div className="flex space-x-8">
                 <Link
                   to="#"
-                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm"
+                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   to="#"
-                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm"
+                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   to="#"
-                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm"
+                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
                 >
                   Cookie Policy
                 </Link>
