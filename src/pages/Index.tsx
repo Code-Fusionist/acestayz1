@@ -99,7 +99,6 @@ const Index = () => {
       </section>
 
       <div className="relative z-10 space-y-0">
-        {/* <AboutSection /> */}
         <FeaturedSection />
         <PressCarousel />
         <DestinationSection />

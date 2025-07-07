@@ -61,7 +61,7 @@ const PartnersSection = () => {
                     <img
                       src={logo}
                       alt={`Partner ${idx + 1}`}
-                      className="h-16 w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-110"
+                      className="h-16 w-full object-contain transition-all duration-300 group-hover:scale-110"
                     />
                   </motion.div>
                 </CarouselItem>

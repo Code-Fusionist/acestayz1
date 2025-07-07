@@ -1,9 +1,12 @@
-
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ThreeBackground from '../components/ThreeBackground';
+import FranchiseComparison from '../components/FranchiseComparison';
+import FranchiseProposition from '../components/FranchiseProposition';
+import HowWeWork from '../components/HowWeWork';
+import RevenueCalculator from '../components/RevenueCalculator';
 import { TrendingUp, Users, Award, Handshake, CheckCircle, Star, DollarSign, Clock } from 'lucide-react';
 
 const PartnerWithUs = () => {
@@ -147,6 +150,12 @@ const PartnerWithUs = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* New Franchise Components */}
+      <FranchiseComparison />
+      <FranchiseProposition />
+      <HowWeWork />
+      <RevenueCalculator />
 
       {/* Benefits Section */}
       <section ref={ref} className="py-20 bg-white">
