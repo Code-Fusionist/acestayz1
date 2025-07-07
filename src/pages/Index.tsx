@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
+// import AboutSection from '../components/AboutSection';
 import DestinationSection from '../components/DestinationSection';
 import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
 import FeaturedSection from '../components/FeaturedSection';
@@ -99,6 +99,7 @@ const Index = () => {
       </section>
 
       <div className="relative z-10 space-y-0">
+        {/* <AboutSection /> */}
         <FeaturedSection />
         <PressCarousel />
         <DestinationSection />

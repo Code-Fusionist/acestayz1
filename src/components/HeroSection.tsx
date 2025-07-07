@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
 const HeroSection = () => {
   const heroImage = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop';
@@ -19,8 +20,8 @@ const HeroSection = () => {
       <div className="relative z-20 flex items-center h-full text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-3xl"
           >
@@ -58,6 +59,23 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white z-20"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="flex flex-col items-center space-y-2"
+        >
+          <span className="text-sm font-poppins opacity-90">Scroll to explore</span>
+          <ChevronDown size={24} className="opacity-75" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
