@@ -45,13 +45,15 @@ const DestinationSection = () => {
             plugins={[
               Autoplay({
                 delay: 2500,
+                stopOnInteraction: false,
+                stopOnMouseEnter: false,
               }),
             ]}
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {destinations.map((destination, index) => (
-                <CarouselItem key={destination.name} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <CarouselItem key={destination.name} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}

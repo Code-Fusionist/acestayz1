@@ -76,13 +76,15 @@ const FeaturedRoomsSection = () => {
             plugins={[
               Autoplay({
                 delay: 3500,
+                stopOnInteraction: false,
+                stopOnMouseEnter: false,
               }),
             ]}
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {rooms.map((room, index) => (
-                <CarouselItem key={room.name} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={room.name} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}

@@ -58,8 +58,12 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             className="flex-shrink-0 flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-12 h-12 bg-ace-gold rounded-lg flex items-center justify-center mr-3">
-              <span className="font-poppins text-2xl font-bold text-white">A</span>
+            <div className="w-12 h-12 bg-ace-gold rounded-lg flex items-center justify-center mr-3 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=48&h=48&fit=crop" 
+                alt="Ace Stayz Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <Link to="/" className="font-poppins text-2xl lg:text-3xl font-bold text-ace-gold">
               Ace Stayz

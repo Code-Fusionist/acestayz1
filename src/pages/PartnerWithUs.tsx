@@ -4,6 +4,10 @@ import { useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ThreeBackground from '../components/ThreeBackground';
+import FranchiseComparison from '../components/FranchiseComparison';
+import FranchiseProposition from '../components/FranchiseProposition';
+import HowWeWork from '../components/HowWeWork';
+import RevenueCalculator from '../components/RevenueCalculator';
 import { TrendingUp, Users, Award, Handshake, CheckCircle, Star, DollarSign, Clock } from 'lucide-react';
 
 const PartnerWithUs = () => {
@@ -84,11 +88,11 @@ const PartnerWithUs = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
+            <h1 className="font-poppins text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
               Partner 
               <span className="text-ace-gold block">With Us</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 font-poppins">
               Join the Ace Stayz family and unlock the full potential of your property. 
               Let's build a partnership that delivers exceptional hospitality together.
             </p>
@@ -97,14 +101,14 @@ const PartnerWithUs = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-ace-gold text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-dark transition-colors duration-300 shadow-xl"
+                className="bg-ace-gold text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-dark transition-colors duration-300 shadow-xl font-poppins"
               >
                 Start Partnership
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-ace-gold text-ace-gold px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-gold hover:text-white transition-all duration-300"
+                className="border-2 border-ace-gold text-ace-gold px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-gold hover:text-white transition-all duration-300 font-poppins"
               >
                 Download Brochure
               </motion.button>
@@ -127,26 +131,32 @@ const PartnerWithUs = () => {
             <div className="absolute bottom-8 left-8 right-8 text-white">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold">500+</div>
-                  <div className="text-sm opacity-90">Properties</div>
+                  <div className="text-2xl font-bold font-poppins">500+</div>
+                  <div className="text-sm opacity-90 font-poppins">Properties</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold">98%</div>
-                  <div className="text-sm opacity-90">Satisfaction</div>
+                  <div className="text-2xl font-bold font-poppins">98%</div>
+                  <div className="text-sm opacity-90 font-poppins">Satisfaction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold">40%</div>
-                  <div className="text-sm opacity-90">Revenue Growth</div>
+                  <div className="text-2xl font-bold font-poppins">40%</div>
+                  <div className="text-sm opacity-90 font-poppins">Revenue Growth</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold">24/7</div>
-                  <div className="text-sm opacity-90">Support</div>
+                  <div className="text-2xl font-bold font-poppins">24/7</div>
+                  <div className="text-sm opacity-90 font-poppins">Support</div>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
+
+      {/* New Franchise Sections */}
+      <FranchiseComparison />
+      <FranchiseProposition />
+      <HowWeWork />
+      <RevenueCalculator />
 
       {/* Benefits Section */}
       <section ref={ref} className="py-20 bg-white">
