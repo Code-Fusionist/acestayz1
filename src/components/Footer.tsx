@@ -101,12 +101,11 @@ const Footer = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-ace-gold rounded-lg flex items-center justify-center mr-3">
-                    <span className="font-poppins text-2xl font-bold text-white">A</span>
-                  </div>
-                  <h3 className="font-poppins text-3xl font-bold text-ace-gold">
-                    Ace Stayz
-                  </h3>
+                  <img 
+                    src="https://acestayz.com/new-img/ace.png" 
+                    alt="Ace Stayz Logo" 
+                    className="h-16 w-auto"
+                  />
                 </div>
                 <p className="text-white/80 mb-6 leading-relaxed font-poppins">
                   Where luxury meets comfort. Experience unparalleled hospitality 

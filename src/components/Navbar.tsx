@@ -47,8 +47,8 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent backdrop-blur-sm'
+          ? 'bg-white/98 backdrop-blur-md shadow-lg' 
+          : 'bg-black/20 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,15 +58,12 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             className="flex-shrink-0 flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-12 h-12 bg-ace-gold rounded-lg flex items-center justify-center mr-3 overflow-hidden">
+            <Link to="/" className="flex items-center">
               <img 
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=50&h=50&fit=crop&crop=center" 
+                src="https://acestayz.com/new-img/ace.png" 
                 alt="Ace Stayz Logo" 
-                className="w-full h-full object-cover"
+                className="h-12 w-auto"
               />
-            </div>
-            <Link to="/" className="font-poppins text-2xl lg:text-3xl font-bold text-ace-gold">
-              Ace Stayz
             </Link>
           </motion.div>
 

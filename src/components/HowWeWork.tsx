@@ -52,20 +52,20 @@ const HowWeWork = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="font-poppins text-3xl lg:text-4xl font-bold text-ace-dark mb-4">
+          <h2 className="font-poppins text-2xl md:text-3xl lg:text-4xl font-bold text-ace-dark mb-4">
             Our Creative Process
           </h2>
-          <h3 className="font-poppins text-4xl lg:text-5xl font-bold text-ace-dark mb-8">
+          <h3 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-ace-dark mb-8">
             How We Work
           </h3>
         </motion.div>
 
-        {/* Steps Overview */}
+        {/* Steps Overview - Single Line */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-4 gap-2 md:gap-4 mb-12"
         >
           {steps.map((step, index) => (
             <motion.div
@@ -74,42 +74,22 @@ const HowWeWork = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               onClick={() => setActiveStep(step.id)}
-              className={`cursor-pointer p-4 rounded-xl text-center transition-all duration-300 ${
+              className={`cursor-pointer p-3 md:p-4 rounded-xl text-center transition-all duration-300 ${
                 activeStep === step.id 
                   ? 'bg-ace-gold text-white shadow-lg scale-105' 
                   : 'bg-white text-gray-600 hover:bg-gray-100'
               }`}
             >
-              <div className="font-poppins font-bold text-lg mb-2">{step.title}</div>
+              <div className={`w-8 h-8 md:w-12 md:h-12 ${step.color} rounded-xl flex items-center justify-center text-white mb-2 mx-auto`}>
+                <div className="scale-75 md:scale-100">{step.icon}</div>
+              </div>
+              <div className="font-poppins font-bold text-sm md:text-base mb-1">{step.title}</div>
               <div className={`h-1 rounded-full transition-all duration-300 ${
                 activeStep === step.id ? 'bg-white' : 'bg-gray-300'
               }`} />
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Detailed Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center text-white mb-4`}>
-                {step.icon}
-              </div>
-              <div className="text-white text-sm font-bold px-4 py-1 bg-red-500 rounded-full inline-block mb-4">
-                STEP {String(step.id + 1).padStart(2, '0')}
-              </div>
-              <h3 className="font-poppins text-xl font-bold text-ace-dark mb-2">
-                {step.subtitle}
-              </h3>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Active Step Details */}
         <motion.div

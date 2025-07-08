@@ -58,43 +58,7 @@ const Index = () => {
       <section className="relative pt-32 pb-20 overflow-hidden">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-            Why Choose
-            <span className="text-ace-gold block">Ace Stayz</span>
-          </h2>
-          <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
-            Discover what makes us the preferred choice for discerning travelers 
-            who value exceptional service and unparalleled comfort.
-          </p>
-          </motion.div>
 
-          {/* Stats Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
-          >
-            {stats.map((stat, index) => (
-              <div key={stat.label} className="text-center">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="text-4xl lg:text-5xl font-bold text-ace-gold mb-2 font-poppins"
-                >
-                  {stat.number}
-                </motion.div>
-                <div className="text-gray-600 font-medium font-poppins">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </section>
 

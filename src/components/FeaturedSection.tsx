@@ -38,7 +38,7 @@ const FeaturedSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-white drop-shadow-lg mb-3 font-poppins"
+          className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-3 font-poppins"
         >
           What makes us Bloom?
         </motion.h2>
@@ -46,7 +46,7 @@ const FeaturedSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-ace-dark font-poppins"
+          className="text-base md:text-lg text-ace-dark font-poppins"
         >
           With so much to tell & so little time, here are a few key highlights.
         </motion.p>
@@ -67,7 +67,7 @@ const FeaturedSection = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {features.map((feature, idx) => (
-              <CarouselItem key={idx} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={idx} className="pl-2 md:pl-4 basis-4/5 sm:basis-3/5 md:basis-1/2 lg:basis-1/3">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}

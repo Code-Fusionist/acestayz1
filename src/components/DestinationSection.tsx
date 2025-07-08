@@ -74,20 +74,6 @@ const DestinationSection = () => {
           </Carousel>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-ace-dark text-white px-4 py-2 rounded-full text-lg font-medium hover:bg-ace-gold transition-colors duration-300 shadow-xl font-poppins"
-          >
-            View All Destinations
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );

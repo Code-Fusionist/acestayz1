@@ -58,11 +58,11 @@ const FeaturedRoomsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Suite Dreams 
             <span className="text-ace-dark block">Begin Here</span>
           </h2>
-          <p className="text-lg lg:text-xl text-white/90 max-w-3xl mx-auto font-poppins">
+          <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto font-poppins">
             From cozy comfort to luxurious suites — explore the spaces that suit you best.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ const FeaturedRoomsSection = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {rooms.map((room, index) => (
-                <CarouselItem key={room.name} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={room.name} className="pl-2 md:pl-4 basis-4/5 sm:basis-3/5 md:basis-1/2 lg:basis-1/3">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -149,20 +149,6 @@ const FeaturedRoomsSection = () => {
           </Carousel>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-ace-dark px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-dark hover:text-white transition-all duration-300 shadow-xl font-poppins"
-          >
-            View All Suites
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );

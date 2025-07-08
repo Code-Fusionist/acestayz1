@@ -66,7 +66,7 @@ const FranchiseComparison = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="font-poppins text-3xl lg:text-4xl font-bold text-ace-dark mb-4">
+          <h2 className="font-poppins text-xl md:text-2xl lg:text-3xl font-bold text-ace-dark mb-4">
             Why Hotel Is India's Most Profitable Franchise Business
           </h2>
         </motion.div>
@@ -81,13 +81,13 @@ const FranchiseComparison = () => {
             <table className="w-full">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="px-6 py-4 text-left font-poppins font-semibold text-ace-dark"></th>
+                  <th className="px-2 md:px-4 lg:px-6 py-2 md:py-4 text-left font-poppins font-semibold text-ace-dark"></th>
                   {categories.map((category, index) => (
-                    <th key={category.name} className="px-6 py-4 text-center">
-                      <div className="font-poppins font-bold text-lg text-ace-dark mb-1">
+                    <th key={category.name} className="px-2 md:px-4 lg:px-6 py-2 md:py-4 text-center">
+                      <div className="font-poppins font-bold text-sm md:text-base lg:text-lg text-ace-dark mb-1">
                         {category.name}
                       </div>
-                      <div className="text-sm text-gray-600">{category.score}</div>
+                      <div className="text-xs md:text-sm text-gray-600">{category.score}</div>
                     </th>
                   ))}
                 </tr>
@@ -95,11 +95,11 @@ const FranchiseComparison = () => {
               <tbody>
                 {comparisonData.map((item, index) => (
                   <tr key={index} className="border-b border-gray-100">
-                    <td className="px-6 py-4">
-                      <div className="font-poppins font-semibold text-ace-dark mb-1">
+                    <td className="px-2 md:px-4 lg:px-6 py-2 md:py-4">
+                      <div className="font-poppins font-semibold text-sm md:text-base text-ace-dark mb-1">
                         {item.title}
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-xs md:text-sm text-gray-600">
                         <span className="text-green-600 font-medium">
                           {item.subtitle.split(' - ')[0]}
                         </span>
@@ -107,32 +107,32 @@ const FranchiseComparison = () => {
                         {item.subtitle.split(' - ')[1]}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-center">
+                    <td className="px-2 md:px-4 lg:px-6 py-2 md:py-4 text-center">
                       {item.hotel ? (
-                        <Check className="w-8 h-8 text-green-500 mx-auto" />
+                        <Check className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-green-500 mx-auto" />
                       ) : (
-                        <X className="w-8 h-8 text-red-500 mx-auto" />
+                        <X className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-red-500 mx-auto" />
                       )}
                     </td>
-                    <td className="px-6 py-4 text-center">
+                    <td className="px-2 md:px-4 lg:px-6 py-2 md:py-4 text-center">
                       {item.food ? (
-                        <Check className="w-8 h-8 text-green-500 mx-auto" />
+                        <Check className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-green-500 mx-auto" />
                       ) : (
-                        <X className="w-8 h-8 text-red-500 mx-auto" />
+                        <X className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-red-500 mx-auto" />
                       )}
                     </td>
-                    <td className="px-6 py-4 text-center">
+                    <td className="px-2 md:px-4 lg:px-6 py-2 md:py-4 text-center">
                       {item.gym ? (
-                        <Check className="w-8 h-8 text-green-500 mx-auto" />
+                        <Check className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-green-500 mx-auto" />
                       ) : (
-                        <X className="w-8 h-8 text-red-500 mx-auto" />
+                        <X className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-red-500 mx-auto" />
                       )}
                     </td>
-                    <td className="px-6 py-4 text-center">
+                    <td className="px-2 md:px-4 lg:px-6 py-2 md:py-4 text-center">
                       {item.salon ? (
-                        <Check className="w-8 h-8 text-green-500 mx-auto" />
+                        <Check className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-green-500 mx-auto" />
                       ) : (
-                        <X className="w-8 h-8 text-red-500 mx-auto" />
+                        <X className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-red-500 mx-auto" />
                       )}
                     </td>
                   </tr>
