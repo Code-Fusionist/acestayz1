@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
@@ -15,7 +16,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex items-start h-full text-white pt-52">
+      <div className="relative z-20 flex items-center h-full text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -23,14 +24,14 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-3xl"
           >
-            <h1 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="font-poppins text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 leading-tight">
               Where Luxury
               <br />
               <span className="text-gradient bg-gradient-to-r from-ace-gold to-ace-gold bg-clip-text text-transparent">
                 Meets Comfort
               </span>
             </h1>
-            <p className="font-poppins text-lg lg:text-xl mb-8 max-w-2xl opacity-95 leading-relaxed">
+            <p className="font-poppins text-xl lg:text-2xl mb-8 max-w-2xl opacity-95 leading-relaxed">
               Experience unparalleled hospitality at Ace Stayz — where every stay tells a story of elegance, comfort, and exceptional service.
             </p>
             <motion.div
@@ -42,14 +43,14 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255, 215, 0, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-ace-gold text-white px-6 py-3 rounded-full text-base font-medium hover:bg-ace-dark transition-all duration-300 shadow-2xl border-2 border-transparent hover:border-ace-gold font-poppins"
+                className="bg-ace-gold text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-dark transition-all duration-300 shadow-2xl border-2 border-transparent hover:border-ace-gold font-poppins"
               >
                 Explore Destinations
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-6 py-3 rounded-full text-base font-medium hover:bg-white hover:text-ace-dark transition-all duration-300 backdrop-blur-sm font-poppins"
+                className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-ace-dark transition-all duration-300 backdrop-blur-sm font-poppins"
               >
                 View Our Stayz
               </motion.button>

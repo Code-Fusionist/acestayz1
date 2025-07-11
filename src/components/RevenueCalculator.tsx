@@ -1,4 +1,3 @@
-
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Building, MapPin, Bed, DollarSign } from 'lucide-react';
@@ -40,13 +39,13 @@ const RevenueCalculator = () => {
   const ebitda = revenue - expense;
 
   return (
-    <section ref={ref} className="py-16 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-12 px-4 bg-white">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <h2 className="font-poppins text-3xl lg:text-4xl font-bold text-ace-dark mb-4">
             Reach operational break-even in 1-2 months
@@ -60,28 +59,28 @@ const RevenueCalculator = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-gradient-to-br from-orange-400 to-orange-500 rounded-3xl p-8 mb-8"
+          className="bg-gradient-to-br from-orange-400 to-orange-500 rounded-3xl p-6 sm:p-8 mb-10"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white rounded-2xl p-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-white rounded-2xl p-5 text-center min-h-28">
               <div className="text-2xl font-bold text-ace-dark mb-1">
                 ₹{(revenue / 100000).toFixed(1)} L
               </div>
               <div className="text-sm text-gray-600">Revenue Yearly</div>
             </div>
-            <div className="bg-white rounded-2xl p-6 text-center">
+            <div className="bg-white rounded-2xl p-5 text-center min-h-28">
               <div className="text-2xl font-bold text-ace-dark mb-1">
                 ₹{(expense / 100000).toFixed(1)} L
               </div>
               <div className="text-sm text-gray-600">Expense Yearly</div>
             </div>
-            <div className="bg-white rounded-2xl p-6 text-center">
+            <div className="bg-white rounded-2xl p-5 text-center min-h-28">
               <div className="text-2xl font-bold text-ace-dark mb-1">
                 {occupancy}.0%
               </div>
               <div className="text-sm text-gray-600">Occupancy</div>
             </div>
-            <div className="bg-white rounded-2xl p-6 text-center">
+            <div className="bg-white rounded-2xl p-5 text-center min-h-28">
               <div className="text-2xl font-bold text-ace-dark mb-1">
                 ₹{(ebitda / 100000).toFixed(1)} L
               </div>
@@ -90,9 +89,9 @@ const RevenueCalculator = () => {
           </div>
         </motion.div>
 
-        <div className="bg-gray-50 rounded-3xl p-8">
+        <div className="bg-gray-50 rounded-3xl p-6 sm:p-8">
           {/* Location Selection */}
-          <div className="mb-8">
+          <div className="mb-10">
             <h3 className="font-poppins text-lg font-semibold text-ace-dark mb-4">SELECT A LOCATION</h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {locations.map((location) => (
@@ -114,9 +113,9 @@ const RevenueCalculator = () => {
           </div>
 
           {/* Room Selection */}
-          <div className="mb-8">
+          <div className="mb-10">
             <h3 className="font-poppins text-lg font-semibold text-ace-dark mb-4">SELECT NO. OF ROOMS</h3>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {roomOptions.map((rooms) => (
                 <button
                   key={rooms}
@@ -136,7 +135,7 @@ const RevenueCalculator = () => {
           {/* Rate Selection */}
           <div>
             <h3 className="font-poppins text-lg font-semibold text-ace-dark mb-4">SELECT THE AVERAGE ROOM RATE</h3>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {rateOptions.map((rate) => (
                 <button
                   key={rate.id}

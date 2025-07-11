@@ -6,9 +6,9 @@ import HeroSection from '../components/HeroSection';
 import DestinationSection from '../components/DestinationSection';
 import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
 import FeaturedSection from '../components/FeaturedSection';
-import ServicesSection from '../components/ServicesSection';
+// import ServicesSection from '../components/ServicesSection';
 import PartnersSection from '../components/PartnersSection';
-import PartnershipSection from '../components/PartnershipSection';
+// import PartnershipSection from '../components/PartnershipSection';
 import ContactForm from '../components/ContactForm';
 import FloatingArrow from '../components/FloatingArrow';
 import ThreeBackground from '../components/ThreeBackground';
@@ -49,16 +49,52 @@ const Index = () => {
       <ThreeBackground />
       
       <Navbar onContactClick={() => setShowContactForm(true)} />
-      
+        
       <motion.div style={{ opacity }} className="relative z-10">
         <HeroSection />
       </motion.div>
-      
-      {/* Hero Section */}
+
       <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-beyond-bg/30 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
+              Why Choose
+              <span className="text-ace-gold block">Ace Stayz</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover what makes us the preferred choice for discerning travelers 
+              who value exceptional service and unparalleled comfort.
+            </p>
+          </motion.div>
 
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
+          >
+            {stats.map((stat, index) => (
+              <div key={stat.label} className="text-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                  className="text-4xl lg:text-5xl font-bold text-ace-gold mb-2"
+                >
+                  {stat.number}
+                </motion.div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -67,9 +103,9 @@ const Index = () => {
         <PressCarousel />
         <DestinationSection />
         <FeaturedRoomsSection />
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <PartnersSection />
-        <PartnershipSection onContactClick={() => setShowContactForm(true)} />
+        {/* <PartnershipSection onContactClick={() => setShowContactForm(true)} /> */}
       </div>
 
       <Footer />

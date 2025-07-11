@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -9,19 +8,10 @@ interface NavbarProps {
 }
 
 const Navbar = ({ onContactClick }: NavbarProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDestinationsOpen, setIsDestinationsOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const destinations = ['Delhi', 'Gurugram', 'Jaipur', 'Noida', 'Mohali'];
 
@@ -33,6 +23,34 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
     { name: 'Why Us', href: '/why-us' },
   ];
 
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setShowNavbar(false); // scrolling down
+      } else {
+        setShowNavbar(true); // scrolling up or stationary
+      }
+
+      lastScrollY = currentScrollY;
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setShowNavbar(true); // show if user stops
+      }, 150);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   const handleContactClick = () => {
     if (onContactClick) {
       onContactClick();
@@ -43,25 +61,19 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/98 backdrop-blur-md shadow-lg' 
-          : 'bg-black/20 backdrop-blur-sm'
-      }`}
+      initial={{ y: 0 }}
+      animate={{ y: showNavbar ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <motion.div 
-            className="flex-shrink-0 flex items-center"
-            whileHover={{ scale: 1.05 }}
-          >
+          <motion.div className="flex-shrink-0 flex items-center" whileHover={{ scale: 1.05 }}>
             <Link to="/" className="flex items-center">
-              <img 
-                src="https://acestayz.com/new-img/ace.png" 
-                alt="Ace Stayz Logo" 
+              <img
+                src="https://acestayz.com/new-img/ace.png"
+                alt="Ace Stayz Logo"
                 className="h-12 w-auto"
               />
             </Link>
@@ -78,14 +90,12 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                       onMouseEnter={() => setIsDestinationsOpen(true)}
                       onMouseLeave={() => setIsDestinationsOpen(false)}
                     >
-                      <Link 
+                      <Link
                         to={item.href}
                         className={`px-3 py-2 text-sm font-medium font-poppins transition-colors duration-200 ${
-                          location.pathname === item.href 
-                            ? 'text-ace-gold font-semibold' 
-                            : isScrolled 
-                              ? 'text-gray-700 hover:text-ace-gold'
-                              : 'text-white hover:text-ace-gold'
+                          location.pathname === item.href
+                            ? 'text-ace-gold font-semibold'
+                            : 'text-gray-700 hover:text-ace-gold'
                         }`}
                       >
                         {item.name}
@@ -113,11 +123,9 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                     <Link
                       to={item.href}
                       className={`px-3 py-2 text-sm font-medium font-poppins transition-colors duration-200 ${
-                        location.pathname === item.href 
-                          ? 'text-ace-gold font-semibold' 
-                          : isScrolled 
-                            ? 'text-gray-700 hover:text-ace-gold'
-                            : 'text-white hover:text-ace-gold'
+                        location.pathname === item.href
+                          ? 'text-ace-gold font-semibold'
+                          : 'text-gray-700 hover:text-ace-gold'
                       }`}
                     >
                       {item.name}
@@ -136,13 +144,11 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Toggle */}
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 transition-colors duration-200 ${
-                isScrolled ? 'text-gray-700 hover:text-ace-gold' : 'text-white hover:text-ace-gold'
-              }`}
+              className="p-2 text-gray-700 hover:text-ace-gold transition-colors duration-200"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -155,7 +161,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 rounded-b-lg"
+            className="lg:hidden bg-white border-t border-gray-100 rounded-b-lg"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
@@ -163,8 +169,8 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                   <Link
                     to={item.href}
                     className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 font-poppins ${
-                      location.pathname === item.href 
-                        ? 'text-ace-gold bg-gray-50 font-semibold' 
+                      location.pathname === item.href
+                        ? 'text-ace-gold bg-gray-50 font-semibold'
                         : 'text-gray-700 hover:text-ace-gold hover:bg-gray-50'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}

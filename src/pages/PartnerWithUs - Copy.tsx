@@ -83,11 +83,85 @@ const PartnerWithUs = () => {
     <div className="min-h-screen bg-white">
       <ThreeBackground />
       <Navbar />
+      sss
       <motion.div style={{ opacity }} className="relative z-10">
         <HeroSection />
       </motion.div>
 
-      {/* <CelebrityPromotion /> */}
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-ace-gold/10 to-beyond-bg/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
+              Partner 
+              <span className="text-ace-gold block">With Us</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Join the Ace Stayz family and unlock the full potential of your property. 
+              Let's build a partnership that delivers exceptional hospitality together.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-ace-gold text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-dark transition-colors duration-300 shadow-xl"
+              >
+                Start Partnership
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-ace-gold text-ace-gold px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-gold hover:text-white transition-all duration-300"
+              >
+                Download Brochure
+              </motion.button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=600&fit=crop"
+              alt="Partnership"
+              className="w-full h-96 object-cover rounded-3xl shadow-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl" />
+            
+            <div className="absolute bottom-8 left-8 right-8 text-white">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold">500+</div>
+                  <div className="text-sm opacity-90">Properties</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">98%</div>
+                  <div className="text-sm opacity-90">Satisfaction</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">40%</div>
+                  <div className="text-sm opacity-90">Revenue Growth</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold">24/7</div>
+                  <div className="text-sm opacity-90">Support</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <CelebrityPromotion />
       <FranchiseProposition />
       <HowWeWork />
       <RevenueCalculator />
