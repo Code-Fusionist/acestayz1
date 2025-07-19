@@ -5,11 +5,12 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import HeroSection from '../components/HeroSection';
 import ThreeBackground from '../components/ThreeBackground';
+import CelebrityPromotion from '../components/CelebrityPromotion';
+import IllustrationSection from '../components/IllustrationSection';
 import FranchiseComparison from '../components/FranchiseComparison';
 import FranchiseProposition from '../components/FranchiseProposition';
 import HowWeWork from '../components/HowWeWork';
 import RevenueCalculator from '../components/RevenueCalculator';
-import CelebrityPromotion from '../components/CelebrityPromotion';
 import { TrendingUp, Users, Award, Handshake, CheckCircle, Star, DollarSign } from 'lucide-react';
 
 const PartnerWithUs = () => {
@@ -88,7 +89,9 @@ const PartnerWithUs = () => {
         <HeroSection />
       </motion.div>
 
-      {/* <CelebrityPromotion /> */}
+      <CelebrityPromotion />
+      <IllustrationSection />
+      <FranchiseComparison />
       <FranchiseProposition />
       <HowWeWork />
       <RevenueCalculator />

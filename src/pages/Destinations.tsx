@@ -175,45 +175,17 @@ const Destinations = () => {
                         </div>
                       </div>
 
-                      {/* Featured Property */}
-                      <div className="p-6 flex flex-col justify-between">
+      {/* City Information */}
+                      <div className="p-6 flex flex-col justify-center">
                         <div>
-                          <div className="mb-4">
-                            <h3 className="font-poppins text-lg font-bold text-ace-dark mb-2">
-                              Featured Property
-                            </h3>
-                            <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4">
-                              <img
-                                src={destination.featured.image}
-                                alt={destination.featured.name}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          </div>
-
-                          <h4 className="font-poppins text-xl font-bold text-ace-dark mb-2">
-                            {destination.featured.name}
-                          </h4>
-
-                          <div className="grid grid-cols-2 gap-2 mb-4">
-                            {destination.featured.amenities.map((amenity, idx) => (
-                              <div key={idx} className="flex items-center space-x-2 text-sm text-gray-700">
-                                <div className="w-4 h-4 bg-ace-gold/20 rounded-full flex items-center justify-center">
-                                  <div className="w-2 h-2 bg-ace-gold rounded-full" />
-                                </div>
-                                <span className="font-poppins">{amenity}</span>
-                              </div>
-                            ))}
-                          </div>
-
-                          <div className="mb-4">
-                            <h5 className="font-poppins text-sm font-semibold text-gray-700 mb-2">
-                              Top Attractions
+                          <div className="mb-6">
+                            <h5 className="font-poppins text-lg font-semibold text-ace-dark mb-4">
+                              Top Attractions in {destination.city}
                             </h5>
-                            <div className="grid grid-cols-2 gap-2">
-                              {destination.highlights.slice(0, 4).map((highlight, idx) => (
-                                <div key={highlight} className="bg-gray-50 rounded-lg px-3 py-2 text-center">
-                                  <span className="text-xs font-medium text-gray-700">
+                            <div className="grid grid-cols-2 gap-3">
+                              {destination.highlights.map((highlight, idx) => (
+                                <div key={highlight} className="bg-ace-gold/10 rounded-lg px-3 py-3 text-center border border-ace-gold/20">
+                                  <span className="text-sm font-medium text-ace-dark">
                                     {highlight}
                                   </span>
                                 </div>
@@ -222,31 +194,6 @@ const Destinations = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between">
-                            <span className="text-2xl font-bold text-ace-gold">
-                              {destination.featured.price}
-                              <span className="text-sm text-gray-500 font-normal">/night</span>
-                            </span>
-                          </div>
-                          
-                          <div className="flex space-x-2">
-                            <motion.button
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              className="flex-1 bg-ace-gold text-white py-2 rounded-full text-sm font-medium hover:bg-ace-dark transition-colors duration-300"
-                            >
-                              Book Now
-                            </motion.button>
-                            <motion.button
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              className="flex-1 border-2 border-ace-gold text-ace-gold py-2 rounded-full text-sm font-medium hover:bg-ace-gold hover:text-white transition-all duration-300"
-                            >
-                              View All
-                            </motion.button>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </motion.div>

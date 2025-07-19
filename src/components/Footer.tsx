@@ -115,11 +115,15 @@ const Footer = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Mail size={16} className="text-ace-gold" />
-                    <span className="text-sm font-poppins">info@acestayz.com</span>
+                    <a href="mailto:info@acestayz.com" className="text-sm font-poppins hover:text-ace-gold transition-colors">
+                      info@acestayz.com
+                    </a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone size={16} className="text-ace-gold" />
-                    <span className="text-sm font-poppins">+91 7011315545</span>
+                    <a href="tel:+917011315545" className="text-sm font-poppins hover:text-ace-gold transition-colors">
+                      +91 7011315545
+                    </a>
                   </div>
                 </div>
               </motion.div>
