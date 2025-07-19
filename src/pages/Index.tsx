@@ -9,14 +9,15 @@ import FeaturedSection from '../components/FeaturedSection';
 // import ServicesSection from '../components/ServicesSection';
 import PartnersSection from '../components/PartnersSection';
 // import PartnershipSection from '../components/PartnershipSection';
-import ContactForm from '../components/ContactForm';
+import { useNavigate } from 'react-router-dom';
 import FloatingArrow from '../components/FloatingArrow';
+import WhatsAppButton from '../components/WhatsAppButton';
 import ThreeBackground from '../components/ThreeBackground';
 import Footer from '../components/Footer';
 import PressCarousel from '../components/PressCarousel';
 
 const Index = () => {
-  const [showContactForm, setShowContactForm] = useState(false);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
@@ -48,7 +49,7 @@ const Index = () => {
     <div className="relative min-h-screen bg-white overflow-x-hidden">
       <ThreeBackground />
       
-      <Navbar onContactClick={() => setShowContactForm(true)} />
+      <Navbar onContactClick={() => navigate('/contact')} />
         
       <motion.div style={{ opacity }} className="relative z-10">
         <HeroSection />
@@ -110,10 +111,7 @@ const Index = () => {
 
       <Footer />
       <FloatingArrow />
-      
-      {showContactForm && (
-        <ContactForm onClose={() => setShowContactForm(false)} />
-      )}
+      <WhatsAppButton />
     </div>
   );
 };

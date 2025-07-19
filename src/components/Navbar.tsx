@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { AlignJustify, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface NavbarProps {
@@ -150,7 +150,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-gray-700 hover:text-ace-gold transition-colors duration-200"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={24} /> : <AlignJustify size={24} />}
             </button>
           </div>
         </div>

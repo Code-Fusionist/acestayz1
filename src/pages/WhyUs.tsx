@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
 import ThreeBackground from '../components/ThreeBackground';
 import TestimonialsSection from '../components/TestimonialsSection';
 import { Shield, Clock, Star, HeadphonesIcon, Wifi, Car, Coffee, Dumbbell } from 'lucide-react';
@@ -281,6 +282,7 @@ const WhyUs = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

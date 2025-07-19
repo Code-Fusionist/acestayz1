@@ -45,7 +45,7 @@ const DestinationSection = () => {
             plugins={[
               Autoplay({
                 delay: 2500,
-              }),
+              }) as any,
             ]}
             className="w-full"
           >

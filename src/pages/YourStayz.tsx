@@ -3,7 +3,9 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
 import ThreeBackground from '../components/ThreeBackground';
+import PropertiesSection from '../components/PropertiesSection';
 import { Star, MapPin, Wifi, Car, Coffee, Dumbbell } from 'lucide-react';
 
 const YourStayz = () => {
@@ -33,29 +35,6 @@ const YourStayz = () => {
     }
   ];
 
-  const properties = [
-    {
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop",
-      title: "Luxury Suite Delhi",
-      location: "Connaught Place, Delhi",
-      price: "₹8,999",
-      rating: 4.8
-    },
-    {
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop",
-      title: "Executive Room Gurugram",
-      location: "Cyber City, Gurugram",
-      price: "₹7,499",
-      rating: 4.9
-    },
-    {
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop",
-      title: "Heritage Stay Jaipur",
-      location: "Pink City, Jaipur",
-      price: "₹6,999",
-      rating: 4.7
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -135,69 +114,15 @@ const YourStayz = () => {
         </div>
       </section>
 
-      {/* Featured Properties */}
-      <section ref={ref} className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-playfair text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-              Featured Properties
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Handpicked accommodations that represent the best of our collection
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map((property, index) => (
-              <motion.div
-                key={property.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="bg-white rounded-3xl overflow-hidden shadow-lg hover-lift group"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={property.image}
-                    alt={property.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
-                    <Star size={14} className="text-ace-gold fill-current" />
-                    <span className="text-sm font-medium">{property.rating}</span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="font-playfair text-xl font-bold text-ace-dark mb-2">
-                    {property.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 flex items-center">
-                    <MapPin size={16} className="mr-2" />
-                    {property.location}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-ace-gold">
-                      {property.price}
-                      <span className="text-sm text-gray-500 font-normal">/night</span>
-                    </span>
-                    <button className="bg-ace-gold text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-ace-dark transition-colors duration-300">
-                      Book Now
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PropertiesSection
+        title="Featured Properties"
+        subtitle="Handpicked accommodations that represent the best of our collection"
+        backgroundColor="bg-gray-50"
+        textColor="text-ace-dark"
+      />
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

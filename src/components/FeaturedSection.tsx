@@ -61,7 +61,7 @@ const FeaturedSection = () => {
           plugins={[
             Autoplay({
               delay: 3000,
-            }),
+            }) as any,
           ]}
           className="w-full"
         >

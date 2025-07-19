@@ -1,10 +1,12 @@
-
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
 import ThreeBackground from '../components/ThreeBackground';
-import { MapPin, Star, Calendar, Users } from 'lucide-react';
+import { MapPin, Star, Users, Wifi, Car, Coffee } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 const Destinations = () => {
   const ref = useRef(null);
@@ -14,34 +16,72 @@ const Destinations = () => {
     {
       city: "Delhi",
       image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&h=600&fit=crop",
-      description: "India's vibrant capital, where history meets modernity",
-      properties: 12,
+      description: "India's vibrant capital where history meets modernity",
+      properties: 15,
       rating: 4.8,
-      highlights: ["Red Fort", "India Gate", "Connaught Place", "Lotus Temple"]
-    },
-    {
-      city: "Gurugram",
-      image: "https://images.unsplash.com/photo-1567552020993-6b0b29c2d35e?w=800&h=600&fit=crop",
-      description: "The millennium city and corporate hub of North India",
-      properties: 8,
-      rating: 4.9,
-      highlights: ["Cyber City", "Kingdom of Dreams", "Ambience Mall", "Golf Course"]
+      highlights: ["Red Fort", "India Gate", "Connaught Place", "Lotus Temple"],
+      featured: {
+        name: "Executive Suite Delhi",
+        image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop",
+        price: "₹8,999",
+        amenities: ["King Bed", "City View", "Wi-Fi", "Parking"]
+      }
     },
     {
       city: "Jaipur",
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
       description: "The Pink City with royal heritage and stunning architecture",
-      properties: 6,
+      properties: 12,
       rating: 4.7,
-      highlights: ["Hawa Mahal", "City Palace", "Amber Fort", "Jantar Mantar"]
+      highlights: ["Hawa Mahal", "City Palace", "Amber Fort", "Jantar Mantar"],
+      featured: {
+        name: "Heritage Stay Jaipur",
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop",
+        price: "₹6,999",
+        amenities: ["Royal Theme", "Garden View", "Wi-Fi", "Cultural Tours"]
+      }
+    },
+    {
+      city: "Gurugram",
+      image: "https://images.unsplash.com/photo-1567552020993-6b0b29c2d35e?w=800&h=600&fit=crop",
+      description: "The millennium city and corporate hub of North India",
+      properties: 10,
+      rating: 4.9,
+      highlights: ["Cyber City", "Kingdom of Dreams", "Ambience Mall", "Golf Course"],
+      featured: {
+        name: "Business Suite Gurugram",
+        image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop",
+        price: "₹7,499",
+        amenities: ["Work Desk", "High-Speed WiFi", "Metro Access", "24/7 Service"]
+      }
     },
     {
       city: "Noida",
       image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop",
       description: "Planned city with modern infrastructure and IT parks",
-      properties: 5,
+      properties: 8,
       rating: 4.6,
-      highlights: ["Sector 18 Market", "DLF Mall", "Botanical Garden", "Film City"]
+      highlights: ["Sector 18 Market", "DLF Mall", "Botanical Garden", "Film City"],
+      featured: {
+        name: "Modern Stay Noida",
+        image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        price: "₹5,999",
+        amenities: ["Smart TV", "Mall Access", "Wi-Fi", "Metro Station"]
+      }
+    },
+    {
+      city: "Mohali",
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
+      description: "IT hub with green spaces and modern amenities",
+      properties: 6,
+      rating: 4.8,
+      highlights: ["IT City", "Rose Garden", "Cricket Stadium", "Shopping Centers"],
+      featured: {
+        name: "Tech Stay Mohali",
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop",
+        price: "₹4,999",
+        amenities: ["Work Space", "Garden View", "Wi-Fi", "Gym Access"]
+      }
     }
   ];
 
@@ -51,7 +91,7 @@ const Destinations = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-ace-gold/10 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -59,13 +99,13 @@ const Destinations = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
+            <h1 className="font-poppins text-4xl md:text-5xl lg:text-6xl font-bold text-ace-dark mb-4">
               Stay Where You
               <span className="text-ace-gold block">Belong</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Choose your perfect destination and let the journey begin. 
               Discover our premium accommodations across India's most vibrant cities.
             </p>
@@ -73,101 +113,157 @@ const Destinations = () => {
         </div>
       </section>
 
-      {/* Destinations Grid */}
-      <section ref={ref} className="py-20">
+      {/* Destinations Carousel */}
+      <section ref={ref} className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            {destinations.map((destination, index) => (
-              <motion.div
-                key={destination.city}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="group"
-              >
-                <div className="relative overflow-hidden rounded-3xl mb-8">
-                  <img
-                    src={destination.image}
-                    alt={destination.city}
-                    className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <div className="flex items-center justify-between mb-4">
-                      <h2 className="font-playfair text-4xl font-bold text-white">
-                        {destination.city}
-                      </h2>
-                      <div className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
-                        <Star size={16} className="text-ace-gold fill-current" />
-                        <span className="text-white font-medium">{destination.rating}</span>
-                      </div>
-                    </div>
-                    
-                    <p className="text-white/90 text-lg mb-4">
-                      {destination.description}
-                    </p>
-                    
-                    <div className="flex items-center space-x-6 text-white/80 mb-6">
-                      <div className="flex items-center space-x-2">
-                        <MapPin size={16} />
-                        <span className="text-sm">{destination.properties} Properties</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Users size={16} />
-                        <span className="text-sm">Premium Locations</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-playfair text-2xl font-bold text-ace-dark mb-4">
-                      Top Attractions
-                    </h3>
-                    <div className="grid grid-cols-2 gap-3">
-                      {destination.highlights.map((highlight, idx) => (
-                        <div
-                          key={highlight}
-                          className="bg-gray-50 rounded-lg px-4 py-2 text-center"
-                        >
-                          <span className="text-sm font-medium text-gray-700">
-                            {highlight}
-                          </span>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }) as any,
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-6">
+              {destinations.map((destination, index) => (
+                <CarouselItem key={destination.city} className="pl-2 md:pl-6 basis-full md:basis-1/2">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className="bg-white rounded-3xl shadow-xl overflow-hidden hover-lift h-full"
+                  >
+                    <div className="grid md:grid-cols-2 h-full">
+                      {/* Destination Image and Info */}
+                      <div className="relative">
+                        <img
+                          src={destination.image}
+                          alt={destination.city}
+                          className="w-full h-64 md:h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <h2 className="font-poppins text-2xl md:text-3xl font-bold text-white">
+                              {destination.city}
+                            </h2>
+                            <div className="flex items-center space-x-1 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
+                              <Star size={14} className="text-ace-gold fill-current" />
+                              <span className="text-white text-sm font-medium">{destination.rating}</span>
+                            </div>
+                          </div>
+                          
+                          <p className="text-white/90 text-sm md:text-base mb-3">
+                            {destination.description}
+                          </p>
+                          
+                          <div className="flex items-center space-x-4 text-white/80 text-sm">
+                            <div className="flex items-center space-x-1">
+                              <MapPin size={14} />
+                              <span>{destination.properties} Properties</span>
+                            </div>
+                            <div className="flex items-center space-x-1">
+                              <Users size={14} />
+                              <span>Premium Locations</span>
+                            </div>
+                          </div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      </div>
 
-                  <div className="flex space-x-4">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1 bg-ace-gold text-white py-3 rounded-full font-medium hover:bg-ace-dark transition-colors duration-300"
-                    >
-                      View Properties
-                    </motion.button>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1 border-2 border-ace-gold text-ace-gold py-3 rounded-full font-medium hover:bg-ace-gold hover:text-white transition-all duration-300"
-                    >
-                      Learn More
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                      {/* Featured Property */}
+                      <div className="p-6 flex flex-col justify-between">
+                        <div>
+                          <div className="mb-4">
+                            <h3 className="font-poppins text-lg font-bold text-ace-dark mb-2">
+                              Featured Property
+                            </h3>
+                            <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4">
+                              <img
+                                src={destination.featured.image}
+                                alt={destination.featured.name}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          </div>
+
+                          <h4 className="font-poppins text-xl font-bold text-ace-dark mb-2">
+                            {destination.featured.name}
+                          </h4>
+
+                          <div className="grid grid-cols-2 gap-2 mb-4">
+                            {destination.featured.amenities.map((amenity, idx) => (
+                              <div key={idx} className="flex items-center space-x-2 text-sm text-gray-700">
+                                <div className="w-4 h-4 bg-ace-gold/20 rounded-full flex items-center justify-center">
+                                  <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                                </div>
+                                <span className="font-poppins">{amenity}</span>
+                              </div>
+                            ))}
+                          </div>
+
+                          <div className="mb-4">
+                            <h5 className="font-poppins text-sm font-semibold text-gray-700 mb-2">
+                              Top Attractions
+                            </h5>
+                            <div className="grid grid-cols-2 gap-2">
+                              {destination.highlights.slice(0, 4).map((highlight, idx) => (
+                                <div key={highlight} className="bg-gray-50 rounded-lg px-3 py-2 text-center">
+                                  <span className="text-xs font-medium text-gray-700">
+                                    {highlight}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-2xl font-bold text-ace-gold">
+                              {destination.featured.price}
+                              <span className="text-sm text-gray-500 font-normal">/night</span>
+                            </span>
+                          </div>
+                          
+                          <div className="flex space-x-2">
+                            <motion.button
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              className="flex-1 bg-ace-gold text-white py-2 rounded-full text-sm font-medium hover:bg-ace-dark transition-colors duration-300"
+                            >
+                              Book Now
+                            </motion.button>
+                            <motion.button
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              className="flex-1 border-2 border-ace-gold text-ace-gold py-2 rounded-full text-sm font-medium hover:bg-ace-gold hover:text-white transition-all duration-300"
+                            >
+                              View All
+                            </motion.button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-ace-dark text-white relative overflow-hidden">
+      <section className="py-16 bg-ace-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-ace-gold rounded-full -translate-y-48 translate-x-48" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-ace-gold rounded-full translate-y-32 -translate-x-32" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-ace-gold rounded-full -translate-y-32 translate-x-32" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-ace-gold rounded-full translate-y-24 -translate-x-24" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -176,10 +272,10 @@ const Destinations = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-playfair text-4xl lg:text-6xl font-bold mb-6">
+            <h2 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Ready to Explore?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Book your perfect stay today and discover the luxury that awaits you 
               in India's most exciting destinations.
             </p>
@@ -188,14 +284,14 @@ const Destinations = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-ace-gold text-ace-dark px-8 py-4 rounded-full text-lg font-medium hover:bg-white transition-colors duration-300"
+                className="bg-ace-gold text-ace-dark px-8 py-3 rounded-full text-lg font-medium hover:bg-white transition-colors duration-300"
               >
                 Book Your Stay
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-ace-gold text-ace-gold px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-gold hover:text-ace-dark transition-all duration-300"
+                className="border-2 border-ace-gold text-ace-gold px-8 py-3 rounded-full text-lg font-medium hover:bg-ace-gold hover:text-ace-dark transition-all duration-300"
               >
                 View All Properties
               </motion.button>
@@ -205,6 +301,7 @@ const Destinations = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
 import HeroSection from '../components/HeroSection';
 import ThreeBackground from '../components/ThreeBackground';
 import FranchiseComparison from '../components/FranchiseComparison';
@@ -292,6 +293,7 @@ const PartnerWithUs = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
