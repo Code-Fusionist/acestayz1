@@ -1,0 +1,127 @@
+
+'use client';
+
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+
+const features = [
+  {
+    title: "Hybrid Model",
+    description:
+      "Waiting For Message",
+    image: '/specialservice/50718.jpg',
+  },
+  {
+    title: "Premium Feel",
+    description:
+      "Waiting For Message",
+    image: '/specialservice/06.jpg',
+  },
+  {
+    title: "Break The Rules",
+    description:
+      "Non Nonsence Hospitality",
+    image: '/specialservice/1728.jpg',
+  },
+];
+
+const FeaturedSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section className="py-20 px-4 sm:px-8 bg-ace-gold" ref={ref}>
+      <div className="max-w-7xl mx-auto text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-3 font-poppins"
+        >
+          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
+            THE MAGIC OF <span className="text-ace-white block">ACE STAYZ</span>
+          </h2>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-base md:text-lg text-ace-dark font-poppins"
+        >
+          With so much to tell & so little time, here are a few key highlights.
+        </motion.p>
+      </div>
+
+      <div className="max-w-7xl mx-auto">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+            }) as any,
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {features.map((feature, idx) => (
+              <CarouselItem key={idx} className="pl-2 md:pl-4 basis-4/5 sm:basis-3/5 md:basis-1/2 lg:basis-1/3">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: idx * 0.2 }}
+                  className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full"
+                >
+                  <div className="relative w-full h-[300px] overflow-hidden">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-ace-dark mb-3 font-poppins group-hover:text-ace-gold transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed font-poppins">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-ace-gold rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="text-center mt-12"
+      >
+        <a
+          href="#"
+          className="inline-flex items-center text-md font-semibold text-ace-dark hover:text-white transition-colors duration-300 font-poppins group"
+        >
+          See what makes us special
+          <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </motion.div>
+    </section>
+  );
+};
+
+export default FeaturedSection;
