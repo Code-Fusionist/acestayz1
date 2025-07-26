@@ -4,11 +4,7 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 // import AboutSection from '../components/AboutSection';
 import DestinationSection from '../components/DestinationSection';
-<<<<<<< HEAD
 // import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
-=======
-import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
->>>>>>> a72645bd4b35d747dad1590d87950801a0b00cb3
 import FeaturedSection from '../components/FeaturedSection';
 // import ServicesSection from '../components/ServicesSection';
 import PartnersSection from '../components/PartnersSection';
