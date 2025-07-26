@@ -64,18 +64,16 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       initial={{ y: 0 }}
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-100"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-md border-b border-gray-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div className="flex-shrink-0 flex items-center" whileHover={{ scale: 1.05 }}>
             <Link to="/" className="flex items-center">
-              <img
-                src="https://acestayz.com/new-img/ace.png"
-                alt="Ace Stayz Logo"
-                className="h-12 w-auto"
-              />
+              <h1 className="text-2xl font-bold text-ace-gold font-poppins">
+                Ace Stayz
+              </h1>
             </Link>
           </motion.div>
 
@@ -148,9 +146,17 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-700 hover:text-ace-gold transition-colors duration-200"
+              className="p-2 text-gray-700 hover:text-ace-gold transition-all duration-300 group"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <AlignJustify size={24} />}
+              {isMobileMenuOpen ? (
+                <X size={24} />
+              ) : (
+                <div className="space-y-1.5">
+                  <span className="block w-6 h-0.5 bg-current transform transition-transform duration-300 group-hover:rotate-12"></span>
+                  <span className="block w-6 h-0.5 bg-current transform transition-transform duration-300"></span>
+                  <span className="block w-6 h-0.5 bg-current transform transition-transform duration-300 group-hover:-rotate-12"></span>
+                </div>
+              )}
             </button>
           </div>
         </div>

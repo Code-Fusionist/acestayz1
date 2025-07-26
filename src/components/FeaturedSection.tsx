@@ -1,29 +1,31 @@
-
 'use client';
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import hotelInterior from '../assets/hotel-interior-1.jpg';
+import hotelRoom from '../assets/hotel-room-premium.jpg';
+import hotelServices from '../assets/hotel-services.jpg';
 
 const features = [
   {
     title: "Hybrid Model",
     description:
-      "Waiting For Message",
-    image: '/specialservice/50718.jpg',
+      "Experience the perfect blend of traditional hospitality and modern convenience",
+    image: hotelInterior,
   },
   {
     title: "Premium Feel",
     description:
-      "Waiting For Message",
-    image: '/specialservice/06.jpg',
+      "Luxury accommodations with world-class amenities and personalized service",
+    image: hotelRoom,
   },
   {
     title: "Break The Rules",
     description:
-      "Non Nonsence Hospitality",
-    image: '/specialservice/1728.jpg',
+      "Non-nonsense hospitality that redefines your stay experience",
+    image: hotelServices,
   },
 ];
 
@@ -32,13 +34,13 @@ const FeaturedSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-10 px-4 sm:px-8 bg-ace-gold" ref={ref}>
+    <section className="py-10 px-4 sm:px-8 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-3 font-poppins"
+          className="text-3xl md:text-4xl font-bold text-ace-dark drop-shadow-lg mb-3 font-poppins"
         >
           <h2 className="font-poppins text-3xl lg:text-5xl font-bold text-ace-dark mb-6">
             The Magic of <span className="text-white block">Ace Stayz</span>

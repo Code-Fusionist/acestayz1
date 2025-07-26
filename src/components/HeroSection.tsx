@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import luxuryHotelHero from '../assets/luxury-hotel-hero.jpg';
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState("Book A Ace in Delhi");
   const [currentCityIndex, setCurrentCityIndex] = useState(0);
 
-  const heroImage = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop';
   const cities = ["Delhi", "Gurugram", "Noida", "Jaipur", "Mohali"];
 
   // Auto-cycle through cities
@@ -26,7 +26,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(${luxuryHotelHero})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10 z-10" />
       </div>

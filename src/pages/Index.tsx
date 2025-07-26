@@ -10,7 +10,7 @@ import FeaturedSection from '../components/FeaturedSection';
 import PartnersSection from '../components/PartnersSection';
 // import PartnershipSection from '../components/PartnershipSection';
 import { useNavigate } from 'react-router-dom';
-import FloatingArrow from '../components/FloatingArrow';
+
 import WhatsAppButton from '../components/WhatsAppButton';
 
 import Footer from '../components/Footer';
@@ -43,9 +43,9 @@ const Index = () => {
       
       <Navbar onContactClick={() => navigate('/contact')} />
         
-      <motion.div style={{ opacity }} className="relative z-10">
+      <div className="relative z-10">
         <HeroSection />
-      </motion.div>
+      </div>
       <div className="relative z-10 space-y-8">
         <FeaturedSection />
         <PressCarousel />
@@ -57,7 +57,6 @@ const Index = () => {
       </div>
 
       <Footer />
-      <FloatingArrow />
       <WhatsAppButton />
     </div>
   );

@@ -7,6 +7,7 @@ import HeroSection from '../components/HeroSection';
 
 import CelebrityPromotion from '../components/CelebrityPromotion';
 import IllustrationSection from '../components/IllustrationSection';
+import LoyaltySection from '../components/LoyaltySection';
 import FranchiseComparison from '../components/FranchiseComparison';
 import FranchiseProposition from '../components/FranchiseProposition';
 import HowWeWork from '../components/HowWeWork';
@@ -91,6 +92,7 @@ const PartnerWithUs = () => {
 
       <CelebrityPromotion />
       <IllustrationSection />
+      <LoyaltySection />
       <FranchiseComparison />
       <FranchiseProposition />
       <HowWeWork />

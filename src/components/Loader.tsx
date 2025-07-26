@@ -10,11 +10,9 @@ const Loader = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <img 
-            src="https://acestayz.com/new-img/ace.png" 
-            alt="Ace STAYZ" 
-            className="h-16 w-auto mx-auto"
-          />
+          <h1 className="text-4xl font-bold text-ace-gold font-poppins">
+            Ace STAYZ
+          </h1>
         </motion.div>
         
         <div className="flex space-x-2 justify-center mb-4">
