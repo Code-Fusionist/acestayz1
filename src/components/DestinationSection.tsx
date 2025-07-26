@@ -18,7 +18,7 @@ const DestinationSection = () => {
   ];
 
   return (
-    <section id="destinations" className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+    <section id="destinations" className="py-10 lg:py-32 bg-gray-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}

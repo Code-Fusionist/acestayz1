@@ -32,7 +32,7 @@ const FeaturedSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-20 px-4 sm:px-8 bg-ace-gold" ref={ref}>
+    <section className="py-10 px-4 sm:px-8 bg-ace-gold" ref={ref}>
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -103,23 +103,6 @@ const FeaturedSection = () => {
           <CarouselNext className="hidden md:flex" />
         </Carousel>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="text-center mt-12"
-      >
-        <a
-          href="#"
-          className="inline-flex items-center text-md font-semibold text-ace-dark hover:text-white transition-colors duration-300 font-poppins group"
-        >
-          See what makes us special
-          <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      </motion.div>
     </section>
   );
 };
