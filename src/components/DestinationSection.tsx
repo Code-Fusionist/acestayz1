@@ -62,7 +62,7 @@ const DestinationSection = () => {
                       <span className="text-sm text-gray-600">{destination.rating}</span>
                     </div>
                     </motion.div>
-                </CarouselItem>
+                  </CarouselItem>
               ))}
             </CarouselContent>
             <CarouselPrevious className="hidden md:flex" />
