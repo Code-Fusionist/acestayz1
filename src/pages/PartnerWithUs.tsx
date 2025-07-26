@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import HeroSection from '../components/HeroSection';
-import ThreeBackground from '../components/ThreeBackground';
+
 import CelebrityPromotion from '../components/CelebrityPromotion';
 import IllustrationSection from '../components/IllustrationSection';
 import FranchiseComparison from '../components/FranchiseComparison';
@@ -83,7 +83,7 @@ const PartnerWithUs = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ThreeBackground />
+      
       <Navbar />
       <motion.div style={{ opacity }} className="relative z-10">
         <HeroSection />

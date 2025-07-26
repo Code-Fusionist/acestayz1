@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
-import ThreeBackground from '../components/ThreeBackground';
+
 import { MapPin, Star, Users, Wifi, Car, Coffee } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
@@ -87,7 +87,7 @@ const Destinations = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ThreeBackground />
+      
       <Navbar />
       
       {/* Hero Section */}

@@ -56,13 +56,13 @@ const PressCarousel = () => {
         <motion.div
           className="flex gap-6"
           animate={{
-            x: [0, -1800],
+            x: [0, -1600],
           }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30,
+              duration: 20,
               ease: "linear",
             },
           }}

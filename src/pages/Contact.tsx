@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
-import ThreeBackground from '../components/ThreeBackground';
+
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
 const Contact = () => {
@@ -77,7 +77,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ThreeBackground />
+      
       <Navbar />
       
       {/* Hero Section */}

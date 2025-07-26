@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
-import ThreeBackground from '../components/ThreeBackground';
+
 import FranchiseComparison from '../components/FranchiseComparison';
 import FranchiseProposition from '../components/FranchiseProposition';
 import HowWeWork from '../components/HowWeWork';
@@ -81,7 +81,7 @@ const PartnerWithUs = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ThreeBackground />
+      
       <Navbar />
       sss
       <motion.div style={{ opacity }} className="relative z-10">

@@ -37,7 +37,7 @@ const FloatingArrow = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-20 bg-ace-gold text-white p-4 rounded-full shadow-2xl hover:bg-ace-dark transition-colors duration-300 z-40 group"
+          className="fixed bottom-6 right-6 bg-ace-gold text-white p-4 rounded-full shadow-2xl hover:bg-ace-dark transition-colors duration-300 z-40 group"
         >
           <ArrowUp size={24} className="group-hover:animate-bounce" />
         </motion.button>

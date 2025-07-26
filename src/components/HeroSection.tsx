@@ -1,12 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCity, setSelectedCity] = useState("Select Your City");
+  const [selectedCity, setSelectedCity] = useState("Book A Ace in Delhi");
+  const [currentCityIndex, setCurrentCityIndex] = useState(0);
 
   const heroImage = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=800&fit=crop';
-  const cities = ["Gurugram", "Noida", "Delhi", "Jaipur", "Mohali"];
+  const cities = ["Delhi", "Gurugram", "Noida", "Jaipur", "Mohali"];
+
+  // Auto-cycle through cities
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCityIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % cities.length;
+        return nextIndex;
+      });
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [cities.length]);
 
   return (
     <section id="home" className="relative h-screen overflow-hidden">
@@ -28,14 +40,14 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-3xl"
           >
-            <h1 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Not Your Regular Hotel
               <br />
               <span className="text-gradient bg-gradient-to-r from-ace-gold to-ace-gold bg-clip-text text-transparent">
                 It's A Hybrid Hotel
               </span>
             </h1>
-            <p className="font-poppins text-lg lg:text-xl mb-8 max-w-2xl opacity-95 leading-relaxed">
+            <p className="font-poppins text-base lg:text-lg mb-8 max-w-2xl opacity-95 leading-relaxed">
               Stayz For Smart Guest. 
             </p>
 
@@ -51,7 +63,7 @@ const HeroSection = () => {
                 className="cursor-pointer flex items-center justify-between bg-white/10 border border-white/30 rounded-full px-5 py-3 backdrop-blur-sm shadow-lg hover:ring-2 hover:ring-ace-gold transition"
               >
                 <span className="text-white font-poppins text-sm sm:text-base opacity-90">
-                  {selectedCity}
+                  Book A Ace in <span className="text-ace-gold font-semibold">{cities[currentCityIndex]}</span>
                 </span>
                 <svg
                   className="w-4 h-4 text-white opacity-70"
@@ -98,8 +110,10 @@ const HeroSection = () => {
                 <li
                   key={city}
                   onClick={() => {
-                    setSelectedCity(city);
+                    setSelectedCity(`Book A Ace in ${city}`);
                     setIsModalOpen(false);
+                    // Redirect to booking
+                    window.open('https://acestayz.com/booking', '_blank');
                   }}
                   className="cursor-pointer px-4 py-2 rounded-lg text-center font-medium transition-all duration-200 hover:bg-ace-gold hover:text-white"
                 >

@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
-import ThreeBackground from '../components/ThreeBackground';
+
 import TestimonialsSection from '../components/TestimonialsSection';
 import { Shield, Clock, Star, HeadphonesIcon, Wifi, Car, Coffee, Dumbbell } from 'lucide-react';
 
@@ -67,7 +67,7 @@ const WhyUs = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ThreeBackground />
+      
       <Navbar />
       
       {/* Hero Section */}

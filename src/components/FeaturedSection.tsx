@@ -40,8 +40,8 @@ const FeaturedSection = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-3 font-poppins"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-            THE MAGIC OF <span className="text-ace-white block">ACE STAYZ</span>
+          <h2 className="font-poppins text-3xl lg:text-5xl font-bold text-ace-dark mb-6">
+            The Magic of <span className="text-white block">Ace Stayz</span>
           </h2>
         </motion.h2>
         <motion.p

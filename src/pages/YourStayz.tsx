@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
-import ThreeBackground from '../components/ThreeBackground';
+
 import PropertiesSection from '../components/PropertiesSection';
 import { Star, MapPin, Wifi, Car, Coffee, Dumbbell } from 'lucide-react';
 
@@ -38,7 +38,7 @@ const YourStayz = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <ThreeBackground />
+      
       <Navbar />
       
       {/* Hero Section */}

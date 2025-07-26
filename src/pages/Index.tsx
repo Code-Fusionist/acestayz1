@@ -12,7 +12,7 @@ import PartnersSection from '../components/PartnersSection';
 import { useNavigate } from 'react-router-dom';
 import FloatingArrow from '../components/FloatingArrow';
 import WhatsAppButton from '../components/WhatsAppButton';
-import ThreeBackground from '../components/ThreeBackground';
+
 import Footer from '../components/Footer';
 import PressCarousel from '../components/PressCarousel';
 
@@ -40,14 +40,13 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen bg-white overflow-x-hidden">
-      <ThreeBackground />
       
       <Navbar onContactClick={() => navigate('/contact')} />
         
       <motion.div style={{ opacity }} className="relative z-10">
         <HeroSection />
       </motion.div>
-      <div className="relative z-10 space-y-0">
+      <div className="relative z-10 space-y-8">
         <FeaturedSection />
         <PressCarousel />
         <DestinationSection />

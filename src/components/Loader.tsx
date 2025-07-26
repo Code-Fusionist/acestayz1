@@ -12,7 +12,7 @@ const Loader = () => {
         >
           <img 
             src="https://acestayz.com/new-img/ace.png" 
-            alt="Ace Stayz" 
+            alt="Ace STAYZ" 
             className="h-16 w-auto mx-auto"
           />
         </motion.div>
