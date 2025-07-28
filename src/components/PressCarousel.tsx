@@ -11,7 +11,7 @@ const pressPublications = [
   {
     id: 2,
     image: 'media/bus-Stan.png',
-    title: 'BUSINESS STANDARDS',
+    title: 'BUSINESS STANDARD',
     description: 'Business feature on hospitality innovation'
   },
   {

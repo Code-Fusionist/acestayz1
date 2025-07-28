@@ -70,20 +70,10 @@ const PartnerWithUs = () => {
     }
   ];
 
-  const requirements = [
-    "Property must be in prime location",
-    "Minimum 2-bedroom configuration",
-    "Modern amenities and furnishings",
-    "Dedicated parking space",
-    "High-speed internet connectivity",
-    "24/7 security arrangements"
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       
       <Navbar />
-      sss
       <motion.div style={{ opacity }} className="relative z-10">
         <HeroSection />
       </motion.div>
@@ -266,65 +256,6 @@ const PartnerWithUs = () => {
       </section>
 
       <FranchiseComparison />
-      {/* Requirements Section */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-ace-dark mb-6">
-                Partnership Requirements
-              </h2>
-              <p className="text-lg text-gray-700 mb-8">
-                To ensure the highest quality standards for our guests, we have specific requirements for partner properties.
-              </p>
-
-              <div className="space-y-4">
-                {requirements.map((requirement, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                    className="flex items-center space-x-3"
-                  >
-                    <CheckCircle className="w-6 h-6 text-ace-gold flex-shrink-0" />
-                    <span className="text-gray-700">{requirement}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=700&fit=crop"
-                alt="Luxury Property"
-                className="rounded-3xl shadow-2xl"
-              />
-              
-              <div className="absolute -top-4 -right-4 bg-ace-gold text-white p-6 rounded-2xl shadow-xl">
-                <Star className="w-8 h-8 mb-2" />
-                <div className="text-2xl font-bold">Premium</div>
-                <div className="text-sm opacity-90">Standards</div>
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                <DollarSign className="w-8 h-8 text-ace-gold mb-2" />
-                <div className="text-2xl font-bold text-ace-dark">40%</div>
-                <div className="text-sm text-gray-600">Revenue Growth</div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-ace-dark text-white relative overflow-hidden">

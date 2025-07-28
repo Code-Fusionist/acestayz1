@@ -34,7 +34,7 @@ const LoyaltySection = () => {
                 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 font-poppins"
               >
                 More Nights,<br />
-                Better Prize.
+                Better Price.
               </motion.h2>
 
               <motion.p
@@ -43,7 +43,7 @@ const LoyaltySection = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-white/80 text-lg leading-relaxed font-poppins"
               >
-                Planing a Longer Stayz? Grap exclusive weekly - monthly offer now!
+                Planing a Longer Stayz? Grab exclusive weekly - monthly offers now!
               </motion.p>
             </div>
 
