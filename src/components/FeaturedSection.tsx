@@ -12,19 +12,19 @@ const features = [
   {
     title: "Hybrid Model",
     description:
-      "Experience the perfect blend of traditional hospitality and modern convenience",
-    image: hotelInterior,
+      "Stay your way. Not everyone wants to step out for every meal, and we get that. Our hybrid rooms come with a fully equipped kitchen—so you can cook, order in, or just have your midnight chai moment without stepping outside. It’s your space. Use it how you like.",
+    image: hotelRoom,
   },
   {
     title: "Premium Feel",
     description:
-      "Luxury accommodations with world-class amenities and personalized service",
-    image: hotelRoom,
+      "Everything you need. Nothing overdone. Think clean spaces, elegant design, soft lighting, and thoughtful touches. We focus on what actually matters—comfort, privacy, and good taste. No fluff, just a calm and premium stay that feels personal.",
+    image: hotelInterior,
   },
   {
     title: "Break The Rules",
     description:
-      "Non-nonsense hospitality that redefines your stay experience",
+      "No Nonsense Hospitality. We keep things simple. Want to order food online? Go ahead. Need a little extra time to check out? If the room's free, it's yours. We try to say yes whenever we can. No silly rules, no surprise charges—just a stay that feels easy, like it should.",
     image: hotelServices,
   },
 ];
@@ -34,7 +34,7 @@ const FeaturedSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-10 px-4 sm:px-8 bg-white" ref={ref}>
+    <section className="py-10 px-4 sm:px-8 bg-ace-gold" ref={ref}>
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}

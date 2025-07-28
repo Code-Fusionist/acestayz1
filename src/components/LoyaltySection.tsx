@@ -22,7 +22,7 @@ const LoyaltySection = () => {
                 <div className="flex items-center gap-2 mb-4">
                   <Zap className="w-6 h-6 text-cyan-600" />
                   <span className="text-cyan-600 font-semibold font-poppins text-sm">
-                    Get up to 15% off extra on your stays!
+                    Get up to 45  % off extra on your stays!
                   </span>
                 </div>
               </motion.div>
@@ -57,7 +57,7 @@ const LoyaltySection = () => {
               >
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className="text-yellow-500 font-bold text-xl font-poppins">bloom</div>
+                  <div className="text-yellow-500 font-bold text-xl font-poppins">ACE STAYZ</div>
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
                       <div className="w-4 h-4 bg-yellow-400 rounded-full"></div>

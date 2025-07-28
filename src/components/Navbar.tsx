@@ -17,8 +17,8 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Your Stayz', href: '/your-stayz' },
-    { name: 'Destinations', href: '/destinations', hasDropdown: true },
+    // { name: 'Your Stayz', href: '/your-stayz' },
+    // { name: 'Destinations', href: '/destinations', hasDropdown: true },
     { name: 'Partner with Us', href: '/partner-with-us' },
     { name: 'Why Us', href: '/why-us' },
   ];
@@ -31,16 +31,16 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowNavbar(false); // scrolling down
+        setShowNavbar(false);
       } else {
-        setShowNavbar(true); // scrolling up or stationary
+        setShowNavbar(true);
       }
 
       lastScrollY = currentScrollY;
 
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        setShowNavbar(true); // show if user stops
+        setShowNavbar(true);
       }, 150);
     };
 
@@ -64,16 +64,14 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       initial={{ y: 0 }}
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-md border-b border-gray-100"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm text-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div className="flex-shrink-0 flex items-center" whileHover={{ scale: 1.05 }}>
             <Link to="/" className="flex items-center">
-              <h1 className="text-2xl font-bold text-ace-gold font-poppins">
-                Ace Stayz
-              </h1>
+              <h1 className="text-4xl text-ace-gold font-poppins">ACE STAYZ</h1>
             </Link>
           </motion.div>
 
@@ -93,7 +91,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                         className={`px-3 py-2 text-sm font-medium font-poppins transition-colors duration-200 ${
                           location.pathname === item.href
                             ? 'text-ace-gold font-semibold'
-                            : 'text-gray-700 hover:text-ace-gold'
+                            : 'text-white hover:text-ace-gold'
                         }`}
                       >
                         {item.name}
@@ -103,13 +101,13 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
+                          className="absolute top-full left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-xl border border-gray-100 py-2 z-50"
                         >
                           {destinations.map((destination) => (
                             <Link
                               key={destination}
                               to="/destinations"
-                              className="block px-4 py-2 text-sm text-gray-700 hover:text-ace-gold hover:bg-gray-50 transition-colors duration-200 font-poppins"
+                              className="block px-4 py-2 text-sm hover:text-ace-gold hover:bg-gray-50 transition-colors duration-200 font-poppins"
                             >
                               {destination}
                             </Link>
@@ -123,7 +121,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                       className={`px-3 py-2 text-sm font-medium font-poppins transition-colors duration-200 ${
                         location.pathname === item.href
                           ? 'text-ace-gold font-semibold'
-                          : 'text-gray-700 hover:text-ace-gold'
+                          : 'text-white hover:text-ace-gold'
                       }`}
                     >
                       {item.name}
@@ -146,7 +144,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-700 hover:text-ace-gold transition-all duration-300 group"
+              className="p-2 text-white hover:text-ace-gold transition-all duration-300 group"
             >
               {isMobileMenuOpen ? (
                 <X size={24} />
@@ -167,7 +165,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100 rounded-b-lg"
+            className="lg:hidden bg-black/90 text-white border-t border-white/20 rounded-b-lg"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
@@ -176,8 +174,8 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                     to={item.href}
                     className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 font-poppins ${
                       location.pathname === item.href
-                        ? 'text-ace-gold bg-gray-50 font-semibold'
-                        : 'text-gray-700 hover:text-ace-gold hover:bg-gray-50'
+                        ? 'text-ace-gold bg-white/10 font-semibold'
+                        : 'text-white hover:text-ace-gold hover:bg-white/10'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -189,7 +187,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                         <Link
                           key={destination}
                           to="/destinations"
-                          className="block px-3 py-2 text-sm text-gray-600 hover:text-ace-gold hover:bg-gray-50 rounded-md transition-colors duration-200 font-poppins"
+                          className="block px-3 py-2 text-sm text-white hover:text-ace-gold hover:bg-white/10 rounded-md transition-colors duration-200 font-poppins"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {destination}
@@ -204,7 +202,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                   handleContactClick();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full text-left px-3 py-2 text-base font-medium text-ace-gold hover:bg-gray-50 rounded-md transition-colors duration-200 font-poppins"
+                className="w-full text-left px-3 py-2 text-base font-medium text-ace-gold hover:bg-white/10 rounded-md transition-colors duration-200 font-poppins"
               >
                 Let's Talk
               </button>

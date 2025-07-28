@@ -10,7 +10,7 @@ const pressPublications = [
   },
   {
     id: 2,
-    image: 'media/bus-Stan.jpg',
+    image: 'media/bus-Stan.png',
     title: 'BUSINESS STANDARDS',
     description: 'Business feature on hospitality innovation'
   },
@@ -22,7 +22,7 @@ const pressPublications = [
   },
   {
     id: 4,
-    image: 'media/tribune.webp',
+    image: 'media/tribune.png',
     title: 'THE TRIBUNE NEWS',
     description: 'Technology integration spotlight'
   }

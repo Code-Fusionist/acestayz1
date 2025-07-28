@@ -4,15 +4,15 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 // import AboutSection from '../components/AboutSection';
 import DestinationSection from '../components/DestinationSection';
-// import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
+import LoyaltySection from '../components/LoyaltySection';
+import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
 import FeaturedSection from '../components/FeaturedSection';
 // import ServicesSection from '../components/ServicesSection';
 import PartnersSection from '../components/PartnersSection';
 // import PartnershipSection from '../components/PartnershipSection';
 import { useNavigate } from 'react-router-dom';
-
 import WhatsAppButton from '../components/WhatsAppButton';
-
+import ScrollToTop from '@/components/ScrollToTop';
 import Footer from '../components/Footer';
 import PressCarousel from '../components/PressCarousel';
 
@@ -46,11 +46,12 @@ const Index = () => {
       <div className="relative z-10">
         <HeroSection />
       </div>
-      <div className="relative z-10 space-y-8">
+      <div className="relative z-5">
+        <LoyaltySection />
         <FeaturedSection />
         <PressCarousel />
         <DestinationSection />
-        {/* <FeaturedRoomsSection /> */}
+        <FeaturedRoomsSection />
         {/* <ServicesSection /> */}
         <PartnersSection />
         {/* <PartnershipSection onContactClick={() => setShowContactForm(true)} /> */}
@@ -58,6 +59,7 @@ const Index = () => {
 
       <Footer />
       <WhatsAppButton />
+      <ScrollToTop />
     </div>
   );
 };

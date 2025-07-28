@@ -32,7 +32,8 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex items-start h-full text-white pt-52">
+      {/* Content */}
+      <div className="relative z-20 flex items-end justify-start h-full text-white pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -41,17 +42,16 @@ const HeroSection = () => {
             className="max-w-3xl"
           >
             <h1 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Not Your Regular Hotel
-              <br />
+              <span className="block mb-4">Not Your Regular Hotel</span>
               <span className="text-gradient bg-gradient-to-r from-ace-gold to-ace-gold bg-clip-text text-transparent">
                 It's A Hybrid Hotel
               </span>
             </h1>
             <p className="font-poppins text-base lg:text-lg mb-8 max-w-2xl opacity-95 leading-relaxed">
-              Stayz For Smart Guest. 
+              Stayz For Smart Guest.
             </p>
 
-            {/* Search Bar (non-editable) */}
+            {/* Search Bar */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const HeroSection = () => {
                 className="cursor-pointer flex items-center justify-between bg-white/10 border border-white/30 rounded-full px-5 py-3 backdrop-blur-sm shadow-lg hover:ring-2 hover:ring-ace-gold transition"
               >
                 <span className="text-white font-poppins text-sm sm:text-base opacity-90">
-                  Book A Ace in <span className="text-ace-gold font-semibold">{cities[currentCityIndex]}</span>
+                  Book A Stayz in <span className="text-ace-gold font-semibold">{cities[currentCityIndex]}</span>
                 </span>
                 <svg
                   className="w-4 h-4 text-white opacity-70"
@@ -79,6 +79,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+
       {/* Modal for city selection */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">

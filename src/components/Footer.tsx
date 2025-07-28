@@ -251,7 +251,7 @@ const Footer = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-white/60 text-sm font-poppins">
-                © 2024 Ace Stayz. All rights reserved.
+                © 2024 Ace Stayz Pvt Ltd. All rights reserved.
               </p>
               <div className="flex space-x-8">
                 <Link

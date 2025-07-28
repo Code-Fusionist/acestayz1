@@ -28,7 +28,7 @@ const DestinationSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-            Explor
+            Explore
             <span className="text-ace-gold block">ACE STAYZ</span>
           </h2>
         </motion.div>

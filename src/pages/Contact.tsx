@@ -64,7 +64,6 @@ const Contact = () => {
     {
       icon: <MapPin size={24} />,
       title: "Locations",
-      details: "Delhi | Gurugram | Jaipur | Noida",
       description: "Premium stays across major cities"
     },
     {
@@ -121,9 +120,6 @@ const Contact = () => {
                 <h3 className="font-playfair text-xl font-bold text-ace-dark mb-2">
                   {info.title}
                 </h3>
-                <p className="text-ace-gold font-semibold mb-2">
-                  {info.details}
-                </p>
                 <p className="text-gray-600 text-sm">
                   {info.description}
                 </p>
@@ -157,7 +153,7 @@ const Contact = () => {
                     Message Sent!
                   </h3>
                   <p className="text-gray-600">
-                    Thank you for contacting us. We'll get back to you within 24 hours.
+                    Thank you for contacting us. We'll get back to you.
                   </p>
                 </motion.div>
               ) : (
@@ -231,7 +227,7 @@ const Contact = () => {
                       >
                         <option value="">Select a subject</option>
                         <option value="booking">Room Booking</option>
-                        <option value="partnership">Partnership Inquiry</option>
+                        <option value="partnership">Franchise Partnership</option>
                         <option value="support">Customer Support</option>
                         <option value="other">Other</option>
                       </select>
@@ -240,11 +236,10 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
+                      Message
                     </label>
                     <textarea
                       name="message"
-                      required
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
