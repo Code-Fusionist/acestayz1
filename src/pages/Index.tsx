@@ -43,7 +43,7 @@ const Index = () => {
       
       <Navbar onContactClick={() => navigate('/contact')} />
         
-      <div className="relative z-10">
+      <div className="relative z-10 y-5">
         <HeroSection />
       </div>
       <div className="relative z-5">

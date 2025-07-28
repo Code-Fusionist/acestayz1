@@ -16,7 +16,7 @@ const HeroSection = () => {
   }, [cities.length]);
 
   return (
-    <section id="home" className="relative h-screen overflow-hidden">
+    <section id="home" className="relative h-[75vh] sm:h-screen overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -25,7 +25,7 @@ const HeroSection = () => {
           muted
           loop
           playsInline
-          src="/Hero.mp4" // replace with your actual video filename
+          src="/Hero.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10 z-10" />
       </div>

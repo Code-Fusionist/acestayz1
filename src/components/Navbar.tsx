@@ -10,46 +10,15 @@ interface NavbarProps {
 const Navbar = ({ onContactClick }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDestinationsOpen, setIsDestinationsOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
   const location = useLocation();
 
   const destinations = ['Delhi', 'Gurugram', 'Jaipur', 'Noida', 'Mohali'];
 
   const navItems = [
     { name: 'Home', href: '/' },
-    // { name: 'Your Stayz', href: '/your-stayz' },
-    // { name: 'Destinations', href: '/destinations', hasDropdown: true },
     { name: 'Partner with Us', href: '/partner-with-us' },
     { name: 'Why Us', href: '/why-us' },
   ];
-
-  useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
-
-      lastScrollY = currentScrollY;
-
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        setShowNavbar(true);
-      }, 150);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(timeoutId);
-    };
-  }, []);
 
   const handleContactClick = () => {
     if (onContactClick) {
@@ -61,10 +30,10 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
 
   return (
     <motion.nav
-      initial={{ y: 0 }}
-      animate={{ y: showNavbar ? 0 : -100 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm text-white"
+      className="w-full bg-black/20 backdrop-blur-sm text-white z-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -79,55 +48,17 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
           <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <div key={item.name} className="relative group">
-                  {item.hasDropdown ? (
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setIsDestinationsOpen(true)}
-                      onMouseLeave={() => setIsDestinationsOpen(false)}
-                    >
-                      <Link
-                        to={item.href}
-                        className={`px-3 py-2 text-sm font-medium font-poppins transition-colors duration-200 ${
-                          location.pathname === item.href
-                            ? 'text-ace-gold font-semibold'
-                            : 'text-white hover:text-ace-gold'
-                        }`}
-                      >
-                        {item.name}
-                      </Link>
-                      {isDestinationsOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          className="absolute top-full left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-xl border border-gray-100 py-2 z-50"
-                        >
-                          {destinations.map((destination) => (
-                            <Link
-                              key={destination}
-                              to="/destinations"
-                              className="block px-4 py-2 text-sm hover:text-ace-gold hover:bg-gray-50 transition-colors duration-200 font-poppins"
-                            >
-                              {destination}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </div>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      className={`px-3 py-2 text-sm font-medium font-poppins transition-colors duration-200 ${
-                        location.pathname === item.href
-                          ? 'text-ace-gold font-semibold'
-                          : 'text-white hover:text-ace-gold'
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`px-3 py-2 text-sm font-medium font-poppins transition-colors duration-200 ${
+                    location.pathname === item.href
+                      ? 'text-ace-gold font-semibold'
+                      : 'text-white hover:text-ace-gold'
+                  }`}
+                >
+                  {item.name}
+                </Link>
               ))}
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -149,11 +80,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
               {isMobileMenuOpen ? (
                 <X size={24} />
               ) : (
-                <div className="space-y-1.5">
-                  <span className="block w-6 h-0.5 bg-current transform transition-transform duration-300 group-hover:rotate-12"></span>
-                  <span className="block w-6 h-0.5 bg-current transform transition-transform duration-300"></span>
-                  <span className="block w-6 h-0.5 bg-current transform transition-transform duration-300 group-hover:-rotate-12"></span>
-                </div>
+                <AlignJustify size={24} />
               )}
             </button>
           </div>
@@ -169,33 +96,18 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <div key={item.name}>
-                  <Link
-                    to={item.href}
-                    className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 font-poppins ${
-                      location.pathname === item.href
-                        ? 'text-ace-gold bg-white/10 font-semibold'
-                        : 'text-white hover:text-ace-gold hover:bg-white/10'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.hasDropdown && (
-                    <div className="ml-4 space-y-1">
-                      {destinations.map((destination) => (
-                        <Link
-                          key={destination}
-                          to="/destinations"
-                          className="block px-3 py-2 text-sm text-white hover:text-ace-gold hover:bg-white/10 rounded-md transition-colors duration-200 font-poppins"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {destination}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 font-poppins ${
+                    location.pathname === item.href
+                      ? 'text-ace-gold bg-white/10 font-semibold'
+                      : 'text-white hover:text-ace-gold hover:bg-white/10'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
               <button
                 onClick={() => {
