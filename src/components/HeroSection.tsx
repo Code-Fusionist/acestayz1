@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import luxuryHotelHero from '../assets/luxury-hotel-hero.jpg';
 
 const HeroSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,29 +8,28 @@ const HeroSection = () => {
 
   const cities = ["Delhi", "Gurugram", "Noida", "Jaipur", "Mohali"];
 
-  // Auto-cycle through cities
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentCityIndex((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % cities.length;
-        return nextIndex;
-      });
+      setCurrentCityIndex((prevIndex) => (prevIndex + 1) % cities.length);
     }, 2000);
     return () => clearInterval(interval);
   }, [cities.length]);
 
   return (
     <section id="home" className="relative h-screen overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${luxuryHotelHero})` }}
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          src="/Hero.mp4" // replace with your actual video filename
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10 z-10" />
       </div>
 
-      {/* Content */}
       {/* Content */}
       <div className="relative z-20 flex items-end justify-start h-full text-white pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -51,7 +49,6 @@ const HeroSection = () => {
               Stayz For Smart Guest.
             </p>
 
-            {/* Search Bar */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,32 +77,23 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Modal for city selection */}
+      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
           <div className="relative bg-white rounded-2xl w-80 sm:w-96 p-6 pt-10 text-black shadow-2xl animate-fadeIn">
-            {/* Close (X) button */}
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-ace-gold transition-colors"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            {/* Modal Heading */}
             <h2 className="text-2xl font-semibold mb-6 text-center text-ace-dark">
               Select a City
             </h2>
 
-            {/* City List */}
             <ul className="space-y-3">
               {cities.map((city) => (
                 <li
@@ -113,7 +101,6 @@ const HeroSection = () => {
                   onClick={() => {
                     setSelectedCity(`Book A Ace in ${city}`);
                     setIsModalOpen(false);
-                    // Redirect to booking
                     window.open('https://acestayz.com/booking', '_blank');
                   }}
                   className="cursor-pointer px-4 py-2 rounded-lg text-center font-medium transition-all duration-200 hover:bg-ace-gold hover:text-white"

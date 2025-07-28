@@ -29,7 +29,7 @@ const PartnersSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-            Corporate <span className="text-ace-gold block">Partners</span>
+            Corporate <span className="text-ace-gold block mt-2">Partners</span>
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
             Trusted By Big Brands.

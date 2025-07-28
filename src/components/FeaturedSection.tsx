@@ -11,20 +11,18 @@ import hotelServices from '../assets/hotel-services.jpg';
 const features = [
   {
     title: "Hybrid Model",
-    description:
-      "Stay your way. Not everyone wants to step out for every meal, and we get that. Our hybrid rooms come with a fully equipped kitchen—so you can cook, order in, or just have your midnight chai moment without stepping outside. It’s your space. Use it how you like.",
+    description: "Faster growing hybrid hotel chain with in room kitchenette",
     image: hotelRoom,
   },
   {
     title: "Premium Feel",
-    description:
-      "Everything you need. Nothing overdone. Think clean spaces, elegant design, soft lighting, and thoughtful touches. We focus on what actually matters—comfort, privacy, and good taste. No fluff, just a calm and premium stay that feels personal.",
+    description: "Design-led hotels – not just rooms, it's a mood.\nFeel the style, live the vibe.",
     image: hotelInterior,
   },
   {
     title: "Break The Rules",
     description:
-      "No Nonsense Hospitality. We keep things simple. Want to order food online? Go ahead. Need a little extra time to check out? If the room's free, it's yours. We try to say yes whenever we can. No silly rules, no surprise charges—just a stay that feels easy, like it should.",
+      "No nonsense hotel rules. Food delivery? Always welcome.\nFlexible breakfast timings\nEasy check-in, late checkout (Subject to availability).",
     image: hotelServices,
   },
 ];
@@ -43,7 +41,7 @@ const FeaturedSection = () => {
           className="text-3xl md:text-4xl font-bold text-ace-dark drop-shadow-lg mb-3 font-poppins"
         >
           <h2 className="font-poppins text-3xl lg:text-5xl font-bold text-ace-dark mb-6">
-            The Magic of <span className="text-white block">Ace Stayz</span>
+            The Magic of <span className="text-white block mt-2">Ace Stayz</span>
           </h2>
         </motion.h2>
         <motion.p
@@ -59,7 +57,7 @@ const FeaturedSection = () => {
       <div className="max-w-7xl mx-auto">
         <Carousel
           opts={{
-            align: "start",
+            align: 'start',
             loop: true,
           }}
           plugins={[
@@ -71,7 +69,10 @@ const FeaturedSection = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {features.map((feature, idx) => (
-              <CarouselItem key={idx} className="pl-2 md:pl-4 basis-4/5 sm:basis-3/5 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem
+                key={idx}
+                className="pl-2 md:pl-4 basis-4/5 sm:basis-3/5 md:basis-1/2 lg:basis-1/3"
+              >
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -91,9 +92,11 @@ const FeaturedSection = () => {
                     <h3 className="text-xl font-bold text-ace-dark mb-3 font-poppins group-hover:text-ace-gold transition-colors duration-300">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed font-poppins">
-                      {feature.description}
-                    </p>
+                    <div className="text-gray-600 text-sm leading-relaxed font-poppins space-y-1">
+                      {feature.description.split('\n').map((line, i) => (
+                        <p key={i}>{line}</p>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="absolute top-4 right-4 w-2 h-2 bg-ace-gold rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
