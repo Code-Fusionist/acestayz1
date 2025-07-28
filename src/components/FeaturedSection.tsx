@@ -44,14 +44,6 @@ const FeaturedSection = () => {
             The Magic of <span className="text-white block mt-2">Ace Stayz</span>
           </h2>
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base md:text-lg text-ace-dark font-poppins"
-        >
-          With so much to tell & so little time, here are a few key highlights.
-        </motion.p>
       </div>
 
       <div className="max-w-7xl mx-auto">
