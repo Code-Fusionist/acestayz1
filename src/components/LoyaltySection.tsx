@@ -22,7 +22,7 @@ const LoyaltySection = () => {
                 <div className="flex items-center gap-2 mb-4">
                   <Zap className="w-6 h-6 text-cyan-600" />
                   <span className="text-cyan-600 font-semibold font-poppins text-sm">
-                    Get up to 45  % off extra on your stays!
+                    Get up to 30 % off extra on your stayz!
                   </span>
                 </div>
               </motion.div>
@@ -33,8 +33,8 @@ const LoyaltySection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 font-poppins"
               >
-                The more you stay,<br />
-                the less you pay.
+                More Nights,<br />
+                Better Prize.
               </motion.h2>
 
               <motion.p
@@ -43,7 +43,7 @@ const LoyaltySection = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-white/80 text-lg leading-relaxed font-poppins"
               >
-                A loyalty program designed for our most committed guests — like you, who stay with us wherever they go.
+                Planing a Longer Stayz? Grap exclusive weekly - monthly offer now!
               </motion.p>
             </div>
 
@@ -103,7 +103,7 @@ const LoyaltySection = () => {
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200 rounded-xl py-3 px-4 flex items-center justify-between text-gray-600 font-medium font-poppins"
                 >
-                  <span>Unlock Member Rates</span>
+                  <span>Unlock Offer Rates</span>
                   <TrendingUp className="w-4 h-4" />
                 </motion.button>
               </motion.div>

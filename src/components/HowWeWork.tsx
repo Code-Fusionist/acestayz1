@@ -1,7 +1,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Lightbulb, Target, Rocket, Award } from 'lucide-react';
+import { Lightbulb, UserRound, Star, Handshake } from 'lucide-react';
 
 const HowWeWork = () => {
   const ref = useRef(null);
@@ -11,37 +11,42 @@ const HowWeWork = () => {
   const steps = [
     {
       id: 0,
-      title: "Research",
-      subtitle: "Listen, Comprehend And Research",
-      description: "This stage is primarily about establishing the foundations. Exploratory discussions are held to build the project's framework, and intelligent questioning is used to clarify the goals.",
+      title: "Revenue Growth",
+      subtitle: "Revenue Growth",
+      description:
+        "Maximize your property revenue with our proven hospitality strategies and guest acquisition channels.",
       icon: <Lightbulb className="w-8 h-8" />,
-      color: "bg-red-500"
+      color: "bg-red-500",
     },
     {
       id: 1,
-      title: "Strategy",
-      subtitle: "Conceptualize, Strategize And Plan",
-      description: "We develop comprehensive strategies based on market research and analysis to ensure optimal positioning and competitive advantage.",
-      icon: <Target className="w-8 h-8" />,
-      color: "bg-gray-700"
+      title: "Guest Management",
+      subtitle: "Guest Management",
+      description:
+        "Professional guest relations and 24/7 support to ensure exceptional experiences and repeat bookings.",
+      icon: <UserRound className="w-8 h-8" />,
+      color: "bg-gray-700",
     },
     {
       id: 2,
-      title: "Action",
-      subtitle: "Execute, Improvise And Analyze",
-      description: "Implementation phase where we execute our strategic plans with continuous monitoring and adjustments for optimal results.",
-      icon: <Rocket className="w-8 h-8" />,
-      color: "bg-red-500"
+      title: "Brand Excellence",
+      subtitle: "Brand Excellence",
+      description:
+        "Maintain premium standards with our quality assurance programs and brand guidelines.",
+      icon: <Star className="w-8 h-8" />,
+      color: "bg-red-500",
     },
     {
       id: 3,
-      title: "Result",
-      subtitle: "Achieve, Improve And Iterate",
-      description: "Delivering measurable results while continuously improving and iterating for sustained growth and success.",
-      icon: <Award className="w-8 h-8" />,
-      color: "bg-gray-700"
-    }
+      title: "Partnership Support",
+      subtitle: "Partnership Support",
+      description:
+        "Dedicated partnership managers to guide you through every step of our collaboration.",
+      icon: <Handshake className="w-8 h-8" />,
+      color: "bg-gray-700",
+    },
   ];
+
 
   return (
     <section ref={ref} className="py-16 bg-gray-50">
@@ -55,9 +60,6 @@ const HowWeWork = () => {
           <h2 className="font-poppins text-2xl md:text-3xl lg:text-4xl font-bold text-ace-dark mb-4">
             Our Creative Process
           </h2>
-          <h3 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-ace-dark mb-8">
-            How We Work
-          </h3>
         </motion.div>
 
         {/* Steps Overview - Single Line */}
@@ -74,19 +76,17 @@ const HowWeWork = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               onClick={() => setActiveStep(step.id)}
-              className={`cursor-pointer p-3 md:p-4 rounded-xl text-center transition-all duration-300 ${
-                activeStep === step.id 
-                  ? 'bg-ace-gold text-white shadow-lg scale-105' 
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-              }`}
+              className={`cursor-pointer p-3 md:p-4 rounded-xl text-center transition-all duration-300 ${activeStep === step.id
+                ? 'bg-ace-gold text-white shadow-lg scale-105'
+                : 'bg-white text-gray-600 hover:bg-gray-100'
+                }`}
             >
               <div className={`w-8 h-8 md:w-12 md:h-12 ${step.color} rounded-xl flex items-center justify-center text-white mb-2 mx-auto`}>
                 <div className="scale-75 md:scale-100">{step.icon}</div>
               </div>
               <div className="font-poppins font-bold text-sm md:text-base mb-1">{step.title}</div>
-              <div className={`h-1 rounded-full transition-all duration-300 ${
-                activeStep === step.id ? 'bg-white' : 'bg-gray-300'
-              }`} />
+              <div className={`h-1 rounded-full transition-all duration-300 ${activeStep === step.id ? 'bg-white' : 'bg-gray-300'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -101,7 +101,7 @@ const HowWeWork = () => {
         >
           <div className="text-center">
             <h4 className="font-poppins text-2xl font-bold text-ace-dark mb-4">
-              {steps[activeStep].title} Phase
+              {steps[activeStep].title}
             </h4>
             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
               {steps[activeStep].description}

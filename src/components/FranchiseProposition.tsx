@@ -12,12 +12,12 @@ const FranchiseProposition = () => {
   const franchiseStats = [
     {
       icon: <Building className="w-6 h-6 mx-auto mb-1" />,
-      value: "2000 Sq Ft",
+      value: "20 Rooms Required",
       title: "PROPERTY SIZE",
     },
     {
       icon: <Calendar className="w-6 h-6 mx-auto mb-1" />,
-      value: "6 Months",
+      value: "3 Months",
       title: "BREAK EVEN PERIOD",
     },
     {
@@ -27,17 +27,17 @@ const FranchiseProposition = () => {
     },
     {
       icon: <TrendingUp className="w-6 h-6 mx-auto mb-1" />,
-      value: "65%",
+      value: "70%",
       title: "ANNUAL ROI",
     },
     {
       icon: <Users className="w-6 h-6 mx-auto mb-1" />,
-      value: "18 Months",
+      value: "15 - 18 Months",
       title: "INVESTMENT RECOVERY",
     },
     {
       icon: <CreditCard className="w-6 h-6 mx-auto mb-1" />,
-      value: "45 Lakh",
+      value: "50 Lakh",
       title: "TOTAL INVESTMENT",
     },
   ];

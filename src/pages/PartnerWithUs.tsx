@@ -3,8 +3,6 @@ import { useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
-import HeroSection from '../components/HeroSection';
-
 import CelebrityPromotion from '../components/CelebrityPromotion';
 import IllustrationSection from '../components/IllustrationSection';
 import FranchiseComparison from '../components/FranchiseComparison';
@@ -85,60 +83,12 @@ const PartnerWithUs = () => {
     <div className="min-h-screen bg-white">
       
       <Navbar />
-      <motion.div style={{ opacity }} className="relative z-10">
-        <HeroSection />
-      </motion.div>
 
-      <CelebrityPromotion />
-      <IllustrationSection />
-      <FranchiseComparison />
+      {/* <CelebrityPromotion />
+      <IllustrationSection /> */}
       <FranchiseProposition />
       <HowWeWork />
-      <RevenueCalculator />
-
-      {/* Benefits Section */}
-      <section ref={ref} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-playfair text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-              Why Partner With Us?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join our network of successful partners and experience the benefits of working with industry leaders
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-lg hover-lift group border border-gray-100"
-              >
-                <div className="w-16 h-16 bg-ace-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-ace-gold group-hover:text-white transition-all duration-300 text-ace-gold">
-                  {benefit.icon}
-                </div>
-                <h3 className="font-playfair text-xl font-bold text-ace-dark mb-4">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  {benefit.description}
-                </p>
-                <div className="text-ace-gold font-semibold text-sm">
-                  {benefit.stats}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FranchiseComparison />
 
       {/* Process Section */}
       <section className="py-20 bg-suite-bg/20">
@@ -195,66 +145,51 @@ const PartnerWithUs = () => {
         </div>
       </section>
 
-      <FranchiseComparison />
-      {/* Requirements Section */}
-      {/* <section className="py-20 bg-white">
+      <RevenueCalculator />
+      
+      {/* Benefits Section */}
+      <section ref={ref} className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-ace-dark mb-6">
-                Partnership Requirements
-              </h2>
-              <p className="text-lg text-gray-700 mb-8">
-                To ensure the highest quality standards for our guests, we have specific requirements for partner properties.
-              </p>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-playfair text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
+              Why Partner With Us?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Join our network of successful partners and experience the benefits of working with industry leaders
+            </p>
+          </motion.div>
 
-              <div className="space-y-4">
-                {requirements.map((requirement, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                    className="flex items-center space-x-3"
-                  >
-                    <CheckCircle className="w-6 h-6 text-ace-gold flex-shrink-0" />
-                    <span className="text-gray-700">{requirement}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=700&fit=crop"
-                alt="Luxury Property"
-                className="rounded-3xl shadow-2xl"
-              />
-              
-              <div className="absolute -top-4 -right-4 bg-ace-gold text-white p-6 rounded-2xl shadow-xl">
-                <Star className="w-8 h-8 mb-2" />
-                <div className="text-2xl font-bold">Premium</div>
-                <div className="text-sm opacity-90">Standards</div>
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                <DollarSign className="w-8 h-8 text-ace-gold mb-2" />
-                <div className="text-2xl font-bold text-ace-dark">40%</div>
-                <div className="text-sm text-gray-600">Revenue Growth</div>
-              </div>
-            </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="bg-white rounded-3xl p-8 shadow-lg hover-lift group border border-gray-100"
+              >
+                <div className="w-16 h-16 bg-ace-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-ace-gold group-hover:text-white transition-all duration-300 text-ace-gold">
+                  {benefit.icon}
+                </div>
+                <h3 className="font-playfair text-xl font-bold text-ace-dark mb-4">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {benefit.description}
+                </p>
+                <div className="text-ace-gold font-semibold text-sm">
+                  {benefit.stats}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-ace-dark text-white relative overflow-hidden">
