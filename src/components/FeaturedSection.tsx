@@ -22,7 +22,7 @@ const features = [
   {
     title: "Break The Rules",
     description:
-      "No nonsense hotel rules. Food delivery? Always welcome.\nFlexible breakfast timings\nEasy check-in, late checkout (Subject to availability).",
+      "No nonsense hotel rules! \nFood delivery? Always welcome.\nFlexible breakfast timings. \nEasy check-in, late checkout (Subject to availability).",
     image: hotelServices,
   },
 ];
