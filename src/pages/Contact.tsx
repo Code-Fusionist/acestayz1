@@ -18,6 +18,29 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setSubmitted(true);
+    
+    // Reset form after showing success message
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      setSubmitted(false);
+    }, 3000);
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -25,40 +48,31 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("https://acestayz-backend.vercel.app/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: ''
-        });
-        setTimeout(() => setSubmitted(false), 10000);
-      } else {
-        const errorData = await response.json();
-        alert(errorData.message || "Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert("Network error. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+  const contactInfo = [
+    {
+      icon: <Phone size={24} />,
+      title: "Phone",
+      details: "+91 9403890926",
+      description: "Available 24/7 for your convenience"
+    },
+    {
+      icon: <Mail size={24} />,
+      title: "Email",
+      details: "info@acestayz.com",
+      description: "We'll respond within 24 hours"
+    },
+    {
+      icon: <MapPin size={24} />,
+      title: "Locations",
+      description: "Premium stays across major cities"
+    },
+    {
+      icon: <Clock size={24} />,
+      title: "Support Hours",
+      details: "24/7 Available",
+      description: "Round-the-clock assistance"
     }
-  };
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -188,7 +202,7 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number *
+                        Phone Number
                       </label>
                       <input
                         type="tel"
