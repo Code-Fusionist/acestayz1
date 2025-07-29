@@ -4,9 +4,9 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import hotelInterior from '../assets/hotel-interior-1.jpg';
-import hotelRoom from '../assets/hotel-room-premium.jpg';
-import hotelServices from '../assets/hotel-services.jpg';
+import hotelInterior from '/specialservice/2.png';
+import hotelRoom from '/specialservice/1.png';
+import hotelServices from '/specialservice/3.png';
 
 const features = [
   {

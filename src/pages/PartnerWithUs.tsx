@@ -155,46 +155,6 @@ const PartnerWithUs = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section ref={ref} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-playfair text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-              Why Partner With Us?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join our network of successful partners and experience the benefits of working with industry leaders
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-lg hover-lift group border border-gray-100"
-              >
-                <div className="w-16 h-16 bg-ace-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-ace-gold group-hover:text-white transition-all duration-300 text-ace-gold">
-                  {benefit.icon}
-                </div>
-                <h3 className="font-playfair text-xl font-bold text-ace-dark mb-4">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{benefit.description}</p>
-                <div className="text-ace-gold font-semibold text-sm">{benefit.stats}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-ace-dark text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-ace-gold/10 rounded-full -translate-y-32 translate-x-32" />
@@ -233,7 +193,7 @@ const PartnerWithUs = () => {
         </div>
       </section>
 
-      <RevenueCalculator />
+      {/* <RevenueCalculator /> */}
       <Footer />
       <WhatsAppButton />
       <FloatingArrow />
