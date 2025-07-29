@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "917011315545"; // Replace with your WhatsApp number
+    const phoneNumber = "919403890926";
     const message = "Hi! I'm interested in learning more about Ace Stayz.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

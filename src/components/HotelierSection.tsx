@@ -8,7 +8,7 @@ const HotelierSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-white pt-36 pb-0 px-4 md:px-16"
+      className="w-full bg-ace-gold pt-36 pb-0 px-4 md:px-16"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left: Image */}
@@ -21,7 +21,7 @@ const HotelierSection = () => {
           <img
             src="Hotelier.svg"
             alt="Hotelier"
-            className="w-[300px] h-[300px] object-cover rounded-lg"
+            className="w-[300px] h-[300px] object-cover rounded-lg shadow-[0_8px_12px_-6px_rgba(0,0,0,0.15)]"
           />
         </motion.div>
 
@@ -32,7 +32,7 @@ const HotelierSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-ace-dark mb-4 font-poppins">
-            Become a <span className="text-ace-gold">Hotelier</span>
+            Become a <span className="text-white">Hotelier</span>
           </h2>
           <p className="text-lg text-gray-700 font-poppins">
             Let your property earn for you. Join the premium hospitality revolution.
