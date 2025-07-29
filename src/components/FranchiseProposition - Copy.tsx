@@ -69,7 +69,7 @@ const FranchiseProposition = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="font-poppins text-xl sm:text-2xl lg:text-3xl font-bold text-ace-dark mb-6">
-              Our Franchise Proposition
+              Franchise Model Highlights
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

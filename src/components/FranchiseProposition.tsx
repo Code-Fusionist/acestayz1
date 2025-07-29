@@ -46,7 +46,7 @@ const FranchiseProposition = () => {
     <section className="py-12 px-4">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
-          Our Franchise <span className="text-ace-gold block">Proposition</span>
+          Franchise Model<span className="text-ace-gold block">Highlights</span>
         </h1>
       </div>
 

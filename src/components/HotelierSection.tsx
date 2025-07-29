@@ -35,7 +35,7 @@ const HotelierSection = () => {
             Become a <span className="text-white">Hotelier</span>
           </h2>
           <p className="text-lg text-gray-700 font-poppins">
-            Let your property earn for you. Join the premium hospitality revolution.
+            Start your hospitality business with Ace Stayz – a trusted franchise opportunity backed by industry experts and complete hand-holding support.
           </p>
         </motion.div>
       </div>

@@ -10,50 +10,75 @@ const FranchiseComparison = () => {
   const comparisonData = [
     {
       title: "Recession Proof",
-      subtitle: "High - Business will have Demand even in Recession",
+      subtitle: "Consistent demand even in downturns",
       hotel: true,
-      food: false,
+      retail: false,
       gym: false,
-      salon: true
+      salon: true,
     },
     {
-      title: "Inventory",
-      subtitle: "Low - Minimal Chances of Losses",
+      title: "Low Inventory Risk",
+      subtitle: "Minimal losses from unsold stock",
       hotel: true,
-      food: false,
-      gym: true,
-      salon: false
+      retail: true,
+      gym: false,
+      salon: false,
     },
     {
-      title: "Online to Offline Service",
-      subtitle: "High - Home Service/Delivery Possible",
+      title: "High ROI Potential",
+      subtitle: "Quick break-even with strong margins",
       hotel: true,
-      food: true,
+      retail: false,
       gym: false,
-      salon: false
+      salon: false,
     },
     {
-      title: "Automation",
-      subtitle: "High - Less Dependency on Trained Staff",
+      title: "Online + Offline Revenue",
+      subtitle: "Bookings via OTA & walk-ins",
       hotel: true,
-      food: false,
+      retail: false,
       gym: false,
-      salon: false
+      salon: false,
     },
     {
-      title: "Competitive",
-      subtitle: "Low Intensity - High Margins",
+      title: "Automation Ready",
+      subtitle: "Self-check-in & digital operations possible",
       hotel: true,
-      food: false,
+      retail: false,
       gym: false,
-      salon: false
-    }
+      salon: false,
+    },
+    {
+      title: "Flexible Staffing",
+      subtitle: "Less dependency on skilled manpower",
+      hotel: true,
+      retail: false,
+      gym: false,
+      salon: false,
+    },
+    {
+      title: "Asset-Based Model",
+      subtitle: "Tangible property = long-term wealth",
+      hotel: true,
+      retail: false,
+      gym: false,
+      salon: true,
+    },
+    {
+      title: "Competitive Intensity",
+      subtitle: "Fewer players, more demand",
+      hotel: true,
+      retail: false,
+      gym: false,
+      salon: false,
+    },
   ];
+
 
   const categories = [
     { name: "HOTEL", score: "5/5" },
-    { name: "FOOD", score: "1/5" },
-    { name: "GYM", score: "1/5" },
+    { name: "RETAIL", score: "1/5" },
+    { name: "GYM", score: "0/5" },
     { name: "SALON", score: "1/5" }
   ];
 
@@ -67,7 +92,7 @@ const FranchiseComparison = () => {
           className="text-center mb-12"
         >
           <h2 className="font-poppins text-xl md:text-2xl lg:text-3xl font-bold text-ace-dark mb-4">
-            Why Hotel Is India's Most Profitable Franchise Business
+            Why Invest in The Booming Hotel Industry?
           </h2>
         </motion.div>
 
@@ -115,7 +140,7 @@ const FranchiseComparison = () => {
                       )}
                     </td>
                     <td className="px-2 md:px-4 lg:px-6 py-2 md:py-4 text-center">
-                      {item.food ? (
+                      {item.retail ? (
                         <Check className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-green-500 mx-auto" />
                       ) : (
                         <X className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-red-500 mx-auto" />

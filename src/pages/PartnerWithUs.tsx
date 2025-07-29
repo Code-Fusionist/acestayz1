@@ -11,15 +11,7 @@ import HowWeWork from '../components/HowWeWork';
 import RevenueCalculator from '../components/RevenueCalculator';
 import HotelierSection from '@/components/HotelierSection';
 import FloatingArrow from '@/components/FloatingArrow';
-import {
-  TrendingUp,
-  Users,
-  Award,
-  Handshake,
-  CheckCircle,
-  Star,
-  DollarSign,
-} from 'lucide-react';
+import { TrendingUp, Users, Award, Handshake, MapPin, Rocket, } from 'lucide-react';
 
 const PartnerWithUs = () => {
   const ref = useRef(null);
@@ -65,23 +57,23 @@ const PartnerWithUs = () => {
   const process = [
     {
       title: 'Initial Consultation',
-      description: 'We assess your property and discuss partnership opportunities',
+      description: 'We guide you with complete knowledge of our franchise program.',
       icon: <Users className="w-6 h-6" />,
     },
     {
-      title: 'Property Evaluation',
-      description: 'Our team conducts a thorough evaluation of your property',
-      icon: <CheckCircle className="w-6 h-6" />,
+      title: 'Real Estate Support',
+      description: 'Assistance in finding ideal property for your hotel.',
+      icon: <MapPin className="w-6 h-6" />,
+    },
+    {
+      title: 'Hotel Launch',
+      description: 'From setup to opening, we manage it all.',
+      icon: <Rocket className="w-6 h-6" />,
     },
     {
       title: 'Agreement & Setup',
-      description: 'Sign partnership agreement and begin property setup',
+      description: 'Sign the partnership agreement and begin property setup.',
       icon: <Handshake className="w-6 h-6" />,
-    },
-    {
-      title: 'Launch & Optimize',
-      description: 'Go live and continuously optimize for maximum revenue',
-      icon: <TrendingUp className="w-6 h-6" />,
     },
   ];
 
@@ -136,11 +128,10 @@ const PartnerWithUs = () => {
                   onMouseEnter={() => setActiveStep(index)}
                 >
                   <div
-                    className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 ${
-                      index <= activeStep
+                    className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 ${index <= activeStep
                         ? 'bg-ace-gold text-white'
                         : 'bg-white border-2 border-ace-gold text-ace-gold'
-                    }`}
+                      }`}
                   >
                     {step.icon}
                   </div>

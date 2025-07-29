@@ -11,41 +11,42 @@ const HowWeWork = () => {
   const steps = [
     {
       id: 0,
-      title: "Revenue Growth",
-      subtitle: "Revenue Growth",
+      title: "Revenue Management",
+      subtitle: "Revenue Management",
       description:
-        "Maximize your property revenue with our proven hospitality strategies and guest acquisition channels.",
+        "We will be doing strategic pricing through OTA, online & offline sales channels to maximize revenue.",
       icon: <Lightbulb className="w-8 h-8" />,
       color: "bg-red-500",
     },
     {
       id: 1,
-      title: "Guest Management",
-      subtitle: "Guest Management",
+      title: "Design & Interiors",
+      subtitle: "Design & Interiors",
       description:
-        "Professional guest relations and 24/7 support to ensure exceptional experiences and repeat bookings.",
+        "We are building design-led hotels with impactful interiors that attract guests and boost bookings.",
       icon: <UserRound className="w-8 h-8" />,
       color: "bg-gray-700",
     },
     {
       id: 2,
-      title: "Brand Excellence",
-      subtitle: "Brand Excellence",
+      title: "Standard Operations Plan",
+      subtitle: "Standard Operations Plan",
       description:
-        "Maintain premium standards with our quality assurance programs and brand guidelines.",
+        "We provide a proven SOP model ensuring smooth day-to-day operations and consistent guest experience.",
       icon: <Star className="w-8 h-8" />,
       color: "bg-red-500",
     },
     {
       id: 3,
-      title: "Partnership Support",
-      subtitle: "Partnership Support",
+      title: "Hiring Support",
+      subtitle: "Hiring Support",
       description:
-        "Dedicated partnership managers to guide you through every step of our collaboration.",
+        "We assist in hiring skilled staff with defined roles to ensure professional and efficient service.",
       icon: <Handshake className="w-8 h-8" />,
       color: "bg-gray-700",
     },
   ];
+
 
 
   return (
