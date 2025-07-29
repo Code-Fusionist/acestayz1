@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FloatingArrow from '../components/FloatingArrow';
 
 import { MapPin, Star, Users, Wifi, Car, Coffee } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -249,6 +250,7 @@ const Destinations = () => {
 
       <Footer />
       <WhatsAppButton />
+      <FloatingArrow />
     </div>
   );
 };

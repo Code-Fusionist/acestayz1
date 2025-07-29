@@ -1,4 +1,4 @@
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -10,6 +10,7 @@ import FranchiseProposition from '../components/FranchiseProposition';
 import HowWeWork from '../components/HowWeWork';
 import RevenueCalculator from '../components/RevenueCalculator';
 import HotelierSection from '@/components/HotelierSection';
+import FloatingArrow from '@/components/FloatingArrow';
 import {
   TrendingUp,
   Users,
@@ -27,8 +28,6 @@ const PartnerWithUs = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const isProcessInView = useInView(processRef, { once: true, margin: '-100px' });
 
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   const [activeStep, setActiveStep] = useState(0);
 
@@ -237,6 +236,7 @@ const PartnerWithUs = () => {
       <RevenueCalculator />
       <Footer />
       <WhatsAppButton />
+      <FloatingArrow />
     </div>
   );
 };

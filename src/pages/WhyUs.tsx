@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FloatingArrow from '../components/FloatingArrow';
 
 import TestimonialsSection from '../components/TestimonialsSection';
 import { Shield, Clock, Star, HeadphonesIcon, Wifi, Car, Coffee, Dumbbell } from 'lucide-react';
@@ -283,6 +284,7 @@ const WhyUs = () => {
 
       <Footer />
       <WhatsAppButton />
+      <FloatingArrow />
     </div>
   );
 };

@@ -12,7 +12,7 @@ import PartnersSection from '../components/PartnersSection';
 // import PartnershipSection from '../components/PartnershipSection';
 import { useNavigate } from 'react-router-dom';
 import WhatsAppButton from '../components/WhatsAppButton';
-import ScrollToTop from '@/components/ScrollToTop';
+import FloatingArrow from '@/components/FloatingArrow';
 import Footer from '../components/Footer';
 import PressCarousel from '../components/PressCarousel';
 
@@ -51,7 +51,12 @@ const Index = () => {
         <FeaturedSection />
         <PressCarousel />
         <DestinationSection />
-        <FeaturedRoomsSection />
+        <FeaturedRoomsSection 
+          title="Suite Dreams Begin Here"
+          subtitle="Discover our premium collection of luxury accommodations tailored for your perfect stay"
+          backgroundColor="bg-white"
+          textColor="text-ace-dark"
+        />
         {/* <ServicesSection /> */}
         <PartnersSection />
         {/* <PartnershipSection onContactClick={() => setShowContactForm(true)} /> */}
@@ -59,7 +64,7 @@ const Index = () => {
 
       <Footer />
       <WhatsAppButton />
-      <ScrollToTop />
+      <FloatingArrow />
     </div>
   );
 };

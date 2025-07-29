@@ -1,46 +1,8 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
-import * as THREE from 'three';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
-
-function FooterPoints() {
-  const ref = useRef<THREE.Points>(null);
-  
-  const sphere = new Float32Array(1000 * 3);
-  for (let i = 0; i < 1000; i++) {
-    const theta = THREE.MathUtils.randFloatSpread(360);
-    const phi = THREE.MathUtils.randFloatSpread(360);
-    const x = Math.sin(theta) * Math.cos(phi) * Math.random() * 5;
-    const y = Math.sin(theta) * Math.sin(phi) * Math.random() * 5;
-    const z = Math.cos(theta) * Math.random() * 5;
-    
-    sphere.set([x, y, z], i * 3);
-  }
-
-  useFrame((state) => {
-    if (ref.current) {
-      ref.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.1) * 0.2;
-      ref.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.15) * 0.1;
-    }
-  });
-
-  return (
-    <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
-      <PointMaterial
-        transparent
-        color="#FFD700"
-        size={0.02}
-        sizeAttenuation={true}
-        depthWrite={false}
-        opacity={0.6}
-      />
-    </Points>
-  );
-}
 
 const Footer = () => {
   const ref = useRef(null);
@@ -77,11 +39,11 @@ const Footer = () => {
 
   return (
     <footer ref={ref} className="relative bg-ace-dark text-white overflow-hidden">
-      {/* Three.js Background */}
-      <div className="absolute inset-0 opacity-30">
-        <Canvas camera={{ position: [0, 0, 1] }}>
-          <FooterPoints />
-        </Canvas>
+      {/* Decorative Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-ace-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-ace-gold/10 rounded-full translate-x-1/2 translate-y-1/2" />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-ace-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
       </div>
 
       <div className="relative z-10">

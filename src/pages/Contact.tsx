@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FloatingArrow from '../components/FloatingArrow';
 
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
@@ -329,6 +330,7 @@ const Contact = () => {
 
       <Footer />
       <WhatsAppButton />
+      <FloatingArrow />
     </div>
   );
 };

@@ -4,8 +4,9 @@ import { useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import FloatingArrow from '../components/FloatingArrow';
 
-import PropertiesSection from '../components/PropertiesSection';
+import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
 import { Star, MapPin, Wifi, Car, Coffee, Dumbbell } from 'lucide-react';
 
 const YourStayz = () => {
@@ -114,7 +115,7 @@ const YourStayz = () => {
         </div>
       </section>
 
-      <PropertiesSection
+      <FeaturedRoomsSection 
         title="Featured Properties"
         subtitle="Handpicked accommodations that represent the best of our collection"
         backgroundColor="bg-gray-50"
@@ -123,6 +124,7 @@ const YourStayz = () => {
 
       <Footer />
       <WhatsAppButton />
+      <FloatingArrow />
     </div>
   );
 };
