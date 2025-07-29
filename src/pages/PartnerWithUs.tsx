@@ -155,44 +155,6 @@ const PartnerWithUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-ace-dark text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-ace-gold/10 rounded-full -translate-y-32 translate-x-32" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-ace-gold/10 rounded-full translate-y-24 -translate-x-24" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="font-playfair text-4xl lg:text-6xl font-bold mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Take the first step towards a successful partnership with Ace Stayz. Our team is ready to discuss how we can help transform your property.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-ace-gold text-ace-dark px-8 py-4 rounded-full text-lg font-bold hover:bg-white transition-colors duration-300 shadow-xl"
-              >
-                Contact Partnership Team
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-ace-gold text-ace-gold px-8 py-4 rounded-full text-lg font-medium hover:bg-ace-gold hover:text-ace-dark transition-all duration-300"
-              >
-                Schedule a Call
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* <RevenueCalculator /> */}
       <Footer />
       <WhatsAppButton />
