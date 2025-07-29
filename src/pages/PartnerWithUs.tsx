@@ -9,6 +9,7 @@ import FranchiseComparison from '../components/FranchiseComparison';
 import FranchiseProposition from '../components/FranchiseProposition';
 import HowWeWork from '../components/HowWeWork';
 import RevenueCalculator from '../components/RevenueCalculator';
+import HotelierSection from '@/components/HotelierSection';
 import {
   TrendingUp,
   Users,
@@ -92,6 +93,7 @@ const PartnerWithUs = () => {
       {/* Optional Promo Sections */}
       {/* <CelebrityPromotion />
       <IllustrationSection /> */}
+      <HotelierSection />
       <FranchiseProposition />
       <HowWeWork />
       <FranchiseComparison />

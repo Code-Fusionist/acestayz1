@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { AlignJustify, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -10,9 +10,11 @@ interface NavbarProps {
 const Navbar = ({ onContactClick }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDestinationsOpen, setIsDestinationsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const location = useLocation();
 
-  const destinations = ['Delhi', 'Gurugram', 'Jaipur', 'Noida', 'Mohali'];
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastScrollY = useRef<number>(0);
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -28,19 +30,51 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
     }
   };
 
+  // Scroll behavior: hide while scrolling, show after 1s of inactivity
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Only hide if user is scrolling down
+      if (currentScrollY > lastScrollY.current) {
+        setIsVisible(false);
+      }
+
+      // Reset timer
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+
+      // After 1s of scroll stop, show navbar again
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsVisible(true);
+      }, 500);
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
+  }, []);
+
   return (
     <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.3 }}
-      className="w-full bg-black backdrop-blur-sm text-white z-50"
+      className="fixed top-0 w-full bg-black backdrop-blur-sm text-white z-50 transition-opacity duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div className="flex-shrink-0 flex items-center" whileHover={{ scale: 1.05 }}>
             <Link to="/" className="flex items-center">
-              <h1 className="text-2xl text-ace-gold font-poppins">ACE STAYZ</h1>
+              <img
+                src="/logo.png" // Your logo image in public folder
+                alt="Ace Stayz Logo"
+                className="h-10 w-auto object-contain"
+              />
             </Link>
           </motion.div>
 
@@ -77,11 +111,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-white hover:text-ace-gold transition-all duration-300 group"
             >
-              {isMobileMenuOpen ? (
-                <X size={24} />
-              ) : (
-                <AlignJustify size={24} />
-              )}
+              {isMobileMenuOpen ? <X size={24} /> : <AlignJustify size={24} />}
             </button>
           </div>
         </div>
