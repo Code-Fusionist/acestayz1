@@ -48,23 +48,23 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '/your-stayz' },
-      { name: 'Why Choose Us', href: '/why-us' },
+      { name: 'About Us', href: '/contact' },
+      { name: 'Why Choose Us', href: '/contact' },
       { name: 'Partner With Us', href: '/partner-with-us' },
       { name: 'Contact Us', href: '/contact' },
     ],
     destinations: [
-      { name: 'Delhi', href: '/destinations' },
-      { name: 'Gurugram', href: '/destinations' },
-      { name: 'Jaipur', href: '/destinations' },
-      { name: 'Noida', href: '/destinations' },
-      { name: 'Mohali', href: '/destinations' },
+      { name: 'Delhi', href: '#' },
+      { name: 'Gurugram', href: '#' },
+      { name: 'Jaipur', href: '#' },
+      { name: 'Noida', href: '#' },
+      { name: 'Mohali', href: '#' },
     ],
     support: [
       { name: 'Customer Support', href: '/contact' },
       { name: 'Privacy Policy', href: '#' },
       { name: 'Terms of Service', href: '#' },
-      { name: 'FAQ', href: '#' },
+      { name: 'Refund Policy', href: '#' },
     ]
   };
 
@@ -102,10 +102,10 @@ const Footer = () => {
               >
                 <div className="flex items-center mb-4">
                   <img 
-                    src="https://acestayz.com/new-img/ace.png" 
+                    src="/ACE_STAYZ.png" 
                     alt="Ace Stayz Logo" 
                     className="h-16 w-auto"
-                  />
+                  />  
                 </div>
                 <p className="text-white/80 mb-6 leading-relaxed font-poppins">
                   Where luxury meets comfort. Experience unparalleled hospitality 
@@ -121,8 +121,8 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone size={16} className="text-ace-gold" />
-                    <a href="tel:+917011315545" className="text-sm font-poppins hover:text-ace-gold transition-colors">
-                      +91 7011315545
+                    <a href="tel:+919403890926" className="text-sm font-poppins hover:text-ace-gold transition-colors">
+                      +91 9403890926
                     </a>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ const Footer = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-white/60 text-sm font-poppins">
-                © 2024 Ace Stayz Pvt Ltd. All rights reserved.
+                © 2025 Ace Stayz Pvt Ltd. All rights reserved.
               </p>
               <div className="flex space-x-8">
                 <Link
@@ -270,7 +270,7 @@ const Footer = () => {
                   to="#"
                   className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
                 >
-                  Cookie Policy
+                  Refund Policy
                 </Link>
               </div>
             </div>

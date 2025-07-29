@@ -71,7 +71,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
           <motion.div className="flex-shrink-0 flex items-center" whileHover={{ scale: 1.05 }}>
             <Link to="/" className="flex items-center">
               <img
-                src="/logo.png" // Your logo image in public folder
+                src="/ACE_STAYZ.png" // Your logo image in public folder
                 alt="Ace Stayz Logo"
                 className="h-10 w-auto object-contain"
               />

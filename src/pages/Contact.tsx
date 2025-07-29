@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
@@ -52,7 +51,7 @@ const Contact = () => {
     {
       icon: <Phone size={24} />,
       title: "Phone",
-      details: "+91 7011315545",
+      details: "+91 9403890926",
       description: "Available 24/7 for your convenience"
     },
     {
