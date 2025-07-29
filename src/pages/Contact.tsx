@@ -60,32 +60,6 @@ const Contact = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <Phone size={24} />,
-      title: "Phone",
-      details: "+91 9403890926",
-      description: "Available 24/7 for your convenience"
-    },
-    {
-      icon: <Mail size={24} />,
-      title: "Email",
-      details: "info@acestayz.com",
-      description: "We'll respond within 24 hours"
-    },
-    {
-      icon: <MapPin size={24} />,
-      title: "Locations",
-      description: "Premium stays across major cities"
-    },
-    {
-      icon: <Clock size={24} />,
-      title: "Support Hours",
-      details: "24/7 Available",
-      description: "Round-the-clock assistance"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       

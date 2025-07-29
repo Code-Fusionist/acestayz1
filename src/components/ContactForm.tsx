@@ -1,13 +1,13 @@
-
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, Phone, Mail, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
+import FloatingArrow from '../components/FloatingArrow';
 
-interface ContactFormProps {
-  onClose: () => void;
-}
+import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
-const ContactForm = ({ onClose }: ContactFormProps) => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,30 +18,6 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    
-    // Reset form and close after showing success message
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-      setSubmitted(false);
-      onClose();
-    }, 2000);
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -49,111 +25,156 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
     });
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://acestayz-backend.vercel.app/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+        setTimeout(() => setSubmitted(false), 10000);
+      } else {
+        const errorData = await response.json();
+        alert(errorData.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const contactInfo = [
+    {
+      icon: <Phone size={24} />,
+      title: "Phone",
+      details: "+91 9403890926",
+      description: "Available 24/7 for your convenience"
+    },
+    {
+      icon: <Mail size={24} />,
+      title: "Email",
+      details: "info@acestayz.com",
+      description: "We'll respond within 24 hours"
+    },
+    {
+      icon: <MapPin size={24} />,
+      title: "Locations",
+      description: "Premium stays across major cities"
+    },
+    {
+      icon: <Clock size={24} />,
+      title: "Support Hours",
+      details: "24/7 Available",
+      description: "Round-the-clock assistance"
+    }
+  ];
+
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <button
-            onClick={onClose}
-            className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors z-10"
+    <div className="min-h-screen bg-white">
+      
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-ace-gold/10 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <X size={24} />
-          </button>
+            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
+              Get in
+              <span className="text-ace-gold block">Touch</span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ready to experience luxury hospitality? We're here to help you 
+              plan your perfect stay and answer any questions you may have.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-          <div className="grid lg:grid-cols-2 min-h-[600px]">
-            {/* Left Side - Contact Info */}
-            <div className="bg-ace-dark text-white p-8 lg:p-12 rounded-l-3xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-ace-gold/20 rounded-full -translate-y-16 translate-x-16" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-ace-gold/10 rounded-full translate-y-12 -translate-x-12" />
-              
-              <div className="relative z-10">
-                <h2 className="font-playfair text-3xl lg:text-4xl font-bold mb-6">
-                  Let's Talk
-                </h2>
-                <p className="text-white/90 mb-8 text-lg">
-                  Ready to experience luxury hospitality? Get in touch with us and let's make your stay memorable.
+      {/* Contact Info Cards */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            {contactInfo.map((info, index) => (
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-3xl p-8 text-center shadow-lg hover-lift"
+              >
+                <div className="w-16 h-16 bg-ace-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-ace-gold">
+                  {info.icon}
+                </div>
+                <h3 className="font-playfair text-xl font-bold text-ace-dark mb-2">
+                  {info.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {info.description}
                 </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-ace-gold/20 rounded-full flex items-center justify-center">
-                      <Phone size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Phone</h4>
-                      <p className="text-white/80">+91 7011315545</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-ace-gold/20 rounded-full flex items-center justify-center">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="text-white/80">info@acestayz.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-ace-gold/20 rounded-full flex items-center justify-center">
-                      <MapPin size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Locations</h4>
-                      <p className="text-white/80">Delhi | Gurugram | Jaipur | Noida</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-12 p-6 bg-ace-gold/10 rounded-2xl">
-                  <h4 className="font-playfair text-xl font-bold mb-2">
-                    24/7 Support
-                  </h4>
-                  <p className="text-white/80">
-                    Our dedicated team is available round the clock to assist you with your hospitality needs.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side - Contact Form */}
-            <div className="p-8 lg:p-12">
+      {/* Contact Form Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
+            >
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center h-full text-center"
+                  className="text-center py-12"
                 >
-                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Send className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="font-playfair text-2xl font-bold text-ace-dark mb-4">
-                    Message Sent Successfully!
+                  <h3 className="font-playfair text-3xl font-bold text-ace-dark mb-4">
+                    Message Sent!
                   </h3>
                   <p className="text-gray-600">
-                    Thank you for contacting us. We'll get back to you within 24 hours.
+                    Thank you for contacting us. We'll get back to you.
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <h3 className="font-playfair text-2xl lg:text-3xl font-bold text-ace-dark mb-2">
+                    <h2 className="font-playfair text-3xl font-bold text-ace-dark mb-2">
                       Send us a Message
-                    </h3>
-                    <p className="text-gray-600">
+                    </h2>
+                    <p className="text-gray-600 mb-8">
                       Fill out the form below and we'll get back to you as soon as possible.
                     </p>
                   </div>
@@ -193,7 +214,7 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
+                        Phone Number *
                       </label>
                       <input
                         type="tel"
@@ -218,7 +239,7 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
                       >
                         <option value="">Select a subject</option>
                         <option value="booking">Room Booking</option>
-                        <option value="partnership">Partnership Inquiry</option>
+                        <option value="partnership">Franchise Partnership</option>
                         <option value="support">Customer Support</option>
                         <option value="other">Other</option>
                       </select>
@@ -227,12 +248,11 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
+                      Message
                     </label>
                     <textarea
                       name="message"
-                      required
-                      rows={5}
+                      rows={6}
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ace-gold focus:border-ace-gold transition-colors resize-none"
@@ -258,12 +278,73 @@ const ContactForm = ({ onClose }: ContactFormProps) => {
                   </motion.button>
                 </form>
               )}
-            </div>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="space-y-8"
+            >
+              <div>
+                <h2 className="font-playfair text-4xl font-bold text-ace-dark mb-6">
+                  Let's Start a Conversation
+                </h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  We're here to help you with all your hospitality needs. 
+                  Whether you're planning a stay, interested in partnership, 
+                  or have questions about our services, we'd love to hear from you.
+                </p>
+              </div>
+
+              <div className="bg-ace-dark text-white rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-ace-gold/20 rounded-full -translate-y-16 translate-x-16" />
+                <div className="relative z-10">
+                  <h3 className="font-playfair text-2xl font-bold mb-4">
+                    Why Choose Ace Stayz?
+                  </h3>
+                  <ul className="space-y-3 text-white/90">
+                    <li className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <span>24/7 premium customer support</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <span>Luxury accommodations in prime locations</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <span>Personalized service and attention to detail</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <span>Seamless booking and check-in experience</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-beyond-bg/20 rounded-3xl p-8">
+                <h3 className="font-playfair text-2xl font-bold text-ace-dark mb-4">
+                  Quick Response Promise
+                </h3>
+                <p className="text-gray-700">
+                  We understand that your time is valuable. That's why we guarantee 
+                  a response to all inquiries within 24 hours. For urgent matters, 
+                  don't hesitate to call us directly.
+                </p>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppButton />
+      <FloatingArrow />
+    </div>
   );
 };
 
-export default ContactForm;
+export default Contact;
