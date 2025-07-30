@@ -2,51 +2,39 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin } from 'lucide-react';
 
-interface FeaturedRoomsSectionProps {
-  title: string;
-  subtitle: string;
-  backgroundColor?: string;
-  textColor?: string;
-}
-
-const FeaturedRoomsSection = ({
-  title,
-  subtitle,
-  backgroundColor = 'bg-white',
-  textColor = 'text-ace-dark'
-}: FeaturedRoomsSectionProps) => {
+const FeaturedRoomsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const properties = [
     {
-      name: 'Royal Executive Suite',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
-      location: 'Connaught Place, Delhi',
-      bookingLink: 'tel:+919403890926'
+      name: 'ACE STAYZ',
+      image: '/media/ani.jpg',
+      location: 'Vasant Kunj, Delhi',
+      bookingLink: 'https://www.zotel.ai/website/234'
     },
     {
-      name: 'Luxury Deluxe Room',
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop',
-      location: 'Cyber City, Gurugram',
-      bookingLink: 'tel:+919403890926'
+      name: 'ACE STAYZ',
+      image: '/media/tribune.png',
+      location: 'DLF Phase-1, Gurugram',
+      bookingLink: 'https://www.zotel.ai/website/468'
     },
     {
-      name: 'Premium Studio',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop',
+      name: 'ACE STAYZ',
+      image: '/media/bus-Stan.png',
       location: 'Pink City, Jaipur',
-      bookingLink: 'tel:+919403890926'
+      bookingLink: 'https://www.zotel.ai/website/333'
     },
     {
-      name: 'Heritage Villa',
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-      location: 'Sector 18, Noida',
-      bookingLink: 'tel:+919403890926'
+      name: 'ACE STAYZ',
+      image: '/media/Nationtv.png',
+      location: 'Sector 70, Noida',
+      bookingLink: 'https://www.zotel.ai/website/469'
     }
   ];
 
   return (
-    <section className={`py-20 lg:py-32 ${backgroundColor}`}>
+    <section className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -55,12 +43,10 @@ const FeaturedRoomsSection = ({
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className={`font-poppins text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${textColor}`}>
-            {title}
+          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
+            Suite Dreams
+            <span className="text-ace-gold block mt-2">Begins Here</span>
           </h2>
-          <p className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-poppins ${textColor === 'text-white' ? 'text-white/90' : 'text-gray-600'}`}>
-            {subtitle}
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -109,7 +95,12 @@ const PropertyCard = ({
         <span className="font-poppins">{property.location}</span>
       </div>
 
-      <a href={property.bookingLink} className="block">
+      <a
+        href={property.bookingLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

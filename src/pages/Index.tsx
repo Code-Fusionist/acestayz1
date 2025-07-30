@@ -51,12 +51,7 @@ const Index = () => {
         <FeaturedSection />
         <PressCarousel />
         <DestinationSection />
-        <FeaturedRoomsSection 
-          title="Suite Dreams Begin Here"
-          subtitle="Discover our premium collection of luxury accommodations tailored for your perfect stay"
-          backgroundColor="bg-white"
-          textColor="text-ace-dark"
-        />
+        <FeaturedRoomsSection />
         {/* <ServicesSection /> */}
         <PartnersSection />
         {/* <PartnershipSection onContactClick={() => setShowContactForm(true)} /> */}

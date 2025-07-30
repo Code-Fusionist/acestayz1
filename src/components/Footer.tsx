@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -31,10 +30,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Instagram size={20} />, href: '#', label: 'Instagram' },
-    { icon: <Facebook size={20} />, href: '#', label: 'Facebook' },
-    { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
-    { icon: <Linkedin size={20} />, href: '#', label: 'LinkedIn' },
+    { icon: <Instagram size={20} />, href: 'https://www.instagram.com/acestayz', label: 'Instagram' },
+    { icon: <Facebook size={20} />, href: 'https://www.facebook.com/acestayz', label: 'Facebook' },
+    // { icon: <Twitter size={20} />, href: 'https://www.twitter.com/acestayz', label: 'Twitter' },
+    { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/company/acestayz', label: 'LinkedIn' },
   ];
 
   return (
@@ -63,17 +62,17 @@ const Footer = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <div className="flex items-center mb-4">
-                  <img 
-                    src="/ACE_STAYZ.png" 
-                    alt="Ace Stayz Logo" 
+                  <img
+                    src="/ACE_STAYZ.png"
+                    alt="Ace Stayz Logo"
                     className="h-16 w-auto"
-                  />  
+                  />
                 </div>
                 <p className="text-white/80 mb-6 leading-relaxed font-poppins">
-                  Where luxury meets comfort. Experience unparalleled hospitality 
+                  Where luxury meets comfort. Experience unparalleled hospitality
                   at our premium stays across India's most vibrant cities.
                 </p>
-                
+
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Mail size={16} className="text-ace-gold" />
@@ -98,9 +97,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">
-                  Company
-                </h4>
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">Company</h4>
                 <ul className="space-y-3">
                   {footerLinks.company.map((link, index) => (
                     <motion.li
@@ -109,10 +106,7 @@ const Footer = () => {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                     >
-                      <Link
-                        to={link.href}
-                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
-                      >
+                      <Link to={link.href} className="text-white/80 hover:text-ace-gold text-sm font-poppins">
                         {link.name}
                       </Link>
                     </motion.li>
@@ -128,9 +122,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">
-                  Destinations
-                </h4>
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">Destinations</h4>
                 <ul className="space-y-3">
                   {footerLinks.destinations.map((link, index) => (
                     <motion.li
@@ -139,10 +131,7 @@ const Footer = () => {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     >
-                      <Link
-                        to={link.href}
-                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
-                      >
+                      <Link to={link.href} className="text-white/80 hover:text-ace-gold text-sm font-poppins">
                         {link.name}
                       </Link>
                     </motion.li>
@@ -158,9 +147,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">
-                  Support
-                </h4>
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">Support</h4>
                 <ul className="space-y-3 mb-8">
                   {footerLinks.support.map((link, index) => (
                     <motion.li
@@ -169,12 +156,14 @@ const Footer = () => {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                     >
-                      <Link
-                        to={link.href}
-                        className="text-white/80 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/80 hover:text-ace-gold text-sm font-poppins"
                       >
                         {link.name}
-                      </Link>
+                      </a>
                     </motion.li>
                   ))}
                 </ul>
@@ -186,6 +175,8 @@ const Footer = () => {
                       <motion.a
                         key={social.label}
                         href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
@@ -216,24 +207,9 @@ const Footer = () => {
                 © 2025 Ace Stayz Pvt Ltd. All rights reserved.
               </p>
               <div className="flex space-x-8">
-                <Link
-                  to="#"
-                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  to="#"
-                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
-                >
-                  Terms of Service
-                </Link>
-                <Link
-                  to="#"
-                  className="text-white/60 hover:text-ace-gold transition-colors duration-200 text-sm font-poppins"
-                >
-                  Refund Policy
-                </Link>
+                <a href="#" className="text-white/60 hover:text-ace-gold text-sm font-poppins">Privacy Policy</a>
+                <a href="#" className="text-white/60 hover:text-ace-gold text-sm font-poppins">Terms of Service</a>
+                <a href="#" className="text-white/60 hover:text-ace-gold text-sm font-poppins">Refund Policy</a>
               </div>
             </div>
           </div>
