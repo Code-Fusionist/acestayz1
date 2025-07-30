@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Star, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -31,48 +31,24 @@ const FeaturedRoomsSection = ({
       name: 'Royal Executive Suite',
       image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
       location: 'Connaught Place, Delhi',
-      rating: 4.9,
-      price: '₹8,999',
       bookingLink: 'tel:+919403890926'
     },
     {
       name: 'Luxury Deluxe Room',
       image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop',
       location: 'Cyber City, Gurugram',
-      rating: 4.8,
-      price: '₹6,999',
       bookingLink: 'tel:+919403890926'
     },
     {
       name: 'Premium Studio',
       image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop',
       location: 'Pink City, Jaipur',
-      rating: 4.9,
-      price: '₹7,499',
       bookingLink: 'tel:+919403890926'
     },
     {
       name: 'Heritage Villa',
       image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
       location: 'Sector 18, Noida',
-      rating: 4.7,
-      price: '₹5,999',
-      bookingLink: 'tel:+919403890926'
-    },
-    {
-      name: 'Business Suite',
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=400&fit=crop',
-      location: 'IT City, Mohali',
-      rating: 4.8,
-      price: '₹6,499',
-      bookingLink: 'tel:+919403890926'
-    },
-    {
-      name: 'Penthouse Villa',
-      image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&h=400&fit=crop',
-      location: 'Golf Course Road, Gurugram',
-      rating: 4.9,
-      price: '₹12,999',
       bookingLink: 'tel:+919403890926'
     }
   ];
@@ -138,8 +114,6 @@ const PropertyCard = ({
     name: string;
     image: string;
     location: string;
-    rating: number;
-    price: string;
     bookingLink: string;
   };
   index: number;
@@ -157,27 +131,22 @@ const PropertyCard = ({
         alt={property.name}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
       />
-      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
-        <Star size={14} className="text-ace-gold fill-current" />
-        <span className="text-sm font-medium">{property.rating}</span>
-      </div>
     </div>
 
     <div className="p-6 flex flex-col h-full">
       <div className="flex-grow">
         <h3 className="font-poppins text-xl font-bold text-ace-dark mb-2">{property.name}</h3>
-        <p className="text-gray-600 text-sm flex items-center font-poppins mb-2">
+        <p className="text-gray-600 text-sm flex items-center font-poppins mb-4">
           <MapPin size={14} className="mr-1" />
           {property.location}
         </p>
-        <p className="text-ace-gold text-lg font-bold font-poppins">{property.price}/night</p>
       </div>
 
       <a href={property.bookingLink}>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-4 bg-ace-gold text-white py-3 rounded-full font-medium hover:bg-ace-dark transition-colors duration-200 font-poppins w-full"
+          className="bg-ace-gold text-white py-3 rounded-full font-medium hover:bg-ace-dark transition-colors duration-200 font-poppins w-full"
         >
           Book Now
         </motion.button>
