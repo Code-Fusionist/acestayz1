@@ -40,9 +40,7 @@ Your Booking will be confirmed only after receipt of Advance Payment, if Advance
 4.1. Where a Guest wishes to extend the period of stay in the Property written notice should be given to us as soon as possible.
 4.2. We cannot guarantee any extension, which is subject to availability of the Property. An alternative apartment may be offered if the Property has been booked for all or part of the required extension period.
 4.3. We reserve the right to charge a different price for the Property for any period of extension. Payment for the extension period will be required immediately that we confirm the availability of the Property or alternative apartment(s) to the Guest or to you.
-4.4 All refunds are subject to deduction of any transaction fees charged by the merchant banks/payment gateways.
-4.5. These Conditions apply to any extension of the booking in the same way that they apply to the original booking.
-4.6. Failure to check in on the date of arrival and/or any cancellations of bookings (or part bookings) owing to disruption to or cancellation of your travel arrangements, whether caused by act of God, industrial action, or other circumstances not being our fault will not reduce or cancel your liability for the full cost of the booking, and if applicable, cancellation charges will apply in accordance with this policy. You are therefore advised to take out adequate travel insurance to cover your losses in such situations.`}
+4.4 All refunds are subject to deduction of any transaction fees charged by the merchant banks/payment gateways.`}
           </p>
         </motion.div>
       </section>
