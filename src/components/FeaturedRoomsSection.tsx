@@ -1,14 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
 
 interface FeaturedRoomsSectionProps {
   title: string;
@@ -20,7 +12,7 @@ interface FeaturedRoomsSectionProps {
 const FeaturedRoomsSection = ({
   title,
   subtitle,
-  backgroundColor,
+  backgroundColor = 'bg-white',
   textColor = 'text-ace-dark'
 }: FeaturedRoomsSectionProps) => {
   const ref = useRef(null);
@@ -54,10 +46,8 @@ const FeaturedRoomsSection = ({
   ];
 
   return (
-    <section className={`py-20 lg:py-32 relative overflow-hidden ${backgroundColor || 'bg-gray-50'}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className={`py-20 lg:py-32 ${backgroundColor}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -73,28 +63,7 @@ const FeaturedRoomsSection = ({
           </p>
         </motion.div>
 
-        {/* Mobile Carousel */}
-        <div className="block lg:hidden">
-          <Carousel
-            opts={{ align: 'start', loop: true }}
-            // @ts-ignore: Suppress type warning for plugin
-            plugins={[Autoplay({ delay: 3500 })]}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {properties.map((property, index) => (
-                <CarouselItem key={property.name} className="pl-2 md:pl-4 basis-4/5 sm:basis-3/5">
-                  <PropertyCard property={property} index={index} isInView={isInView} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-        </div>
-
-        {/* Desktop Grid */}
-        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {properties.map((property, index) => (
             <PropertyCard key={property.name} property={property} index={index} isInView={isInView} />
           ))}
@@ -104,7 +73,7 @@ const FeaturedRoomsSection = ({
   );
 };
 
-// Reusable Property Card Component
+// Property Card Component
 const PropertyCard = ({
   property,
   index,
@@ -123,30 +92,28 @@ const PropertyCard = ({
     initial={{ opacity: 0, y: 50 }}
     animate={isInView ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.8, delay: index * 0.2 }}
-    className="bg-white rounded-2xl shadow-xl overflow-hidden group h-full"
+    className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300"
   >
-    <div className="aspect-[4/3] overflow-hidden relative">
+    <div className="aspect-[4/3] overflow-hidden">
       <img
         src={property.image}
         alt={property.name}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
     </div>
 
-    <div className="p-6 flex flex-col h-full">
-      <div className="flex-grow">
-        <h3 className="font-poppins text-xl font-bold text-ace-dark mb-2">{property.name}</h3>
-        <p className="text-gray-600 text-sm flex items-center font-poppins mb-4">
-          <MapPin size={14} className="mr-1" />
-          {property.location}
-        </p>
+    <div className="p-6">
+      <h3 className="font-poppins text-xl font-bold text-ace-dark mb-3">{property.name}</h3>
+      <div className="flex items-center text-gray-600 text-sm mb-6">
+        <MapPin size={16} className="mr-2" />
+        <span className="font-poppins">{property.location}</span>
       </div>
 
-      <a href={property.bookingLink}>
+      <a href={property.bookingLink} className="block">
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-ace-gold text-white py-3 rounded-full font-medium hover:bg-ace-dark transition-colors duration-200 font-poppins w-full"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full bg-ace-gold text-white py-3 rounded-lg font-medium hover:bg-ace-dark transition-colors duration-200 font-poppins"
         >
           Book Now
         </motion.button>
