@@ -11,7 +11,7 @@ import hotelServices from '/specialservice/3.png';
 const features = [
   {
     title: "Hybrid Model",
-    description: "Fastest growing hybrid hotel chain with in room kitchenette",
+    description: "Fastest growing hybrid hotel chain with in room kitchenette.",
     image: hotelRoom,
   },
   {
