@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const ref = useRef(null);
@@ -23,16 +23,15 @@ const Footer = () => {
     ],
     support: [
       { name: 'Customer Support', href: '/contact' },
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Refund Policy', href: '#' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
+      { name: 'Terms of Service', href: '/terms-and-conditions' },
+      { name: 'Refund Policy', href: '/refund-policy' },
     ]
   };
 
   const socialLinks = [
     { icon: <Instagram size={20} />, href: 'https://www.instagram.com/acestayz', label: 'Instagram' },
     { icon: <Facebook size={20} />, href: 'https://www.facebook.com/acestayz', label: 'Facebook' },
-    // { icon: <Twitter size={20} />, href: 'https://www.twitter.com/acestayz', label: 'Twitter' },
     { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/company/acestayz', label: 'LinkedIn' },
   ];
 
@@ -156,14 +155,23 @@ const Footer = () => {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                     >
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white/80 hover:text-ace-gold text-sm font-poppins"
-                      >
-                        {link.name}
-                      </a>
+                      {link.href.startsWith('/') ? (
+                        <Link
+                          to={link.href}
+                          className="text-white/80 hover:text-ace-gold text-sm font-poppins"
+                        >
+                          {link.name}
+                        </Link>
+                      ) : (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-white/80 hover:text-ace-gold text-sm font-poppins"
+                        >
+                          {link.name}
+                        </a>
+                      )}
                     </motion.li>
                   ))}
                 </ul>
@@ -207,9 +215,15 @@ const Footer = () => {
                 © 2025 Ace Stayz Pvt Ltd. All rights reserved.
               </p>
               <div className="flex space-x-8">
-                <a href="#" className="text-white/60 hover:text-ace-gold text-sm font-poppins">Privacy Policy</a>
-                <a href="#" className="text-white/60 hover:text-ace-gold text-sm font-poppins">Terms of Service</a>
-                <a href="#" className="text-white/60 hover:text-ace-gold text-sm font-poppins">Refund Policy</a>
+                <Link to="/privacy-policy" className="text-white/60 hover:text-ace-gold text-sm font-poppins">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms-and-conditions" className="text-white/60 hover:text-ace-gold text-sm font-poppins">
+                  Terms of Service
+                </Link>
+                <Link to="/refund-policy" className="text-white/60 hover:text-ace-gold text-sm font-poppins">
+                  Refund Policy
+                </Link>
               </div>
             </div>
           </div>

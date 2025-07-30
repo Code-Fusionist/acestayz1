@@ -76,10 +76,10 @@ const FranchiseComparison = () => {
 
 
   const categories = [
-    { name: "HOTEL", score: "5/5" },
-    { name: "RETAIL", score: "1/5" },
-    { name: "GYM", score: "0/5" },
-    { name: "SALON", score: "1/5" }
+    { name: "HOTEL", score: "8/8" },
+    { name: "RETAIL", score: "1/8" },
+    { name: "GYM", score: "0/8" },
+    { name: "SALON", score: "2/8" }
   ];
 
   return (
