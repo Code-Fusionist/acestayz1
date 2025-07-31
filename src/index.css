@@ -49,8 +49,10 @@ All colors MUST be HSL.
 
     --ace-gold: 51 100% 50%;
     --sand-beige: 33 44% 90%;
-    --tan-brown: 34.29, 43.75%, 68.63%;
-    --coffee-brown: 30, 38.89%, 21.18%;
+    /* --tan-brown: 34.29, 43.75%, 68.63%;
+    --coffee-brown: 30, 38.89%, 21.18%; */
+    --coffee-brown: 34.29, 43.75%, 68.63%;
+    --tan-brown: 30, 38.89%, 21.18%;
     --ace-dark: 0 4% 3%;
     --suite-bg: 14 48% 72%;
     --beyond-bg: 33 100% 94%;
