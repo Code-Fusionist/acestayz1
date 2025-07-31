@@ -18,7 +18,7 @@ const DestinationSection = () => {
   ];
 
   return (
-    <section id="destinations" className="py-10 lg:py-32 bg-gray-50 relative overflow-hidden">
+    <section id="destinations" className="py-10 lg:py-32 bg-sand-beige relative overflow-hidden parallax-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -27,9 +27,9 @@ const DestinationSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
+          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-coffee-brown mb-6 parallax-fast">
             Explore
-            <span className="text-ace-gold block mt-2">ACE STAYZ</span>
+            <span className="text-tan-brown block mt-2">ACE STAYZ</span>
           </h2>
         </motion.div>
 
@@ -53,10 +53,10 @@ const DestinationSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 cursor-pointer hover:scale-105 h-full"
+                    className="group flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 cursor-pointer hover:scale-105 h-full scroll-reveal"
                   >
-                    <MapPin className="w-8 h-8 text-ace-dark mb-2 group-hover:text-ace-gold transition-colors" />
-                    <h3 className="text-lg font-semibold text-ace-dark group-hover:text-ace-gold font-poppins">{destination.name}</h3>
+                    <MapPin className="w-8 h-8 text-coffee-brown mb-2 group-hover:text-tan-brown transition-colors" />
+                    <h3 className="text-lg font-semibold text-coffee-brown group-hover:text-tan-brown font-poppins">{destination.name}</h3>
                     <div className="flex items-center space-x-1 mt-2">
                       <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                       <span className="text-sm text-gray-600">{destination.rating}</span>

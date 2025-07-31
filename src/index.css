@@ -49,6 +49,8 @@ All colors MUST be HSL.
 
     --ace-gold: 51 100% 50%;
     --sand-beige: 33 44% 90%;
+    --tan-brown: 15 18% 42%;
+    --coffee-brown: 39 55% 69%;
     --ace-dark: 0 4% 3%;
     --suite-bg: 14 48% 72%;
     --beyond-bg: 33 100% 94%;
@@ -174,6 +176,31 @@ All colors MUST be HSL.
   .carousel-item {
     min-width: 300px;
   }
+
+  /* Parallax Effects */
+  .parallax-bg {
+    will-change: transform;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-slow {
+    animation: parallax-slow 20s ease-in-out infinite;
+  }
+
+  .parallax-fast {
+    animation: parallax-fast 15s ease-in-out infinite;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
@@ -232,4 +259,14 @@ All colors MUST be HSL.
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--ace-dark));
+}
+
+@keyframes parallax-slow {
+  0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+  50% { transform: translateY(-10px) rotateZ(1deg); }
+}
+
+@keyframes parallax-fast {
+  0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+  50% { transform: translateY(-20px) rotateZ(-1deg); }
 }

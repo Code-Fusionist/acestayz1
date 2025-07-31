@@ -57,10 +57,10 @@ const HeroSection = () => {
             >
               <div
                 onClick={() => setIsModalOpen(true)}
-                className="cursor-pointer flex items-center justify-between bg-white/10 border border-white/30 rounded-full px-5 py-3 backdrop-blur-sm shadow-lg hover:ring-2 hover:ring-ace-gold transition"
+                className="cursor-pointer flex items-center justify-between bg-white/10 border border-white/30 rounded-full px-5 py-3 backdrop-blur-sm shadow-lg hover:ring-2 hover:ring-tan-brown transition"
               >
                 <span className="text-white font-poppins text-sm sm:text-base opacity-90">
-                  Book A Stayz in <span className="text-ace-gold font-semibold">{cities[currentCityIndex]}</span>
+                  Book A Stayz in <span className="text-tan-brown font-semibold">{cities[currentCityIndex]}</span>
                 </span>
                 <svg
                   className="w-4 h-4 text-white opacity-70"
@@ -83,14 +83,14 @@ const HeroSection = () => {
           <div className="relative bg-white rounded-2xl w-80 sm:w-96 p-6 pt-10 text-black shadow-2xl animate-fadeIn">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-ace-gold transition-colors"
+              className="absolute top-4 right-4 text-gray-500 hover:text-tan-brown transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <h2 className="text-2xl font-semibold mb-6 text-center text-ace-dark">
+            <h2 className="text-2xl font-semibold mb-6 text-center text-coffee-brown">
               Select a City
             </h2>
 
@@ -103,7 +103,7 @@ const HeroSection = () => {
                     setIsModalOpen(false);
                     window.open('https://acestayz.com/booking', '_blank');
                   }}
-                  className="cursor-pointer px-4 py-2 rounded-lg text-center font-medium transition-all duration-200 hover:bg-ace-gold hover:text-white"
+                  className="cursor-pointer px-4 py-2 rounded-lg text-center font-medium transition-all duration-200 hover:bg-tan-brown hover:text-white"
                 >
                   {city}
                 </li>

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScrollReveal } from '../hooks/useParallax';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 // import AboutSection from '../components/AboutSection';
@@ -20,6 +21,8 @@ const Index = () => {
   const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  
+  useScrollReveal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +42,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-sand-beige overflow-x-hidden">
       
       <Navbar onContactClick={() => navigate('/contact')} />
         

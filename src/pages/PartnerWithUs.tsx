@@ -78,7 +78,7 @@ const PartnerWithUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-sand-beige">
       <Navbar />
 
       {/* Optional Promo Sections */}
@@ -129,13 +129,13 @@ const PartnerWithUs = () => {
                 >
                   <div
                     className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 ${index <= activeStep
-                        ? 'bg-ace-gold text-white'
-                        : 'bg-white border-2 border-ace-gold text-ace-gold'
+                        ? 'bg-tan-brown text-white'
+                        : 'bg-white border-2 border-tan-brown text-tan-brown'
                       }`}
                   >
                     {step.icon}
                   </div>
-                  <h3 className="font-playfair text-lg font-bold text-ace-dark mb-2">
+                  <h3 className="font-playfair text-lg font-bold text-coffee-brown mb-2">
                     {step.title}
                   </h3>
                   <p className="text-gray-600 text-sm">{step.description}</p>

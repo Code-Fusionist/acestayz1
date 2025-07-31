@@ -36,12 +36,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer ref={ref} className="relative bg-ace-dark text-white overflow-hidden">
+    <footer ref={ref} className="relative bg-coffee-brown text-white overflow-hidden parallax-bg">
       {/* Decorative Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-ace-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-ace-gold/10 rounded-full translate-x-1/2 translate-y-1/2" />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-ace-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-tan-brown/10 rounded-full -translate-x-1/2 -translate-y-1/2 parallax-slow" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-sand-beige/20 rounded-full translate-x-1/2 translate-y-1/2 parallax-fast" />
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-tan-brown/5 rounded-full -translate-x-1/2 -translate-y-1/2 parallax-slow" />
       </div>
 
       <div className="relative z-10">
@@ -96,7 +96,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">Company</h4>
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-tan-brown">Company</h4>
                 <ul className="space-y-3">
                   {footerLinks.company.map((link, index) => (
                     <motion.li
@@ -105,7 +105,7 @@ const Footer = () => {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                     >
-                      <Link to={link.href} className="text-white/80 hover:text-ace-gold text-sm font-poppins">
+                      <Link to={link.href} className="text-white/80 hover:text-tan-brown text-sm font-poppins">
                         {link.name}
                       </Link>
                     </motion.li>
@@ -121,7 +121,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">Destinations</h4>
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-tan-brown">Destinations</h4>
                 <ul className="space-y-3">
                   {footerLinks.destinations.map((link, index) => (
                     <motion.li
@@ -130,7 +130,7 @@ const Footer = () => {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     >
-                      <Link to={link.href} className="text-white/80 hover:text-ace-gold text-sm font-poppins">
+                      <Link to={link.href} className="text-white/80 hover:text-tan-brown text-sm font-poppins">
                         {link.name}
                       </Link>
                     </motion.li>
@@ -146,7 +146,7 @@ const Footer = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <h4 className="font-poppins text-xl font-semibold mb-6 text-ace-gold">Support</h4>
+                <h4 className="font-poppins text-xl font-semibold mb-6 text-tan-brown">Support</h4>
                 <ul className="space-y-3 mb-8">
                   {footerLinks.support.map((link, index) => (
                     <motion.li
@@ -158,7 +158,7 @@ const Footer = () => {
                       {link.href.startsWith('/') ? (
                         <Link
                           to={link.href}
-                          className="text-white/80 hover:text-ace-gold text-sm font-poppins"
+                          className="text-white/80 hover:text-tan-brown text-sm font-poppins"
                         >
                           {link.name}
                         </Link>
@@ -167,7 +167,7 @@ const Footer = () => {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-white/80 hover:text-ace-gold text-sm font-poppins"
+                          className="text-white/80 hover:text-tan-brown text-sm font-poppins"
                         >
                           {link.name}
                         </a>
@@ -177,7 +177,7 @@ const Footer = () => {
                 </ul>
 
                 <div>
-                  <h5 className="font-semibold mb-4 text-ace-gold font-poppins">Follow Us</h5>
+                  <h5 className="font-semibold mb-4 text-tan-brown font-poppins">Follow Us</h5>
                   <div className="flex space-x-4">
                     {socialLinks.map((social, index) => (
                       <motion.a
@@ -189,7 +189,7 @@ const Footer = () => {
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
                         whileHover={{ scale: 1.2, rotate: 10 }}
-                        className="w-10 h-10 bg-ace-gold/10 rounded-full flex items-center justify-center text-ace-gold hover:bg-ace-gold hover:text-ace-dark transition-all duration-300"
+                        className="w-10 h-10 bg-tan-brown/20 rounded-full flex items-center justify-center text-tan-brown hover:bg-tan-brown hover:text-white transition-all duration-300"
                         aria-label={social.label}
                       >
                         {social.icon}
@@ -215,13 +215,13 @@ const Footer = () => {
                 © 2025 Ace Stayz Pvt Ltd. All rights reserved.
               </p>
               <div className="flex space-x-8">
-                <Link to="/privacy-policy" className="text-white/60 hover:text-ace-gold text-sm font-poppins">
+                <Link to="/privacy-policy" className="text-white/60 hover:text-tan-brown text-sm font-poppins">
                   Privacy Policy
                 </Link>
-                <Link to="/terms-and-conditions" className="text-white/60 hover:text-ace-gold text-sm font-poppins">
+                <Link to="/terms-and-conditions" className="text-white/60 hover:text-tan-brown text-sm font-poppins">
                   Terms of Service
                 </Link>
-                <Link to="/refund-policy" className="text-white/60 hover:text-ace-gold text-sm font-poppins">
+                <Link to="/refund-policy" className="text-white/60 hover:text-tan-brown text-sm font-poppins">
                   Refund Policy
                 </Link>
               </div>

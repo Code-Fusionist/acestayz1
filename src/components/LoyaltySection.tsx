@@ -7,9 +7,9 @@ const LoyaltySection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-16 px-4 sm:px-8 bg-sand-beige" ref={ref}>
+    <section className="py-16 px-4 sm:px-8 bg-sand-beige parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto">
-        <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-3xl overflow-hidden">
+        <div className="bg-gradient-to-r from-tan-brown to-coffee-brown rounded-3xl overflow-hidden parallax-slow">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Left Content */}
             <div className="p-8 lg:p-12 flex flex-col justify-center">

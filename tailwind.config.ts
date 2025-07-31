@@ -69,6 +69,9 @@ export default {
 				},
 				'ace-gold': 'hsl(var(--ace-gold))',
 				'ace-dark': 'hsl(var(--ace-dark))',
+				'sand-beige': 'hsl(var(--sand-beige))',
+				'tan-brown': 'hsl(var(--tan-brown))',
+				'coffee-brown': 'hsl(var(--coffee-brown))',
 				'suite-bg': 'hsl(var(--suite-bg))',
 				'beyond-bg': 'hsl(var(--beyond-bg))',
 			},
@@ -131,6 +134,14 @@ export default {
 				'slide-infinite': {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(-100%)' }
+				},
+				'parallax-slow': {
+					'0%, 100%': { transform: 'translateY(0px) rotateZ(0deg)' },
+					'50%': { transform: 'translateY(-10px) rotateZ(1deg)' }
+				},
+				'parallax-fast': {
+					'0%, 100%': { transform: 'translateY(0px) rotateZ(0deg)' },
+					'50%': { transform: 'translateY(-20px) rotateZ(-1deg)' }
 				}
 			},
 			animation: {
@@ -140,7 +151,9 @@ export default {
 				'slide-up': 'slide-up 0.8s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'slide-infinite': 'slide-infinite 30s linear infinite'
+				'slide-infinite': 'slide-infinite 30s linear infinite',
+				'parallax-slow': 'parallax-slow 20s ease-in-out infinite',
+				'parallax-fast': 'parallax-fast 15s ease-in-out infinite'
 			}
 		}
 	},

@@ -38,13 +38,13 @@ const YourStayz = () => {
 
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-sand-beige">
       
       <Navbar />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ace-gold/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-tan-brown/10 to-transparent parallax-slow" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -53,9 +53,9 @@ const YourStayz = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
+            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-coffee-brown mb-6">
               Your Perfect
-              <span className="text-ace-gold block">Stayz</span>
+              <span className="text-tan-brown block">Stayz</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our curated collection of premium accommodations designed 
@@ -83,7 +83,7 @@ const YourStayz = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="font-playfair text-4xl font-bold text-ace-dark mb-6">
+                <h2 className="font-playfair text-4xl font-bold text-coffee-brown mb-6">
                   Where Elegance Stays
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
@@ -102,10 +102,10 @@ const YourStayz = () => {
                     transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="w-12 h-12 bg-ace-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-3 text-ace-gold">
+                    <div className="w-12 h-12 bg-tan-brown/10 rounded-2xl flex items-center justify-center mx-auto mb-3 text-tan-brown">
                       {feature.icon}
                     </div>
-                    <h3 className="font-semibold text-ace-dark mb-2">{feature.title}</h3>
+                    <h3 className="font-semibold text-coffee-brown mb-2">{feature.title}</h3>
                     <p className="text-sm text-gray-600">{feature.description}</p>
                   </motion.div>
                 ))}
@@ -115,12 +115,7 @@ const YourStayz = () => {
         </div>
       </section>
 
-      <FeaturedRoomsSection 
-        title="Featured Properties"
-        subtitle="Handpicked accommodations that represent the best of our collection"
-        backgroundColor="bg-gray-50"
-        textColor="text-ace-dark"
-      />
+      <FeaturedRoomsSection />
 
       <Footer />
       <WhatsAppButton />

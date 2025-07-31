@@ -34,7 +34,7 @@ const FeaturedRoomsSection = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-sand-beige parallax-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -43,9 +43,9 @@ const FeaturedRoomsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
+          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-coffee-brown mb-6 parallax-fast">
             Suite Dreams
-            <span className="text-ace-gold block mt-2">Begins Here</span>
+            <span className="text-tan-brown block mt-2">Begins Here</span>
           </h2>
         </motion.div>
 
@@ -78,7 +78,7 @@ const PropertyCard = ({
     initial={{ opacity: 0, y: 50 }}
     animate={isInView ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.8, delay: index * 0.2 }}
-    className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300"
+    className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300 scroll-reveal"
   >
     <div className="aspect-[4/3] overflow-hidden">
       <img
@@ -89,7 +89,7 @@ const PropertyCard = ({
     </div>
 
     <div className="p-6">
-      <h3 className="font-poppins text-xl font-bold text-ace-dark mb-3">{property.name}</h3>
+      <h3 className="font-poppins text-xl font-bold text-coffee-brown mb-3">{property.name}</h3>
       <div className="flex items-center text-gray-600 text-sm mb-6">
         <MapPin size={16} className="mr-2" />
         <span className="font-poppins">{property.location}</span>
@@ -104,7 +104,7 @@ const PropertyCard = ({
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full bg-ace-gold text-white py-3 rounded-lg font-medium hover:bg-ace-dark transition-colors duration-200 font-poppins"
+          className="w-full bg-tan-brown text-white py-3 rounded-lg font-medium hover:bg-coffee-brown transition-colors duration-200 font-poppins"
         >
           Book Now
         </motion.button>
