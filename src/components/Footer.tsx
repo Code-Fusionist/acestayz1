@@ -61,10 +61,6 @@ const Footer = () => {
                     className="h-16 w-auto"
                   />
                 </div>
-                <p className="text-white/80 mb-6 leading-relaxed font-poppins">
-                  Where luxury meets comfort. Experience unparalleled hospitality
-                  at our premium stays across India's most vibrant cities.
-                </p>
 
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
