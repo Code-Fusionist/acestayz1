@@ -45,7 +45,7 @@ const PressCarousel = () => {
   const duplicatedPublications = [...pressPublications, ...pressPublications];
 
   return (
-    <section className="py-8 bg-sand-beige overflow-hidden">
+    <section className="py-8 bg-tan-brown overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
             <span className="text-coffee-brown block">Media Coverage</span>
@@ -70,7 +70,7 @@ const PressCarousel = () => {
           {duplicatedPublications.map((publication, index) => (
             <div
               key={`${publication.id}-${index}`}
-              className="flex-shrink-0 w-80 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="flex-shrink-0 w-80 bg-sand-beige rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src={publication.image}

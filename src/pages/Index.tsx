@@ -52,9 +52,9 @@ const Index = () => {
       <div className="relative z-5">
         <LoyaltySection />
         <FeaturedSection />
-        <PressCarousel />
-        <DestinationSection />
         <FeaturedRoomsSection />
+        <DestinationSection />
+        <PressCarousel />
         {/* <ServicesSection /> */}
         <PartnersSection />
         {/* <PartnershipSection onContactClick={() => setShowContactForm(true)} /> */}

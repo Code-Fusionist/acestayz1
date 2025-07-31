@@ -18,7 +18,7 @@ const DestinationSection = () => {
   ];
 
   return (
-    <section id="destinations" className="py-10 lg:py-32 bg-sand-beige relative overflow-hidden parallax-bg">
+    <section id="destinations" className="py-10 lg:py-32 bg-tan-brown relative overflow-hidden parallax-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -27,7 +27,7 @@ const DestinationSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-tan-brown mb-6 parallax-fast">
+          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-sand-beige mb-6 parallax-fast">
             Explore
             <span className="text-coffee-brown block mt-2">ACE STAYZ</span>
           </h2>
@@ -53,7 +53,7 @@ const DestinationSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 cursor-pointer hover:scale-105 h-full scroll-reveal"
+                    className="group flex flex-col items-center text-center p-6 bg-sand-beige rounded-xl shadow-sm hover:shadow-md transition duration-300 cursor-pointer hover:scale-105 h-full scroll-reveal"
                   >
                     <MapPin className="w-8 h-8 text-coffee-brown mb-2 group-hover:text-tan-brown transition-colors" />
                     <h3 className="text-lg font-semibold text-coffee-brown group-hover:text-tan-brown font-poppins">{destination.name}</h3>

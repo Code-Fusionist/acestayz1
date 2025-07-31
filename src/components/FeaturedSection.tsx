@@ -32,7 +32,7 @@ const FeaturedSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-10 px-4 sm:px-8 bg-coffee-brown parallax-bg" ref={ref}>
+    <section className="py-10 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -40,7 +40,7 @@ const FeaturedSection = () => {
           transition={{ duration: 0.6 }}
           className="font-poppins text-3xl lg:text-5xl font-bold text-white mb-6 parallax-slow"
         >
-          The Magic of <span className="text-tan-brown block mt-2">Ace Stayz</span>
+          The Magic of <span className="text-coffee-brown block mt-2">Ace Stayz</span>
         </motion.h2>
       </div>
 

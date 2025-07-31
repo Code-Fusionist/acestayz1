@@ -65,36 +65,36 @@ const Contact = () => {
       icon: <Phone size={24} />,
       title: "Phone",
       details: "+91 9403890926",
-      description: "Available 24/7 for your convenience"
+      description: "Always available — 24/7 support, just a call away."
     },
     {
       icon: <Mail size={24} />,
       title: "Email",
       details: "info@acestayz.com",
-      description: "We'll respond within 24 hours"
+      description: "Drop us a message — we'll respond within 24 hours."
     },
     {
       icon: <MapPin size={24} />,
       title: "Locations",
-      description: "Premium stays across major cities"
+      description: "Stay with us across premium properties in major cities."
     },
     {
       icon: <Clock size={24} />,
       title: "Support Hours",
       details: "24/7 Available",
-      description: "Round-the-clock assistance"
+      description: "Round-the-clock assistance, anytime you need us."
     }
   ];
 
   return (
     <div className="min-h-screen bg-sand-beige">
-      
+
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-ace-gold/10 to-transparent" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -103,12 +103,12 @@ const Contact = () => {
             className="text-center mb-16"
           >
             <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
-              Get in
-              <span className="text-ace-gold block">Touch</span>
+              Let’s Talk
+              <span className="text-ace-gold block">Hospitality</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ready to experience luxury hospitality? We're here to help you 
-              plan your perfect stay and answer any questions you may have.
+              We'd love to hear from you! Whether you have a question, need assistance with booking, or just want more information.
+              We are here to help you.
             </p>
           </motion.div>
         </div>
@@ -289,12 +289,11 @@ const Contact = () => {
             >
               <div>
                 <h2 className="font-playfair text-4xl font-bold text-ace-dark mb-6">
-                  Let's Start a Conversation
+                  Let's Talk
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  We're here to help you with all your hospitality needs. 
-                  Whether you're planning a stay, interested in partnership, 
-                  or have questions about our services, we'd love to hear from you.
+                  Planning a stay? Exploring a partnership? Have a quick question?
+                  We're just a message away—always happy to help!
                 </p>
               </div>
 
@@ -302,24 +301,24 @@ const Contact = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-ace-gold/20 rounded-full -translate-y-16 translate-x-16" />
                 <div className="relative z-10">
                   <h3 className="font-playfair text-2xl font-bold mb-4">
-                    Why Choose Ace Stayz?
+                    Why Ace Stayz?
                   </h3>
                   <ul className="space-y-3 text-white/90">
                     <li className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-ace-gold rounded-full" />
-                      <span>24/7 premium customer support</span>
+                      <span>24/7 premium support</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-ace-gold rounded-full" />
-                      <span>Luxury accommodations in prime locations</span>
+                      <span>Prime location stays</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-ace-gold rounded-full" />
-                      <span>Personalized service and attention to detail</span>
+                      <span>Personalized service</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-ace-gold rounded-full" />
-                      <span>Seamless booking and check-in experience</span>
+                      <span> Hassle-free booking & check-in</span>
                     </li>
                   </ul>
                 </div>
@@ -330,9 +329,7 @@ const Contact = () => {
                   Quick Response Promise
                 </h3>
                 <p className="text-gray-700">
-                  We understand that your time is valuable. That's why we guarantee 
-                  a response to all inquiries within 24 hours. For urgent matters, 
-                  don't hesitate to call us directly.
+                  We reply to all messages within 24 hours. For urgent matters, just give us a call.
                 </p>
               </div>
             </motion.div>

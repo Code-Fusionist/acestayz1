@@ -34,7 +34,7 @@ const FeaturedRoomsSection = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-sand-beige parallax-bg">
+    <section className="py-20 lg:py-32 bg-coffee-brown parallax-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -43,9 +43,9 @@ const FeaturedRoomsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-tan-brown mb-6 parallax-fast">
+          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-sand-beige mb-6 parallax-fast">
             Suite Dreams
-            <span className="text-coffee-brown block mt-2">Begins Here</span>
+            <span className="text-tan-brown block mt-2">Begins Here</span>
           </h2>
         </motion.div>
 
@@ -78,7 +78,7 @@ const PropertyCard = ({
     initial={{ opacity: 0, y: 50 }}
     animate={isInView ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.8, delay: index * 0.2 }}
-    className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300 scroll-reveal"
+    className="bg-sand-beige rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300 scroll-reveal"
   >
     <div className="aspect-[4/3] overflow-hidden">
       <img

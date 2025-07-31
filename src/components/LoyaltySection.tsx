@@ -7,7 +7,7 @@ const LoyaltySection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-16 px-4 sm:px-8 bg-sand-beige parallax-bg" ref={ref}>
+    <section className="py-16 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <div className="bg-gradient-to-r from-coffee-brown to-coffee-brown rounded-3xl overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0">
@@ -20,8 +20,8 @@ const LoyaltySection = () => {
                 className="mb-4"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Zap className="w-6 h-6 text-cyan-600" />
-                  <span className="text-cyan-600 font-semibold font-poppins text-sm">
+                  <Zap className="w-6 h-6 text-ace-gold" />
+                  <span className="text-ace-gold font-semibold font-poppins text-sm">
                     Get up to 30 % off extra on your stayz!
                   </span>
                 </div>
@@ -31,7 +31,7 @@ const LoyaltySection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl lg:text-5xl font-bold text-tan-brown leading-tight mb-6 font-poppins"
+                className="text-4xl lg:text-5xl font-bold text-sand-beige leading-tight mb-6 font-poppins"
               >
                 More Nights,<br />
                 Better Price.
@@ -41,7 +41,7 @@ const LoyaltySection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-tan-brown text-lg leading-relaxed font-poppins"
+                className="text-sand-beige text-lg leading-relaxed font-poppins"
               >
                 Planing a Longer Stayz? Grab exclusive weekly - monthly offers now!
               </motion.p>
