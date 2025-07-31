@@ -32,7 +32,7 @@ const FeaturedSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-10 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
+    <section className="py-10 px-4 sm:px-8 bg-coffee-brown parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -40,7 +40,7 @@ const FeaturedSection = () => {
           transition={{ duration: 0.6 }}
           className="font-poppins text-3xl lg:text-5xl font-bold text-white mb-6 parallax-slow"
         >
-          The Magic of <span className="text-sand-beige block mt-2">Ace Stayz</span>
+          The Magic of <span className="text-tan-brown block mt-2">Ace Stayz</span>
         </motion.h2>
       </div>
 
@@ -67,7 +67,7 @@ const FeaturedSection = () => {
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
-                  className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full scroll-reveal"
+                  className="group bg-sand-beige rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full scroll-reveal"
                 >
                   <div className="relative w-full h-[300px] overflow-hidden">
                     <img
@@ -79,10 +79,10 @@ const FeaturedSection = () => {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-coffee-brown mb-3 font-poppins group-hover:text-tan-brown transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-black mb-3 font-poppins group-hover:text-tan-brown transition-colors duration-300">
                       {feature.title}
                     </h3>
-                    <div className="text-gray-600 text-sm leading-relaxed font-poppins space-y-1">
+                    <div className="text-black text-sm leading-relaxed font-poppins space-y-1">
                       {feature.description.split('\n').map((line, i) => (
                         <p key={i}>{line}</p>
                       ))}

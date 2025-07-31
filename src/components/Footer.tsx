@@ -37,12 +37,6 @@ const Footer = () => {
 
   return (
     <footer ref={ref} className="relative bg-coffee-brown text-white overflow-hidden parallax-bg">
-      {/* Decorative Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-tan-brown/10 rounded-full -translate-x-1/2 -translate-y-1/2 parallax-slow" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-sand-beige/20 rounded-full translate-x-1/2 translate-y-1/2 parallax-fast" />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-tan-brown/5 rounded-full -translate-x-1/2 -translate-y-1/2 parallax-slow" />
-      </div>
 
       <div className="relative z-10">
         {/* Main Footer Content */}
@@ -212,7 +206,7 @@ const Footer = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-white/60 text-sm font-poppins">
-                © 2025 Ace Stayz Pvt Ltd. All rights reserved.
+                © 2025 Ace Stayz Pvt. Ltd. All rights reserved.
               </p>
               <div className="flex space-x-8">
                 <Link to="/privacy-policy" className="text-white/60 hover:text-tan-brown text-sm font-poppins">

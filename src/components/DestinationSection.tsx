@@ -27,9 +27,9 @@ const DestinationSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-coffee-brown mb-6 parallax-fast">
+          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-tan-brown mb-6 parallax-fast">
             Explore
-            <span className="text-tan-brown block mt-2">ACE STAYZ</span>
+            <span className="text-coffee-brown block mt-2">ACE STAYZ</span>
           </h2>
         </motion.div>
 

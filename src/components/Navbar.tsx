@@ -63,7 +63,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
       initial={{ opacity: 1 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 w-full bg-coffee-brown/90 backdrop-blur-sm text-white z-50 transition-opacity duration-500"
+      className="fixed top-0 w-full bg-coffee-brown backdrop-blur-sm text-white z-50 transition-opacity duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">

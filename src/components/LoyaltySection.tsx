@@ -9,7 +9,7 @@ const LoyaltySection = () => {
   return (
     <section className="py-16 px-4 sm:px-8 bg-sand-beige parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto">
-        <div className="bg-gradient-to-r from-tan-brown to-coffee-brown rounded-3xl overflow-hidden parallax-slow">
+        <div className="bg-gradient-to-r from-coffee-brown to-coffee-brown rounded-3xl overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Left Content */}
             <div className="p-8 lg:p-12 flex flex-col justify-center">
@@ -31,7 +31,7 @@ const LoyaltySection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 font-poppins"
+                className="text-4xl lg:text-5xl font-bold text-tan-brown leading-tight mb-6 font-poppins"
               >
                 More Nights,<br />
                 Better Price.
@@ -41,7 +41,7 @@ const LoyaltySection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-white/80 text-lg leading-relaxed font-poppins"
+                className="text-tan-brown text-lg leading-relaxed font-poppins"
               >
                 Planing a Longer Stayz? Grab exclusive weekly - monthly offers now!
               </motion.p>
