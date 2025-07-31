@@ -39,9 +39,9 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-3xl"
           >
-            <h1 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight bg-brown">
               <span className="block mb-4">Not Your Regular Hotel</span>
-              <span className="text-gradient bg-gradient-to-r from-ace-gold to-ace-gold bg-clip-text text-transparent">
+              <span className="text-gradient bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
                 It's A Hybrid Hotel
               </span>
             </h1>
