@@ -45,10 +45,9 @@ const FeaturedRoomsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
-          <h2 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-coffee-brown mb-2 parallax-fast">
+          <h2 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-sand-beige mb-2">
             Explore ACE STAYZ
           </h2>
-          <p className="font-poppins text-lg text-gray-600 mb-4">Suite Dreams Begins Here</p>
         </motion.div>
 
         {/* Desktop Grid */}

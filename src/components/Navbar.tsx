@@ -130,8 +130,8 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                   to={item.href}
                   className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 font-poppins ${
                     location.pathname === item.href
-                      ? 'text-ace-gold bg-white/10 font-semibold'
-                      : 'text-white hover:text-ace-gold hover:bg-white/10'
+                      ? 'text-tan-brown bg-white/10 font-semibold'
+                      : 'text-white hover:text-tan-brown hover:bg-white/10'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -143,7 +143,7 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
                   handleContactClick();
                   setIsMobileMenuOpen(false);
                 }}
-                className="w-full text-left px-3 py-2 text-base font-medium text-ace-gold hover:bg-white/10 rounded-md transition-colors duration-200 font-poppins"
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-tan-brown rounded-md transition-colors duration-200 font-poppins"
               >
                 Let's Talk
               </button>

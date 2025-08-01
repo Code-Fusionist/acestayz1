@@ -11,7 +11,7 @@ const HowWeWork = () => {
   const steps = [
     {
       id: 0,
-      title: "Revenue Management",
+      title: "Revenue Mang.",
       subtitle: "Revenue Management",
       description:
         "We will be doing strategic pricing through OTA, online & offline sales channels to maximize revenue.",
@@ -20,7 +20,7 @@ const HowWeWork = () => {
     },
     {
       id: 1,
-      title: "Design & Interiors",
+      title: "Design Interiors",
       subtitle: "Design & Interiors",
       description:
         "We are building design-led hotels with impactful interiors that attract guests and boost bookings.",
@@ -29,7 +29,7 @@ const HowWeWork = () => {
     },
     {
       id: 2,
-      title: "Standard Operations Plan",
+      title: "Standard Oper.",
       subtitle: "Standard Operations Plan",
       description:
         "We provide a proven SOP model ensuring smooth day-to-day operations and consistent guest experience.",
@@ -68,7 +68,7 @@ const HowWeWork = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-4 gap-2 md:gap-4 mb-12"
+          className="grid grid-cols-4 gap-1 md:gap-4 mb-12"
         >
           {steps.map((step, index) => (
             <motion.div
