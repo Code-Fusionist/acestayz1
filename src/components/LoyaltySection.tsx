@@ -31,7 +31,7 @@ const LoyaltySection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-xl sm:text-2xl lg:text-3xl font-bold text-coffee-brown leading-tight mb-4 font-poppins"
+                className="text-xl sm:text-2xl lg:text-3xl font-bold text-sand-beige leading-tight mb-4 font-poppins"
               >
                 More Nights, Better Price.
               </motion.h2>
