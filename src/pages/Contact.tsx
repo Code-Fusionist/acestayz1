@@ -90,12 +90,12 @@ const Contact = () => {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-sand-beige scroll-reveal parallax-bg">
+    <div className="min-h-screen bg-sand-beige">
 
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden parallax-slow">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-tan-brown/10 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -105,11 +105,11 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
+            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-coffee-brown mb-6">
               Let’s Talk
-              <span className="text-ace-gold block">Hospitality</span>
+              {/* <span className="text-ace-gold block">Hospitality</span> */}
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-coffee-brown  max-w-3xl mx-auto">
               We'd love to hear from you! Whether you have a question, need assistance with booking, or just want more information.
               We are here to help you.
             </p>
@@ -118,7 +118,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 bg-tan-brown parallax-fast">
+      <section className="py-20 bg-tan-brown">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
@@ -145,7 +145,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-sand-beige parallax-slow">
+      <section className="py-20 bg-sand-beige">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Form */}
@@ -153,7 +153,7 @@ const Contact = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-3xl p-8 shadow-2xl border border-tan-brown/20"
+              className="bg-white rounded-3xl p-8 shadow-2xl border border-tan-brown"
             >
               {submitted ? (
                 <motion.div
@@ -174,17 +174,17 @@ const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <h2 className="font-playfair text-3xl font-bold text-ace-dark mb-2">
+                    <h2 className="font-playfair text-3xl font-bold text-coffee-brown mb-2">
                       Send us a Message
                     </h2>
-                    <p className="text-gray-600 mb-8">
-                      Fill out the form below and we'll get back to you as soon as possible.
+                    <p className="text-coffee-brown mb-8">
+                      Kindly fill the form we will get back to you.
                     </p>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-coffee-brown mb-2">
                         Full Name *
                       </label>
                       <input
@@ -199,7 +199,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-coffee-brown mb-2">
                         Email Address *
                       </label>
                       <input
@@ -216,7 +216,7 @@ const Contact = () => {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-coffee-brown mb-2">
                         Phone Number *
                       </label>
                       <input
@@ -230,7 +230,7 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-coffee-brown mb-2">
                         Subject *
                       </label>
                       <select
@@ -250,7 +250,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-coffee-brown mb-2">
                       Message
                     </label>
                     <textarea
@@ -268,7 +268,7 @@ const Contact = () => {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-ace-gold text-white py-4 rounded-lg font-medium hover:bg-ace-dark transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    className="w-full bg-tan-brown text-sand-beige py-4 rounded-lg font-medium hover:bg-coffee-brown transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   >
                     {isSubmitting ? (
                       <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -308,19 +308,19 @@ const Contact = () => {
                   </h3>
                   <ul className="space-y-3 text-white/90">
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <div className="w-2 h-2 bg-tan-brown rounded-full" />
                       <span>24/7 premium support</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <div className="w-2 h-2 bg-tan-brown rounded-full" />
                       <span>Prime location stays</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <div className="w-2 h-2 bg-tan-brown rounded-full" />
                       <span>Personalized service</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-ace-gold rounded-full" />
+                      <div className="w-2 h-2 bg-tan-brown rounded-full" />
                       <span> Hassle-free booking & check-in</span>
                     </li>
                   </ul>
@@ -328,10 +328,10 @@ const Contact = () => {
               </div>
 
               <div className="bg-beyond-bg/20 rounded-3xl p-8">
-                <h3 className="font-playfair text-2xl font-bold text-ace-dark mb-4">
+                <h3 className="font-playfair text-2xl font-bold text-coffee-brown mb-4">
                   Quick Response Promise
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-coffee-brown">
                   We reply to all messages within 24 hours. For urgent matters, just give us a call.
                 </p>
               </div>
