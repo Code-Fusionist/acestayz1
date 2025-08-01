@@ -19,7 +19,6 @@ const Navbar = ({ onContactClick }: NavbarProps) => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Partner with Us', href: '/partner-with-us' },
-    { name: 'Why Us', href: '/why-us' },
   ];
 
   const handleContactClick = () => {

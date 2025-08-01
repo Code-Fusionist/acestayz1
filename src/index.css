@@ -253,12 +253,12 @@ All colors MUST be HSL.
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--ace-gold));
+  background: hsl(var(--coffee-brown));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--ace-dark));
+  background: hsl(var(--coffee-brown));
 }
 
 @keyframes parallax-slow {

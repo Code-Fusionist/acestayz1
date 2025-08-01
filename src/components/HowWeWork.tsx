@@ -50,7 +50,7 @@ const HowWeWork = () => {
 
 
   return (
-    <section ref={ref} className="py-16 bg-gray-50">
+    <section ref={ref} className="py-16 bg-tan-brown">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -58,7 +58,7 @@ const HowWeWork = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="font-poppins text-2xl md:text-3xl lg:text-4xl font-bold text-ace-dark mb-4">
+          <h2 className="font-poppins text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-brown mb-4">
             Our Creative Process
           </h2>
         </motion.div>
@@ -78,15 +78,15 @@ const HowWeWork = () => {
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               onClick={() => setActiveStep(step.id)}
               className={`cursor-pointer p-3 md:p-4 rounded-xl text-center transition-all duration-300 ${activeStep === step.id
-                ? 'bg-ace-gold text-white shadow-lg scale-105'
-                : 'bg-white text-gray-600 hover:bg-gray-100'
+                ? 'bg-coffee-brown text-sand-beige shadow-lg scale-105'
+                : 'bg-sand-beige text-coffee-brown hover:bg-tan-brown'
                 }`}
             >
               <div className={`w-8 h-8 md:w-12 md:h-12 ${step.color} rounded-xl flex items-center justify-center text-white mb-2 mx-auto`}>
                 <div className="scale-75 md:scale-100">{step.icon}</div>
               </div>
               <div className="font-poppins font-bold text-sm md:text-base mb-1">{step.title}</div>
-              <div className={`h-1 rounded-full transition-all duration-300 ${activeStep === step.id ? 'bg-white' : 'bg-gray-300'
+              <div className={`h-1 rounded-full transition-all duration-300 ${activeStep === step.id ? 'bg-sand-beige' : 'bg-coffee-brown'
                 }`} />
             </motion.div>
           ))}
@@ -98,13 +98,13 @@ const HowWeWork = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl p-8 shadow-lg"
+          className="bg-sand-beige rounded-2xl p-8 shadow-lg"
         >
           <div className="text-center">
-            <h4 className="font-poppins text-2xl font-bold text-ace-dark mb-4">
+            <h4 className="font-poppins text-2xl font-bold text-coffee-brown mb-4">
               {steps[activeStep].title}
             </h4>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+            <p className="text-coffee-brown text-lg leading-relaxed max-w-3xl mx-auto">
               {steps[activeStep].description}
             </p>
           </div>

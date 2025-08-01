@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 
 const Loader = () => {
   return (
-    <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div className="fixed inset-0 bg-tan-brown z-50 flex items-center justify-center">
       <div className="text-center space-y-6">
 
         {/* Title */}
         <motion.h1
-          className="text-4xl font-bold text-ace-gold font-poppins tracking-wide"
+          className="text-4xl font-bold text-coffee-brown font-poppins tracking-wide"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
@@ -20,7 +20,7 @@ const Loader = () => {
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
-              className="w-3 h-3 bg-ace-gold rounded-full"
+              className="w-3 h-3 bg-coffee-brown rounded-full"
               animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.5, 1, 0.5],

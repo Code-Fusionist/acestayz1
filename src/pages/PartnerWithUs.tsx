@@ -81,7 +81,7 @@ const PartnerWithUs = () => {
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-sand-beige scroll-reveal parallax-bg">
+    <div className="min-h-screen bg-sand-beige">
       <Navbar />
 
       {/* Optional Promo Sections */}
@@ -93,7 +93,7 @@ const PartnerWithUs = () => {
       <FranchiseComparison />
 
       {/* Process Section */}
-      <section ref={processRef} className="py-20 bg-tan-brown/20 parallax-slow scroll-reveal">
+      <section ref={processRef} className="py-20 bg-tan-brown/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

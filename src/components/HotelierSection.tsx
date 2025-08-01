@@ -8,7 +8,7 @@ const HotelierSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-tan-brown pt-20 pb-16 px-4 md:px-16 scroll-reveal parallax-bg"
+      className="w-full bg-tan-brown pt-20 pb-16 px-4 md:px-16"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left: Image */}
@@ -16,7 +16,7 @@ const HotelierSection = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="flex justify-center parallax-slow"
+          className="flex justify-center"
         >
           <div className="relative">
             <img
@@ -35,7 +35,6 @@ const HotelierSection = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="parallax-fast"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-coffee-brown mb-6 font-poppins leading-tight">
             Become a <span className="text-sand-beige bg-coffee-brown px-2 py-1 rounded-lg">Hotelier</span>
