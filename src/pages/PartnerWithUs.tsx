@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { useScrollReveal } from '@/hooks/useParallax';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -77,8 +78,10 @@ const PartnerWithUs = () => {
     },
   ];
 
+  useScrollReveal();
+
   return (
-    <div className="min-h-screen bg-sand-beige">
+    <div className="min-h-screen bg-sand-beige scroll-reveal parallax-bg">
       <Navbar />
 
       {/* Optional Promo Sections */}
@@ -90,7 +93,7 @@ const PartnerWithUs = () => {
       <FranchiseComparison />
 
       {/* Process Section */}
-      <section ref={processRef} className="py-20 bg-suite-bg/20">
+      <section ref={processRef} className="py-20 bg-tan-brown/20 parallax-slow scroll-reveal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -98,21 +101,21 @@ const PartnerWithUs = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="font-playfair text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
+            <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-coffee-brown mb-6">
               Partnership Process
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-coffee-brown/80 max-w-2xl mx-auto">
               A simple 4-step process to get your property listed and generating revenue
             </p>
           </motion.div>
 
           <div className="relative">
             {/* Static Timeline Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-ace-gold/20 transform -translate-y-1/2 hidden lg:block" />
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-tan-brown/20 transform -translate-y-1/2 hidden lg:block" />
 
             {/* Active Progress Line */}
             <div
-              className="absolute top-1/2 left-0 h-1 bg-ace-gold transform -translate-y-1/2 transition-all duration-1000 hidden lg:block"
+              className="absolute top-1/2 left-0 h-1 bg-tan-brown transform -translate-y-1/2 transition-all duration-1000 hidden lg:block"
               style={{ width: `${(activeStep + 1) * 25}%` }}
             />
 
@@ -135,10 +138,10 @@ const PartnerWithUs = () => {
                   >
                     {step.icon}
                   </div>
-                  <h3 className="font-playfair text-lg font-bold text-coffee-brown mb-2">
+                  <h3 className="font-poppins text-lg font-bold text-coffee-brown mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
+                  <p className="text-coffee-brown/70 text-sm">{step.description}</p>
                 </motion.div>
               ))}
             </div>

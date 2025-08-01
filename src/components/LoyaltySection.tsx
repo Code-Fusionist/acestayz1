@@ -48,11 +48,11 @@ const LoyaltySection = () => {
 
             {/* Right Illustration */}
             <div className="relative p-4 sm:p-6 lg:p-8 flex items-center justify-center">
-              <motion.div
+                <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white/95 rounded-xl p-4 sm:p-6 w-full max-w-xs shadow-xl"
+                className="bg-white/95 rounded-xl p-4 sm:p-6 w-full max-w-md shadow-xl"
               >
                 {/* Header */}
                 <div className="flex items-center justify-between mb-4">
@@ -67,9 +67,9 @@ const LoyaltySection = () => {
                 </div>
 
                 {/* Illustration with Image */}
-                <div className="relative bg-gray-50 rounded-lg p-4 mb-4 h-24 sm:h-28 overflow-hidden">
+                <div className="relative bg-gray-50 rounded-lg p-4 mb-4 h-32 sm:h-36 overflow-hidden">
                   <img 
-                    src="/specialservice/1.png" 
+                    src="/specialservice/4.png" 
                     alt="Ace Stayz Offer" 
                     className="w-full h-full object-cover rounded-lg"
                   />

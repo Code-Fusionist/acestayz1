@@ -52,7 +52,23 @@ const PressCarousel = () => {
         </h2>
       </div>
 
-      <div className="relative">
+      <div className="relative px-4 sm:px-6 lg:px-8">
+        {/* Slide controls */}
+        <div className="flex justify-center gap-2 mb-4">
+          <button 
+            onClick={() => {}}
+            className="w-2 h-2 rounded-full bg-coffee-brown/50 hover:bg-coffee-brown transition-colors"
+          />
+          <button 
+            onClick={() => {}}
+            className="w-2 h-2 rounded-full bg-coffee-brown/50 hover:bg-coffee-brown transition-colors"
+          />
+          <button 
+            onClick={() => {}}
+            className="w-2 h-2 rounded-full bg-coffee-brown transition-colors"
+          />
+        </div>
+        
         <motion.div
           className="flex gap-4 sm:gap-6"
           animate={{

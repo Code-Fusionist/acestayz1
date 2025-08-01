@@ -8,7 +8,7 @@ const HotelierSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-ace-gold pt-36 pb-20 px-4 md:px-16"
+      className="w-full bg-tan-brown pt-20 pb-16 px-4 md:px-16 scroll-reveal parallax-bg"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left: Image */}
@@ -16,13 +16,18 @@ const HotelierSection = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="flex justify-center"
+          className="flex justify-center parallax-slow"
         >
-          <img
-            src="hotelier.png"
-            alt="Hotelier"
-            className="w-[300px] h-[300px] object-cover rounded-lg shadow-[0_8px_12px_-6px_rgba(0,0,0,0.15)]"
-          />
+          <div className="relative">
+            <img
+              src="hotelier.png"
+              alt="Hotelier"
+              className="w-[350px] h-[350px] object-cover rounded-2xl shadow-2xl border-4 border-sand-beige"
+            />
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-coffee-brown rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-sand-beige font-bold text-lg">★</span>
+            </div>
+          </div>
         </motion.div>
 
         {/* Right: Title + Subtitle */}
@@ -30,13 +35,24 @@ const HotelierSection = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="parallax-fast"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-ace-dark mb-4 font-poppins">
-            Become a <span className="text-white">Hotelier</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-coffee-brown mb-6 font-poppins leading-tight">
+            Become a <span className="text-sand-beige bg-coffee-brown px-2 py-1 rounded-lg">Hotelier</span>
           </h2>
-          <p className="text-lg text-gray-700 font-poppins">
+          <p className="text-lg text-sand-beige font-poppins leading-relaxed bg-coffee-brown/20 p-4 rounded-lg backdrop-blur-sm">
             Start your hospitality business with Ace Stayz – a trusted franchise opportunity backed by industry experts and complete hand-holding support.
           </p>
+          <motion.div 
+            className="mt-6 flex gap-2"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="w-12 h-1 bg-coffee-brown rounded-full"></div>
+            <div className="w-8 h-1 bg-coffee-brown/60 rounded-full"></div>
+            <div className="w-4 h-1 bg-coffee-brown/40 rounded-full"></div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

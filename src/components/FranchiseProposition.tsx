@@ -43,36 +43,33 @@ const FranchiseProposition = () => {
   ];
 
   return (
-    <section className="py-12 px-4">
+    <section className="py-12 px-4 bg-sand-beige scroll-reveal parallax-bg">
       <div className="max-w-6xl mx-auto text-center mb-10">
-        <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-ace-dark mb-6">
-          Franchise Model<span className="text-ace-gold block">Highlights</span>
+        <h1 className="font-poppins text-3xl lg:text-4xl font-bold text-coffee-brown mb-6 parallax-slow">
+          Franchise Model Highlights
         </h1>
       </div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative mx-auto max-w-6xl"
+        className="max-w-6xl mx-auto bg-tan-brown rounded-2xl p-6 sm:p-8 shadow-xl"
       >
-        <img
-          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&h=600&fit=crop"
-          alt="Franchise Stats"
-          className="w-full h-72 object-cover rounded-3xl shadow-2xl"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl" />
-
-        <div className="absolute bottom-6 left-6 right-6 text-white">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {franchiseStats.map((item) => (
-              <div key={item.title} className="text-center">
-                <div className="mb-1 text-ace-gold">{item.icon}</div>
-                <div className="text-base sm:text-lg font-bold">{item.value}</div>
-                <div className="text-xs opacity-90 uppercase">{item.title}</div>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {franchiseStats.map((item, index) => (
+            <motion.div 
+              key={item.title} 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="text-center bg-sand-beige rounded-lg p-4 hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="mb-3 text-coffee-brown flex justify-center">{item.icon}</div>
+              <div className="text-lg sm:text-xl font-bold text-coffee-brown mb-1">{item.value}</div>
+              <div className="text-xs text-gray-600 uppercase font-medium">{item.title}</div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </section>

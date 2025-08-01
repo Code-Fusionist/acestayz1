@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import FloatingArrow from '../components/FloatingArrow';
+import { useScrollReveal } from '@/hooks/useParallax';
 
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
@@ -86,14 +87,16 @@ const Contact = () => {
     }
   ];
 
+  useScrollReveal();
+
   return (
-    <div className="min-h-screen bg-sand-beige">
+    <div className="min-h-screen bg-sand-beige scroll-reveal parallax-bg">
 
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ace-gold/10 to-transparent" />
+      <section className="relative pt-32 pb-20 overflow-hidden parallax-slow">
+        <div className="absolute inset-0 bg-gradient-to-br from-tan-brown/10 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -115,7 +118,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-tan-brown parallax-fast">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
@@ -124,12 +127,12 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-3xl p-8 text-center shadow-lg hover-lift"
+                className="bg-sand-beige rounded-3xl p-8 text-center shadow-lg hover-lift"
               >
-                <div className="w-16 h-16 bg-ace-gold/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-ace-gold">
+                <div className="w-16 h-16 bg-coffee-brown/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-coffee-brown">
                   {info.icon}
                 </div>
-                <h3 className="font-playfair text-xl font-bold text-ace-dark mb-2">
+                <h3 className="font-poppins text-xl font-bold text-coffee-brown mb-2">
                   {info.title}
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -142,7 +145,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-sand-beige parallax-slow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Form */}
@@ -150,7 +153,7 @@ const Contact = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
+              className="bg-white rounded-3xl p-8 shadow-2xl border border-tan-brown/20"
             >
               {submitted ? (
                 <motion.div
@@ -288,7 +291,7 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="font-playfair text-4xl font-bold text-ace-dark mb-6">
+                <h2 className="font-poppins text-4xl font-bold text-coffee-brown mb-6">
                   Let's Talk
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
@@ -297,8 +300,8 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="bg-ace-dark text-white rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-ace-gold/20 rounded-full -translate-y-16 translate-x-16" />
+              <div className="bg-coffee-brown text-sand-beige rounded-3xl p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-tan-brown/20 rounded-full -translate-y-16 translate-x-16" />
                 <div className="relative z-10">
                   <h3 className="font-playfair text-2xl font-bold mb-4">
                     Why Ace Stayz?
