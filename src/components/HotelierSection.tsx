@@ -20,7 +20,7 @@ const HotelierSection = () => {
         >
           <div className="relative">
             <img
-              src="Hotelier.png"
+              src="hotelier.png"
               alt="Hotelier"
               className="w-[350px] h-[350px] object-cover rounded-2xl shadow-2xl border-4 border-sand-beige"
             />
