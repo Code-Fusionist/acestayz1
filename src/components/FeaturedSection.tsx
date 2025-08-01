@@ -32,15 +32,15 @@ const FeaturedSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-10 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
-      <div className="max-w-7xl mx-auto text-center mb-12">
+    <section className="py-6 sm:py-8 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
+      <div className="max-w-7xl mx-auto text-center mb-8">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-poppins text-3xl lg:text-5xl font-bold text-white mb-6 parallax-slow"
+          className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-coffee-brown mb-4 parallax-slow"
         >
-          The Magic of <span className="text-coffee-brown block mt-2">Ace Stayz</span>
+          The Magic of Ace Stayz
         </motion.h2>
       </div>
 
@@ -57,19 +57,19 @@ const FeaturedSection = () => {
           ]}
           className="w-full"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-1 sm:-ml-2">
             {features.map((feature, idx) => (
               <CarouselItem
                 key={idx}
-                className="pl-2 md:pl-4 basis-4/5 sm:basis-3/5 md:basis-1/2 lg:basis-1/3"
+                className="pl-1 sm:pl-2 basis-4/5 sm:basis-3/5 md:basis-1/2 lg:basis-1/3"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
-                  className="group bg-sand-beige rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full scroll-reveal"
+                  className="group bg-sand-beige rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 h-full scroll-reveal"
                 >
-                  <div className="relative w-full h-[300px] overflow-hidden">
+                  <div className="relative w-full h-40 sm:h-48 overflow-hidden">
                     <img
                       src={feature.image}
                       alt={feature.title}
@@ -78,24 +78,20 @@ const FeaturedSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-black mb-3 font-poppins group-hover:text-tan-brown transition-colors duration-300">
+                  <div className="p-3 sm:p-4">
+                    <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-poppins group-hover:text-tan-brown transition-colors duration-300">
                       {feature.title}
                     </h3>
-                    <div className="text-black text-sm leading-relaxed font-poppins space-y-1">
+                    <div className="text-black text-xs sm:text-sm leading-relaxed font-poppins space-y-1">
                       {feature.description.split('\n').map((line, i) => (
                         <p key={i}>{line}</p>
                       ))}
                     </div>
                   </div>
-
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-ace-gold rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
         </Carousel>
       </div>
     </section>

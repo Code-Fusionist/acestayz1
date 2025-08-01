@@ -31,7 +31,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex items-end justify-start h-full text-white pb-20">
+      <div className="relative z-20 flex items-end justify-start h-full text-white pb-12 sm:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -39,13 +39,10 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="max-w-3xl"
           >
-            <h1 className="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight bg-brown">
-              <span className="block mb-4">Not Your Regular Hotel</span>
-              <span className="text-gradient bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
-                It's A Hybrid Hotel
-              </span>
+            <h1 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-tight text-coffee-brown">
+              <span className="block mb-2">Not Your Regular Hotel It's A Hybrid Hotel</span>
             </h1>
-            <p className="font-poppins text-base lg:text-lg mb-8 max-w-2xl opacity-95 leading-relaxed">
+            <p className="font-poppins text-sm lg:text-base mb-6 max-w-2xl opacity-95 leading-relaxed">
               Stayz For Smart Guest.
             </p>
 

@@ -45,24 +45,24 @@ const PressCarousel = () => {
   const duplicatedPublications = [...pressPublications, ...pressPublications];
 
   return (
-    <section className="py-8 bg-tan-brown overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-ace-dark mb-6">
-            <span className="text-coffee-brown block">Media Coverage</span>
-          </h2>
+    <section className="py-6 sm:py-8 bg-tan-brown overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+        <h2 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-coffee-brown mb-4">
+          Media Coverage
+        </h2>
       </div>
 
       <div className="relative">
         <motion.div
-          className="flex gap-6"
+          className="flex gap-4 sm:gap-6"
           animate={{
-            x: [0, -1600],
+            x: [0, -1400],
           }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 18,
               ease: "linear",
             },
           }}

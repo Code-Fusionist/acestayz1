@@ -18,22 +18,42 @@ const DestinationSection = () => {
   ];
 
   return (
-    <section id="destinations" className="py-10 lg:py-32 bg-tan-brown relative overflow-hidden parallax-bg">
+    <section id="destinations" className="py-6 sm:py-8 bg-tan-brown relative overflow-hidden parallax-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="font-poppins text-4xl lg:text-6xl font-bold text-sand-beige mb-6 parallax-fast">
-            Explore
-            <span className="text-coffee-brown block mt-2">ACE STAYZ</span>
+          <h2 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-coffee-brown mb-4 parallax-fast">
+            Explore ACE STAYZ
           </h2>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        {/* Desktop Grid */}
+        <div className="hidden lg:grid grid-cols-5 gap-4 max-w-4xl mx-auto">
+          {destinations.map((destination, index) => (
+            <motion.div
+              key={destination.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group flex flex-col items-center text-center p-4 bg-sand-beige rounded-lg shadow-sm hover:shadow-md transition duration-300 cursor-pointer hover:scale-105 h-full scroll-reveal"
+            >
+              <MapPin className="w-6 h-6 text-coffee-brown mb-2 group-hover:text-tan-brown transition-colors" />
+              <h3 className="text-sm font-semibold text-coffee-brown group-hover:text-tan-brown font-poppins">{destination.name}</h3>
+              <div className="flex items-center space-x-1 mt-1">
+                <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
+                <span className="text-xs text-gray-600">{destination.rating}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="lg:hidden max-w-4xl mx-auto">
           <Carousel
             opts={{
               align: "start",
@@ -46,27 +66,25 @@ const DestinationSection = () => {
             ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-1 sm:-ml-2">
               {destinations.map((destination, index) => (
-                <CarouselItem key={destination.name} className="pl-2 md:pl-4 basis-2/3 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <CarouselItem key={destination.name} className="pl-1 sm:pl-2 basis-2/3 sm:basis-1/2">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group flex flex-col items-center text-center p-6 bg-sand-beige rounded-xl shadow-sm hover:shadow-md transition duration-300 cursor-pointer hover:scale-105 h-full scroll-reveal"
+                    className="group flex flex-col items-center text-center p-3 sm:p-4 bg-sand-beige rounded-lg shadow-sm hover:shadow-md transition duration-300 cursor-pointer hover:scale-105 h-full scroll-reveal"
                   >
-                    <MapPin className="w-8 h-8 text-coffee-brown mb-2 group-hover:text-tan-brown transition-colors" />
-                    <h3 className="text-lg font-semibold text-coffee-brown group-hover:text-tan-brown font-poppins">{destination.name}</h3>
-                    <div className="flex items-center space-x-1 mt-2">
-                      <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                      <span className="text-sm text-gray-600">{destination.rating}</span>
+                    <MapPin className="w-6 h-6 text-coffee-brown mb-2 group-hover:text-tan-brown transition-colors" />
+                    <h3 className="text-sm font-semibold text-coffee-brown group-hover:text-tan-brown font-poppins">{destination.name}</h3>
+                    <div className="flex items-center space-x-1 mt-1">
+                      <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
+                      <span className="text-xs text-gray-600">{destination.rating}</span>
                     </div>
-                    </motion.div>
-                  </CarouselItem>
+                  </motion.div>
+                </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
           </Carousel>
         </div>
 
