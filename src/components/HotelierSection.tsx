@@ -8,7 +8,7 @@ const HotelierSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-tan-brown pt-20 pb-16 px-4 md:px-16"
+      className="w-full bg-tan-brown pt-32 pb-16 px-4 md:px-16"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left: Image */}

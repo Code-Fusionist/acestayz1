@@ -47,7 +47,44 @@ const HowWeWork = () => {
     },
   ];
 
-
+  const steps1 = [
+    {
+      id: 0,
+      title: "Revenue Management",
+      subtitle: "Revenue Management",
+      description:
+        "We will be doing strategic pricing through OTA, online & offline sales channels to maximize revenue.",
+      icon: <Lightbulb className="w-8 h-8" />,
+      color: "bg-red-500",
+    },
+    {
+      id: 1,
+      title: "Design Interiors",
+      subtitle: "Design & Interiors",
+      description:
+        "We are building design-led hotels with impactful interiors that attract guests and boost bookings.",
+      icon: <UserRound className="w-8 h-8" />,
+      color: "bg-gray-700",
+    },
+    {
+      id: 2,
+      title: "Standard Operation Plan",
+      subtitle: "Standard Operations Plan",
+      description:
+        "We provide a proven SOP model ensuring smooth day-to-day operations and consistent guest experience.",
+      icon: <Star className="w-8 h-8" />,
+      color: "bg-red-500",
+    },
+    {
+      id: 3,
+      title: "Hiring Support",
+      subtitle: "Hiring Support",
+      description:
+        "We assist in hiring skilled staff with defined roles to ensure professional and efficient service.",
+      icon: <Handshake className="w-8 h-8" />,
+      color: "bg-gray-700",
+    },
+  ];
 
   return (
     <section ref={ref} className="py-16 bg-tan-brown">
@@ -102,10 +139,10 @@ const HowWeWork = () => {
         >
           <div className="text-center">
             <h4 className="font-poppins text-2xl font-bold text-coffee-brown mb-4">
-              {steps[activeStep].title}
+              {steps1[activeStep].title}
             </h4>
             <p className="text-coffee-brown text-lg leading-relaxed max-w-3xl mx-auto">
-              {steps[activeStep].description}
+              {steps1[activeStep].description}
             </p>
           </div>
         </motion.div>
