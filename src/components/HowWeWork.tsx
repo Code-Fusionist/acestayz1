@@ -96,7 +96,7 @@ const HowWeWork = () => {
           className="text-center mb-12"
         >
           <h2 className="font-poppins text-2xl md:text-3xl lg:text-4xl font-bold text-coffee-brown mb-4">
-            Our Creative Process
+            Our Commitment
           </h2>
         </motion.div>
 

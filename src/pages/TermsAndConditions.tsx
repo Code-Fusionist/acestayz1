@@ -11,10 +11,10 @@ const TermsAndConditions = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-sand-beige overflow-x-hidden scroll-reveal parallax-bg">
+    <div className="relative min-h-screen bg-sand-beige overflow-x-hidden">
       <Navbar />
 
-      <section className="bg-sand-beige text-coffee-brown px-6 md:px-20 py-24 parallax-slow">
+      <section className="bg-sand-beige text-coffee-brown px-6 md:px-20 py-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

@@ -46,54 +46,28 @@ const LoyaltySection = () => {
               </motion.p>
             </div>
 
-            {/* Right Illustration */}
-            <div className="relative p-4 sm:p-6 lg:p-8 flex items-center justify-center">
-                <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white/95 rounded-xl p-4 sm:p-6 w-full max-w-md shadow-xl"
+            <div className="relative rounded-lg p-4 mb-4 aspect-video overflow-hidden max-w-full mx-auto">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <img
+                  src="/specialservice/4.png"
+                  alt="Ace Stayz Offer"
+                  className="h-full w-2/4 object-cover rounded-lg"
+                  loading="eager"
+                  decoding="async"
+                  style={{ imageRendering: 'auto' }}
+                />
+              </div>
+
+              {/* Floating elements */}
+              <motion.div
+                animate={{ y: [-3, 3, -3] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute top-2 right-2"
               >
-                {/* Header */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-yellow-500 font-bold text-lg font-poppins">ACE STAYZ</div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center">
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    </div>
-                    <div className="w-3 h-1 bg-gray-200 rounded-full"></div>
-                    <div className="w-3 h-1 bg-gray-200 rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Illustration with Image */}
-                <div className="relative bg-gray-50 rounded-lg p-4 mb-4 h-32 sm:h-36 overflow-hidden">
-                  <img 
-                    src="/specialservice/4.png" 
-                    alt="Ace Stayz Offer" 
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                  {/* Floating elements */}
-                  <motion.div
-                    animate={{ y: [-3, 3, -3] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="absolute top-2 right-2"
-                  >
-                    <Award className="w-4 h-4 text-yellow-400" />
-                  </motion.div>
-                </div>
-
-                {/* CTA */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200 rounded-lg py-2 px-3 flex items-center justify-between text-gray-600 font-medium font-poppins text-sm"
-                >
-                  <span>Unlock Offer Rates</span>
-                  <TrendingUp className="w-3 h-3" />
-                </motion.button>
+                {/* Add badge/icon if needed */}
               </motion.div>
             </div>
+
           </div>
         </div>
       </div>

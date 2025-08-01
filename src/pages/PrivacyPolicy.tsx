@@ -11,10 +11,10 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-sand-beige overflow-x-hidden scroll-reveal parallax-bg">
+    <div className="relative min-h-screen bg-sand-beige overflow-x-hidden">
       <Navbar />
 
-      <section className="bg-sand-beige text-coffee-brown px-6 md:px-20 py-24 parallax-slow">
+      <section className="bg-sand-beige text-coffee-brown px-6 md:px-20 py-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ const PrivacyPolicy = () => {
               You may opt out of promotional emails anytime by:
             </p>
             <ul className="list-disc pl-6">
-              <li>Emailing <a className="text-blue-600" href="mailto:book@letstay.co.in">book@letstay.co.in</a></li>
+              <li>Emailing <a className="text-blue-600" href="mailto:book@acestayz.com">book@acestayz.com</a></li>
               <li>Clicking “unsubscribe” in our emails</li>
             </ul>
             <p>

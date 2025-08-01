@@ -8,7 +8,7 @@ const HotelierSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-tan-brown pt-32 pb-16 px-4 md:px-16"
+      className="w-full bg-coffee-brown pt-32 pb-16 px-4 md:px-16"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left: Image */}
@@ -20,12 +20,12 @@ const HotelierSection = () => {
         >
           <div className="relative">
             <img
-              src="hotelier.png"
+              src="Hotelier.png"
               alt="Hotelier"
               className="w-[350px] h-[350px] object-cover rounded-2xl shadow-2xl border-4 border-sand-beige"
             />
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-coffee-brown rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-sand-beige font-bold text-lg">★</span>
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-sand-beige rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-coffee-brown font-bold text-lg">★</span>
             </div>
           </div>
         </motion.div>
@@ -36,11 +36,11 @@ const HotelierSection = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-coffee-brown mb-6 font-poppins leading-tight">
-            Become a <span className="text-sand-beige bg-coffee-brown px-2 py-1 rounded-lg">Hotelier</span>
+          <h2 className="text-4xl md:text-5xl font-bold-italian text-tan-brown mb-6 font-poppins leading-tight">
+            Become a Hotelier
           </h2>
-          <p className="text-lg text-sand-beige font-poppins leading-relaxed bg-coffee-brown/20 p-4 rounded-lg backdrop-blur-sm">
-            Start your hospitality business with Ace Stayz – a trusted franchise opportunity backed by industry experts and complete hand-holding support.
+          <p className="text-lg text-sand-beige font-poppins leading-relaxed bg-coffee-brown/20 p-4 rounded-lg">
+            Start your hospitality business with Ace Stayz - a trusted franchise opportunity backed by industry experts and complete hand-holding support.
           </p>
           <motion.div 
             className="mt-6 flex gap-2"

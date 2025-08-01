@@ -11,10 +11,10 @@ const RefundPolicy = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-sand-beige overflow-x-hidden scroll-reveal parallax-bg">
+    <div className="relative min-h-screen bg-sand-beige overflow-x-hidden">
       <Navbar />
 
-      <section className="px-6 md:px-20 py-20 text-coffee-brown bg-sand-beige parallax-slow">
+      <section className="px-6 md:px-20 py-20 text-coffee-brown bg-sand-beige">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
