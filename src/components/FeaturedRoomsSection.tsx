@@ -11,25 +11,25 @@ const FeaturedRoomsSection = () => {
   const properties = [
     {
       name: 'ACE STAYZ',
-      image: '/media/ani.jpg',
+      image: '/rooms/vk.jpg',
       location: 'Vasant Kunj, Delhi',
       bookingLink: 'https://www.zotel.ai/website/234'
     },
     {
       name: 'ACE STAYZ',
-      image: '/media/tribune.png',
+      image: '/rooms/dlf.avif',
       location: 'DLF Phase-1, Gurugram',
       bookingLink: 'https://www.zotel.ai/website/468'
     },
     {
       name: 'ACE STAYZ',
-      image: '/media/bus-Stan.png',
+      image: '/rooms/jaipur.png',
       location: 'Pink City, Jaipur',
       bookingLink: 'https://www.zotel.ai/website/333'
     },
     {
       name: 'ACE STAYZ',
-      image: '/media/Nationtv.png',
+      image: '/rooms/noida.jpg',
       location: 'Sector 70, Noida',
       bookingLink: 'https://www.zotel.ai/website/469'
     }
