@@ -15,7 +15,6 @@ const FranchiseHeroSection = () => {
         <div className="bg-gradient-to-r from-coffee-brown to-coffee-brown rounded-2xl overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0 items-center">
             {/* Left Content */}
-            <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
