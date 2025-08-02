@@ -4,26 +4,26 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import hotelInterior from '/specialservice/2.png';
-import hotelRoom from '/specialservice/1.png';
-import hotelServices from '/specialservice/3.png';
+import hybridModelVector from '@/assets/hybrid-model-vector.png';
+import premiumFeelVector from '@/assets/premium-feel-vector.png';
+import breakRulesVector from '@/assets/break-rules-vector.png';
 
 const features = [
   {
     title: "Hybrid Model",
     description: "Fastest growing hybrid hotel chain with in room kitchenette.",
-    image: hotelRoom,
+    image: hybridModelVector,
   },
   {
     title: "Premium Feel",
     description: "Design-led hotels – not just rooms, it's a mood.\nFeel the style, live the vibe.",
-    image: hotelInterior,
+    image: premiumFeelVector,
   },
   {
     title: "Break The Rules",
     description:
       "No nonsense hotel rules! \nFood delivery? Always welcome.\nFlexible breakfast timings. \nEasy check-in, late checkout (Subject to availability).",
-    image: hotelServices,
+    image: breakRulesVector,
   },
 ];
 
@@ -75,7 +75,12 @@ const FeaturedSection = () => {
                       alt={feature.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="eager"
-                      style={{ imageRendering: 'crisp-edges' }}
+                      style={{ 
+                        imageRendering: 'auto',
+                        objectFit: 'cover',
+                        width: '100%',
+                        height: '100%'
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>

@@ -5,6 +5,8 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import FloatingArrow from '../components/FloatingArrow';
 import { useScrollReveal } from '@/hooks/useParallax';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
@@ -120,7 +122,8 @@ const Contact = () => {
       {/* Contact Info Cards */}
       <section className="py-20 bg-tan-brown">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={info.title}
@@ -140,6 +143,48 @@ const Contact = () => {
                 </p>
               </motion.div>
             ))}
+          </div>
+
+          {/* Mobile/Tablet Carousel */}
+          <div className="lg:hidden mb-20">
+            <Carousel
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                }) as any,
+              ]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 sm:-ml-4">
+                {contactInfo.map((info, index) => (
+                  <CarouselItem
+                    key={info.title}
+                    className="pl-2 sm:pl-4 basis-4/5 sm:basis-1/2"
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="bg-sand-beige rounded-3xl p-6 text-center shadow-lg hover-lift h-full"
+                    >
+                      <div className="w-12 h-12 bg-coffee-brown/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-coffee-brown">
+                        {info.icon}
+                      </div>
+                      <h3 className="font-poppins text-lg font-bold text-coffee-brown mb-2">
+                        {info.title}
+                      </h3>
+                      <p className="text-gray-600 text-xs">
+                        {info.description}
+                      </p>
+                    </motion.div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </section>

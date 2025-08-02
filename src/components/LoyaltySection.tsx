@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Zap, MapPin, Building, Award, Smile, TrendingUp } from 'lucide-react';
+import loyaltyOffersVector from '@/assets/loyalty-offers-vector.png';
 
 const LoyaltySection = () => {
   const ref = useRef(null);
@@ -49,12 +50,17 @@ const LoyaltySection = () => {
             <div className="relative rounded-lg p-4 mb-4 aspect-video overflow-hidden max-w-full mx-auto">
               <div className="relative w-full h-full flex items-center justify-center">
                 <img
-                  src="/specialservice/4.png"
-                  alt="Ace Stayz Offer"
-                  className="h-full w-2/3 object-cover rounded-lg"
+                  src={loyaltyOffersVector}
+                  alt="Ace Stayz Loyalty Offers"
+                  className="h-full w-full object-cover rounded-lg"
                   loading="eager"
                   decoding="async"
-                  style={{ imageRendering: 'auto' }}
+                  style={{ 
+                    imageRendering: 'auto',
+                    objectFit: 'cover',
+                    width: '100%',
+                    height: '100%'
+                  }}
                 />
               </div>
 
