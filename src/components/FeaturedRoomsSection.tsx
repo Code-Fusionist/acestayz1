@@ -29,7 +29,7 @@ const FeaturedRoomsSection = () => {
     },
     {
       name: 'ACE STAYZ',
-      image: '/rooms/noida.jpg',
+      image: '/rooms/noida.png',
       location: 'Sector 70, Noida',
       bookingLink: 'https://www.zotel.ai/website/469'
     }
