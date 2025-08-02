@@ -1,7 +1,9 @@
+'use client';
+
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Zap, MapPin, Building, Award, Smile, TrendingUp } from 'lucide-react';
-import loyaltyOffersVector from '@/assets/loyalty-offers-vector.png';
+import { Zap } from 'lucide-react';
+import loyaltyOffersVector from '/specialservice/4.png';
 
 const LoyaltySection = () => {
   const ref = useRef(null);
@@ -43,37 +45,29 @@ const LoyaltySection = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-sand-beige text-sm sm:text-base leading-relaxed font-poppins"
               >
-                Planing a Longer Stayz? Grab exclusive weekly - monthly offers now!
+                Planning a Longer Stayz? Grab exclusive weekly - monthly offers now!
               </motion.p>
             </div>
 
-            <div className="relative rounded-lg p-4 mb-4 aspect-video overflow-hidden max-w-full mx-auto">
-              <div className="relative w-full h-full flex items-center justify-center">
-                <img
-                  src={loyaltyOffersVector}
-                  alt="Ace Stayz Loyalty Offers"
-                  className="h-full w-full object-cover rounded-lg"
-                  loading="eager"
-                  decoding="async"
-                  style={{ 
-                    imageRendering: 'auto',
-                    objectFit: 'cover',
-                    width: '100%',
-                    height: '100%'
-                  }}
-                />
-              </div>
+            {/* Right Image */}
+            <div className="relative p-4 mb-4 flex items-center justify-center">
+              <img
+                src={loyaltyOffersVector}
+                alt="Ace Stayz Loyalty Offers"
+                className="object-contain rounded-lg w-full max-w-[400px] h-auto"
+                loading="eager"
+                decoding="async"
+              />
 
-              {/* Floating elements */}
+              {/* Optional Floating Animation Element */}
               <motion.div
                 animate={{ y: [-3, 3, -3] }}
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute top-2 right-2"
               >
-                {/* Add badge/icon if needed */}
+                {/* Add icon/badge here if needed */}
               </motion.div>
             </div>
-
           </div>
         </div>
       </div>
