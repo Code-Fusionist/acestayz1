@@ -15,16 +15,23 @@ const FranchiseHeroSection = () => {
         <div className="bg-gradient-to-r from-coffee-brown to-coffee-brown rounded-2xl overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0 items-center">
             {/* Left Content */}
-            <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-sand-beige text-sm sm:text-base leading-relaxed font-poppins"
-              >
-                Planning a Longer Stayz? Grab exclusive weekly - monthly offers now!
-              </motion.p>
-            </div>
+            <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold-italian text-tan-brown mb-6 font-poppins leading-tight">
+            Become a Hotelier
+          </h2>
+          <p className="text-lg text-sand-beige font-poppins leading-relaxed bg-coffee-brown/20 p-4 rounded-lg">
+            Start your hospitality business with Ace Stayz - a trusted franchise opportunity backed by industry experts and complete hand-holding support.
+          </p>
+          <motion.div 
+            className="mt-6 flex gap-2"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
 
             {/* Right Image */}
             <div className="p-4 flex items-center justify-center">
