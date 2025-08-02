@@ -12,6 +12,7 @@ import HowWeWork from '../components/HowWeWork';
 import RevenueCalculator from '../components/RevenueCalculator';
 import HotelierSection from '@/components/HotelierSection';
 import FloatingArrow from '@/components/FloatingArrow';
+import FranchiseHeroSection from '@/components/FranchiseHeroSection';
 import { TrendingUp, Users, Award, Handshake, MapPin, Rocket, } from 'lucide-react';
 
 const PartnerWithUs = () => {
@@ -87,6 +88,7 @@ const PartnerWithUs = () => {
       {/* Optional Promo Sections */}
       {/* <CelebrityPromotion />
       <IllustrationSection /> */}
+      <FranchiseHeroSection />
       <HotelierSection />
       <FranchiseProposition />
       <HowWeWork />
