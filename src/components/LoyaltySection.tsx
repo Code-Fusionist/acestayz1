@@ -13,7 +13,7 @@ const LoyaltySection = () => {
     <section className="py-6 sm:py-8 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <div className="bg-gradient-to-r from-coffee-brown to-coffee-brown rounded-2xl overflow-hidden">
-          <div className="grid lg:grid-cols-2 gap-0">
+          <div className="grid lg:grid-cols-2 gap-0 items-center">
             {/* Left Content */}
             <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
               <motion.div
@@ -36,7 +36,7 @@ const LoyaltySection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-xl sm:text-2xl lg:text-3xl font-bold text-sand-beige leading-tight mb-4 font-poppins"
               >
-                More Nights, Better Price.
+                More Nights,<br />Better Price.
               </motion.h2>
 
               <motion.p
@@ -50,14 +50,16 @@ const LoyaltySection = () => {
             </div>
 
             {/* Right Image */}
-            <div className="relative p-4 mb-4 flex items-center justify-center">
-              <img
-                src={loyaltyOffersVector}
-                alt="Ace Stayz Loyalty Offers"
-                className="object-contain rounded-lg w-full max-w-[400px] h-auto"
-                loading="eager"
-                decoding="async"
-              />
+            <div className="p-4 flex items-center justify-center">
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={loyaltyOffersVector}
+                  alt="Ace Stayz Loyalty Offers"
+                  className="object-contain w-full max-w-[300px] max-h-[250px]"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
 
               {/* Optional Floating Animation Element */}
               <motion.div
@@ -65,7 +67,7 @@ const LoyaltySection = () => {
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute top-2 right-2"
               >
-                {/* Add icon/badge here if needed */}
+                {/* Badge or icon if needed */}
               </motion.div>
             </div>
           </div>
