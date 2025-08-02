@@ -101,7 +101,7 @@ const HeroSection = () => {
                   onClick={() => {
                     setSelectedCity(`Book A Ace in ${city}`);
                     setIsModalOpen(false);
-                    window.open('https://acestayz.com/booking', '_blank');
+                    window.open('/Contact', '_blank');
                   }}
                   className="cursor-pointer px-4 py-2 rounded-lg text-center font-medium transition-all duration-200 hover:bg-tan-brown hover:text-white"
                 >
