@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Zap } from 'lucide-react';
-import loyaltyOffersVector from 'FranchseMan.png';
+import loyaltyOffersVector from '/FranchseMan.png';
 
 const FranchiseHeroSection = () => {
   const ref = useRef(null);
