@@ -88,8 +88,8 @@ const PartnerWithUs = () => {
       {/* Optional Promo Sections */}
       {/* <CelebrityPromotion />
       <IllustrationSection /> */}
-      <FranchiseHeroSection />
       <HotelierSection />
+      <FranchiseHeroSection />
       <FranchiseProposition />
       <HowWeWork />
       <FranchiseComparison />
