@@ -64,14 +64,14 @@ const Footer = () => {
 
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
-                    <Mail size={16} className="text-ace-gold" />
-                    <a href="mailto:info@acestayz.com" className="text-sm font-poppins hover:text-ace-gold transition-colors">
+                    <Mail size={16} className="text-sand-beige hover:text-tan-brown" />
+                    <a href="mailto:info@acestayz.com" className="text-sm font-poppins hover:text-tan-brown transition-colors">
                       info@acestayz.com
                     </a>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Phone size={16} className="text-ace-gold" />
-                    <a href="tel:+919403890926" className="text-sm font-poppins hover:text-ace-gold transition-colors">
+                    <Phone size={16} className="text-sand-beige hover:text-tan-brown" />
+                    <a href="tel:+919403890926" className="text-sm font-poppins hover:text-tan-brown transition-colors">
                       +91 9403890926
                     </a>
                   </div>

@@ -31,9 +31,6 @@ const PartnersSection = () => {
           <h2 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-coffee-brown mb-4">
             Corporate Partners
           </h2>
-          <p className="text-sm lg:text-base text-gray-600 max-w-3xl mx-auto font-poppins">
-            Trusted By Big Brands.
-          </p>
         </motion.div>
 
         {/* Desktop Grid */}

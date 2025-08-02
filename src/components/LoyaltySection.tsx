@@ -51,7 +51,7 @@ const LoyaltySection = () => {
                 <img
                   src="/specialservice/4.png"
                   alt="Ace Stayz Offer"
-                  className="h-full w-2/4 object-cover rounded-lg"
+                  className="h-full w-2/3 object-cover rounded-lg"
                   loading="eager"
                   decoding="async"
                   style={{ imageRendering: 'auto' }}
