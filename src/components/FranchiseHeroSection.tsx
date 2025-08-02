@@ -16,27 +16,13 @@ const FranchiseHeroSection = () => {
           <div className="grid lg:grid-cols-2 gap-0 items-center">
             {/* Left Content */}
               <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6 }}
-                  className="mb-3"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <Zap className="w-4 h-4 sm:w-5 h-5 text-ace-gold" />
-                    <span className="text-ace-gold font-semibold font-poppins text-xs sm:text-sm">
-                      Get up to 30 % off extra on your stayz!
-                    </span>
-                  </div>
-                </motion.div>
-  
                 <motion.h2
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="text-xl sm:text-2xl lg:text-3xl font-bold text-sand-beige leading-tight mb-4 font-poppins"
                 >
-                  More Nights,<br />Better Price.
+                  Become a Hotelier
                 </motion.h2>
   
                 <motion.p
@@ -45,7 +31,7 @@ const FranchiseHeroSection = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="text-sand-beige text-sm sm:text-base leading-relaxed font-poppins"
                 >
-                  Planning a Longer Stayz? Grab exclusive weekly - monthly offers now!
+                  Start your hospitality business with Ace Stayz - a trusted franchise opportunity backed by industry experts and complete hand-holding support.
                 </motion.p>
             </div>
             {/* Right Image */}
