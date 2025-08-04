@@ -12,7 +12,7 @@ const FranchiseHeroSection = () => {
   return (
     <section className="pt-24 pb-6 sm:py-8 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto">
-        {/* Title outside the container */}
+        {/* Outer Title - above the container */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -22,17 +22,29 @@ const FranchiseHeroSection = () => {
           Become a Hotelier
         </motion.h2>
 
+        {/* Gradient Container */}
         <div className="bg-gradient-to-r from-coffee-brown to-coffee-brown rounded-2xl overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-0 items-center">
             {/* Left Content */}
             <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+              {/* Inner Title */}
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-xl sm:text-2xl font-semibold text-sand-beige mb-4 font-poppins"
+              >
+                Partner With Us
+              </motion.h3>
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-sand-beige text-sm sm:text-base leading-relaxed font-poppins"
               >
-                Start your hospitality business with Ace Stayz - a trusted franchise opportunity backed by industry experts and complete hand-holding support.
+                Start your hospitality business with Ace Stayz - a trusted franchise opportunity
+                backed by industry experts and complete hand-holding support.
               </motion.p>
             </div>
 
