@@ -12,7 +12,7 @@ const FranchiseHeroSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-tan-brown pt-32 pb-16 px-4 md:px-16 parallax-bg"
+      className="w-full bg-tan-brown pt-40 pb-16 px-4 md:px-16 parallax-bg scroll-mt-40"
     >
       <div className="max-w-7xl mx-auto">
         {/* Outer Title */}
