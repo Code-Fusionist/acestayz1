@@ -28,7 +28,7 @@ const DestinationSection = () => {
           className="text-center mb-8"
         >
           <h2 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-coffee-brown mb-4">
-            We Are Live
+            Available
           </h2>
         </motion.div>
 
