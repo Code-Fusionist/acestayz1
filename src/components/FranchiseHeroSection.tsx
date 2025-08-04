@@ -20,7 +20,7 @@ const FranchiseHeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl font-bold text-center text-sand-beige mb-6 font-poppins"
+          className="text-3xl sm:text-4xl font-bold text-center text-coffee-brown mb-6 font-poppins"
         >
           Become a Hotelier
         </motion.h2>
