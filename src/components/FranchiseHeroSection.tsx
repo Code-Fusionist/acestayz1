@@ -10,7 +10,7 @@ const FranchiseHeroSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="pt-24 pb-6 sm:py-8 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
+    <section className="pt-32 pb-6 sm:py-10 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Outer Title - above the container */}
         <motion.h2
