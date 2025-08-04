@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
+import SEOHead from '../components/SEOHead';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import FloatingArrow from '../components/FloatingArrow';
@@ -93,6 +94,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-sand-beige">
+      <SEOHead 
+        title="Contact ACE STAYZ - Get in Touch for Hotel Franchise Opportunities"
+        description="Contact ACE STAYZ for hotel franchise opportunities, partnership inquiries, and hospitality business support. 24/7 customer service, instant response guaranteed."
+        keywords="contact ACE STAYZ, hotel franchise contact, partnership inquiry, hospitality business support, franchise opportunity contact, customer service"
+      />
 
       <Navbar />
 

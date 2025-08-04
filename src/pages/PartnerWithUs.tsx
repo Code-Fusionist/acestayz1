@@ -2,14 +2,12 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useScrollReveal } from '@/hooks/useParallax';
 import Navbar from '../components/Navbar';
+import SEOHead from '../components/SEOHead';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
-import CelebrityPromotion from '../components/CelebrityPromotion';
-import IllustrationSection from '../components/IllustrationSection';
 import FranchiseComparison from '../components/FranchiseComparison';
 import FranchiseProposition from '../components/FranchiseProposition';
 import HowWeWork from '../components/HowWeWork';
-import RevenueCalculator from '../components/RevenueCalculator';
 import HotelierSection from '@/components/HotelierSection';
 import FloatingArrow from '@/components/FloatingArrow';
 import FranchiseHeroSection from '@/components/FranchiseHeroSection';
@@ -83,11 +81,13 @@ const PartnerWithUs = () => {
 
   return (
     <div className="min-h-screen bg-sand-beige">
+      <SEOHead 
+        title="Partner With ACE STAYZ - Hotel Franchise Opportunities"
+        description="Join ACE STAYZ network and grow your hospitality business. Franchise opportunities, partnership benefits, revenue growth strategies, and comprehensive support for hotel owners."
+        keywords="hotel franchise opportunities, hotel partnership, franchise business, hospitality franchise, ACE STAYZ franchise, hotel investment"
+      />
       <Navbar />
 
-      {/* Optional Promo Sections */}
-      {/* <CelebrityPromotion />
-      <IllustrationSection /> */}
 {/*       <HotelierSection /> */}
       <FranchiseHeroSection />
       <FranchiseProposition />
@@ -151,7 +151,7 @@ const PartnerWithUs = () => {
         </div>
       </section>
 
-      {/* <RevenueCalculator /> */}
+      
       <Footer />
       <WhatsAppButton />
       <FloatingArrow />

@@ -25,6 +25,7 @@ const HeroSection = () => {
           muted
           loop
           playsInline
+          preload="metadata"
           src="/Hero.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/30 to-black/50 z-10" />

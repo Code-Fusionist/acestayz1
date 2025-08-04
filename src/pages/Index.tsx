@@ -1,21 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useScrollReveal } from '../hooks/useParallax';
 import Navbar from '../components/Navbar';
+import SEOHead from '../components/SEOHead';
 import HeroSection from '../components/HeroSection';
-// import AboutSection from '../components/AboutSection';
-import DestinationSection from '../components/DestinationSection';
-import LoyaltySection from '../components/LoyaltySection';
-import FeaturedRoomsSection from '../components/FeaturedRoomsSection';
-import FeaturedSection from '../components/FeaturedSection';
-// import ServicesSection from '../components/ServicesSection';
-import PartnersSection from '../components/PartnersSection';
-// import PartnershipSection from '../components/PartnershipSection';
+
+// Lazy load components for better performance
+const DestinationSection = lazy(() => import('../components/DestinationSection'));
+const LoyaltySection = lazy(() => import('../components/LoyaltySection'));
+const FeaturedRoomsSection = lazy(() => import('../components/FeaturedRoomsSection'));
+const FeaturedSection = lazy(() => import('../components/FeaturedSection'));
+const PartnersSection = lazy(() => import('../components/PartnersSection'));
+const Footer = lazy(() => import('../components/Footer'));
+const PressCarousel = lazy(() => import('../components/PressCarousel'));
+
 import { useNavigate } from 'react-router-dom';
 import WhatsAppButton from '../components/WhatsAppButton';
 import FloatingArrow from '@/components/FloatingArrow';
-import Footer from '../components/Footer';
-import PressCarousel from '../components/PressCarousel';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -43,24 +44,31 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen bg-sand-beige overflow-x-hidden">
+      <SEOHead 
+        title="ACE STAYZ - Premium Hotel Franchise & Property Management Solutions"
+        description="Transform your property into a profitable hospitality business with ACE STAYZ. Premium hotel franchise opportunities, professional management, proven revenue growth strategies, and 24/7 support."
+        keywords="hotel franchise, property management, hospitality business, hotel partnership, revenue growth, premium hotels, ACE STAYZ, franchise opportunities"
+      />
       
       <Navbar onContactClick={() => navigate('/contact')} />
         
       <div className="relative z-10 y-5">
         <HeroSection />
       </div>
-      <div className="relative z-5">
-        <LoyaltySection />
-        <FeaturedSection />
-        <FeaturedRoomsSection />
-        <DestinationSection />
-        <PressCarousel />
-        {/* <ServicesSection /> */}
-        <PartnersSection />
-        {/* <PartnershipSection onContactClick={() => setShowContactForm(true)} /> */}
-      </div>
+      
+      <Suspense fallback={<div className="h-32 bg-sand-beige animate-pulse" />}>
+        <div className="relative z-5">
+          <LoyaltySection />
+          <FeaturedSection />
+          <FeaturedRoomsSection />
+          <DestinationSection />
+          <PressCarousel />
+          <PartnersSection />
+        </div>
 
-      <Footer />
+        <Footer />
+      </Suspense>
+      
       <WhatsAppButton />
       <FloatingArrow />
     </div>
