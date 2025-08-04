@@ -22,7 +22,7 @@ const FranchiseHeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl font-bold text-center text-coffee-brown mb-6 font-poppins"
         >
-          Become a Hotelier
+          Start Your Hotel Today
         </motion.h2>
 
         {/* Inner Container */}
@@ -37,7 +37,7 @@ const FranchiseHeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-xl sm:text-2xl font-semibold text-sand-beige mb-4 font-poppins"
               >
-                Partner With Us
+                Become a Hotelier
               </motion.h3>
 
               <motion.p
