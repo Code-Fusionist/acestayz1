@@ -10,9 +10,12 @@ const FranchiseHeroSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="pt-32 pb-6 sm:py-10 px-4 sm:px-8 bg-tan-brown parallax-bg" ref={ref}>
+    <section
+      ref={ref}
+      className="w-full bg-tan-brown pt-40 pb-16 px-4 md:px-16 parallax-bg scroll-mt-40"
+    >
       <div className="max-w-7xl mx-auto">
-        {/* Outer Title - above the container */}
+        {/* Outer Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -22,10 +25,10 @@ const FranchiseHeroSection = () => {
           Become a Hotelier
         </motion.h2>
 
-        {/* Gradient Container */}
+        {/* Inner Container */}
         <div className="bg-gradient-to-r from-coffee-brown to-coffee-brown rounded-2xl overflow-hidden">
-          <div className="grid lg:grid-cols-2 gap-0 items-center">
-            {/* Left Content */}
+          <div className="grid lg:grid-cols-2 items-center">
+            {/* Left: Text */}
             <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
               {/* Inner Title */}
               <motion.h3
@@ -48,7 +51,7 @@ const FranchiseHeroSection = () => {
               </motion.p>
             </div>
 
-            {/* Right Image */}
+            {/* Right: Image */}
             <div className="p-4 flex items-center justify-center relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
@@ -60,13 +63,13 @@ const FranchiseHeroSection = () => {
                 />
               </div>
 
-              {/* Optional Floating Animation Element */}
+              {/* Optional Floating Element */}
               <motion.div
                 animate={{ y: [-3, 3, -3] }}
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute top-2 right-2"
               >
-                {/* Icon or floating badge if needed */}
+                {/* Floating icon if needed */}
               </motion.div>
             </div>
           </div>
