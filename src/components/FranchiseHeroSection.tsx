@@ -22,7 +22,7 @@ const FranchiseHeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl sm:text-4xl font-bold text-center text-coffee-brown mb-6 font-poppins"
         >
-          Start Your Hotel Today
+          Start Your Hotel Now
         </motion.h2>
 
         {/* Inner Container */}
