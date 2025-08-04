@@ -75,35 +75,32 @@ const Footer = () => {
               </motion.div>
             </div>
 
-            {/* Combined Links for Compact Layout */}
-            <div className="grid grid-cols-2 gap-6">
-              {/* Company Links */}
-              <div>
-                <h4 className="font-poppins text-lg font-semibold mb-4 text-tan-brown">Company</h4>
-                <ul className="space-y-2">
-                  {footerLinks.company.map((link, index) => (
-                    <li key={index}>
-                      <Link to={link.href} className="text-white/80 hover:text-tan-brown text-sm font-poppins">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Company Links */}
+            <div>
+              <h4 className="font-poppins text-lg font-semibold mb-4 text-tan-brown">Company</h4>
+              <ul className="space-y-2">
+                {footerLinks.company.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href} className="text-white/80 hover:text-tan-brown text-sm font-poppins">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              {/* Destinations */}
-              <div>
-                <h4 className="font-poppins text-lg font-semibold mb-4 text-tan-brown">Destinations</h4>
-                <ul className="space-y-2">
-                  {footerLinks.destinations.map((link, index) => (
-                    <li key={index}>
-                      <Link to={link.href} className="text-white/80 hover:text-tan-brown text-sm font-poppins">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Destinations */}
+            <div>
+              <h4 className="font-poppins text-lg font-semibold mb-4 text-tan-brown">Destinations</h4>
+              <ul className="space-y-2">
+                {footerLinks.destinations.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href} className="text-white/80 hover:text-tan-brown text-sm font-poppins">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Support & Social */}
