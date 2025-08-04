@@ -49,7 +49,7 @@ const PressCarousel = () => {
           className="text-center mb-8"
         >
           <h2 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold text-coffee-brown">
-            Media Coverage
+            Featured
           </h2>
         </motion.div>
 
