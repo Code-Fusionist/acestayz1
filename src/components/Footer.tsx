@@ -91,7 +91,7 @@ const Footer = () => {
 
             {/* Destinations */}
             <div>
-              <h4 className="font-poppins text-lg font-semibold mb-4 text-tan-brown">Destinations</h4>
+              <h4 className="font-poppins text-lg font-semibold mb-4 text-tan-brown">Available</h4>
               <ul className="space-y-2">
                 {footerLinks.destinations.map((link, index) => (
                   <li key={index}>
