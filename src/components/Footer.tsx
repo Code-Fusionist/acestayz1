@@ -159,7 +159,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-tan-brown text-sm font-poppins"
               >
-                Created by: Keshav Aggarwal
+                Designed by: Keshav Aggarwal
               </a>
             </div>
           </div>
