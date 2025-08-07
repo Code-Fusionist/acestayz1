@@ -153,14 +153,6 @@ const Footer = () => {
               <p className="text-white/60 text-sm font-poppins">
                 © 2025 Ace Stayz Pvt. Ltd. All rights reserved.
               </p>
-              <a
-                href="https://www.linkedin.com/in/keshav-aggarwal-3b6759277/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-tan-brown text-sm font-poppins"
-              >
-                Designed by: Keshav Aggarwal
-              </a>
             </div>
           </div>
         </motion.div>
